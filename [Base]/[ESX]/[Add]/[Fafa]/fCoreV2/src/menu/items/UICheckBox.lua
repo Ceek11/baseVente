@@ -1,17 +1,16 @@
 ---@type table
 local SettingsButton = {
-    Rectangle = { Y = 0, Width = 431, Height = 43 },
-    Text = { X = 25, Y = 7, Scale = 0.25 },
+    Rectangle = { Y = 0, Width = 431, Height = 38 },
+    Text = { X = 8, Y = 3, Scale = 0.33 },
     LeftBadge = { Y = -2, Width = 40, Height = 40 },
     RightBadge = { X = 385, Y = -2, Width = 40, Height = 40 },
-    RightText = { X = 420, Y = 4, Scale = 0.25 },
+    RightText = { X = 420, Y = 4, Scale = 0.35 },
     SelectedSprite = { Dictionary = "commonmenu", Texture = "gradient_nav", Y = 0, Width = 431, Height = 38 },
 }
 
 ---@type table
 local SettingsCheckbox = {
-    Dictionary = "commonmenu",
-    Textures = {
+    Dictionary = "commonmenu", Textures = {
         "shop_box_blankb", -- 1
         "shop_box_tickb", -- 2
         "shop_box_blank", -- 3
@@ -19,12 +18,8 @@ local SettingsCheckbox = {
         "shop_box_crossb", -- 5
         "shop_box_cross", -- 6
     },
-    X = 370, 
-    Y = -3, 
-    Width = 40, 
-    Height = 40
+    X = 380, Y = -6, Width = 50, Height = 50
 }
-
 RageUI.CheckboxStyle = {
     Tick = 1,
     Cross = 2
@@ -36,26 +31,27 @@ RageUI.CheckboxStyle = {
 ---@param Box number
 ---@param BoxSelect number
 ---@return nil
-
 local function StyleCheckBox(Selected, Checked, Box, BoxSelect, OffSet)
     ---@type table
     local CurrentMenu = RageUI.CurrentMenu;
     if OffSet == nil then
         OffSet = 0
     end
-
-    if Checked then
-        RenderSprite(SettingsCheckbox.Dictionary, SettingsCheckbox.Textures[BoxSelect], CurrentMenu.X + SettingsCheckbox.X + CurrentMenu.WidthOffset - OffSet, CurrentMenu.Y + SettingsCheckbox.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, SettingsCheckbox.Width, SettingsCheckbox.Height)
+    if Selected then
+        if Checked then
+            RenderSprite(SettingsCheckbox.Dictionary, SettingsCheckbox.Textures[Box], CurrentMenu.X + SettingsCheckbox.X + CurrentMenu.WidthOffset - OffSet, CurrentMenu.Y + SettingsCheckbox.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, SettingsCheckbox.Width, SettingsCheckbox.Height)
+        else
+            RenderSprite(SettingsCheckbox.Dictionary, SettingsCheckbox.Textures[1], CurrentMenu.X + SettingsCheckbox.X + CurrentMenu.WidthOffset - OffSet, CurrentMenu.Y + SettingsCheckbox.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, SettingsCheckbox.Width, SettingsCheckbox.Height)
+        end
     else
-        RenderSprite(SettingsCheckbox.Dictionary, SettingsCheckbox.Textures[3], CurrentMenu.X + SettingsCheckbox.X + CurrentMenu.WidthOffset - OffSet, CurrentMenu.Y + SettingsCheckbox.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, SettingsCheckbox.Width, SettingsCheckbox.Height)
+        if Checked then
+            RenderSprite(SettingsCheckbox.Dictionary, SettingsCheckbox.Textures[BoxSelect], CurrentMenu.X + SettingsCheckbox.X + CurrentMenu.WidthOffset - OffSet, CurrentMenu.Y + SettingsCheckbox.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, SettingsCheckbox.Width, SettingsCheckbox.Height)
+        else
+            RenderSprite(SettingsCheckbox.Dictionary, SettingsCheckbox.Textures[3], CurrentMenu.X + SettingsCheckbox.X + CurrentMenu.WidthOffset - OffSet, CurrentMenu.Y + SettingsCheckbox.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, SettingsCheckbox.Width, SettingsCheckbox.Height)
+        end
     end
 end
 
-local progressValue = 0
-local isStarted = false
-local canInteract = true
-local isThreadCreateded = false
-local alpha = 100
 
 function RageUI.Checkbox(Label, Description, Checked, Style, Actions)
     ---@type table
@@ -73,51 +69,22 @@ function RageUI.Checkbox(Label, Description, Checked, Style, Actions)
                 local BoxOffset = 0
                 RageUI.ItemsSafeZone(CurrentMenu)
 
-                RenderRectangle(CurrentMenu.X + 15, CurrentMenu.Y + SettingsButton.SelectedSprite.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, SettingsButton.SelectedSprite.Width + CurrentMenu.WidthOffset - 30, SettingsButton.SelectedSprite.Height - 3, 35, 39, 47, 255)
+                local Hovered = false;
 
-                if not isThreadCreateded then
-                    isThreadCreateded = true
-                    Citizen.CreateThread(function() 
-                        while true do
-                            if progressValue <= 5 then 
-                                progressValue = progressValue + 2
-                            else
-                                progressValue = progressValue + 7
-                            end
-                            
-                            alpha = alpha - 3,5
-    
-                            if progressValue >= 300 then 
-                                progressValue = 0
-                                alpha = 100
-                                canInteract = false
-                            end
-    
-                            if not RageUI.CurrentMenu then 
-                                isThreadCreateded = false
-                                canInteract = true
-                                return
-                            end
-    
-                            Wait(10)
-                        end
-                    end)
+                ---@type boolean
+                if CurrentMenu.EnableMouse == true and (CurrentMenu.CursorStyle == 0) or (CurrentMenu.CursorStyle == 1) then
+                    Hovered = RageUI.ItemsMouseBounds(CurrentMenu, Selected, Option, SettingsButton);
                 end
-
-                if Selected then 
-                    RenderRectangle(CurrentMenu.X + 15, CurrentMenu.Y + SettingsButton.SelectedSprite.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, SettingsButton.SelectedSprite.Width + CurrentMenu.WidthOffset - 427, SettingsButton.SelectedSprite.Height - 3, 133, 133, 133, 255)
+                if Selected then
+                    RenderSprite(SettingsButton.SelectedSprite.Dictionary, SettingsButton.SelectedSprite.Texture, CurrentMenu.X, CurrentMenu.Y + SettingsButton.SelectedSprite.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, SettingsButton.SelectedSprite.Width + CurrentMenu.WidthOffset, SettingsButton.SelectedSprite.Height)
                 end
-
-                if Selected and canInteract then
-                    local rectangle_anim = RenderRectangle(CurrentMenu.X + 15 + progressValue, CurrentMenu.Y + SettingsButton.SelectedSprite.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, SettingsButton.SelectedSprite.Width + CurrentMenu.WidthOffset - 300, SettingsButton.SelectedSprite.Height - 3, 74, 75, 77, alpha) 
-                end 
 
                 if type(Style) == "table" then
                     if Style.Enabled == true or Style.Enabled == nil then
                         if Selected then
-                            RenderText(Label, CurrentMenu.X + SettingsButton.Text.X + LeftBadgeOffset, CurrentMenu.Y + SettingsButton.Text.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 0, SettingsButton.Text.Scale, 245, 245, 245, 255)
+                            RenderText(Label, CurrentMenu.X + SettingsButton.Text.X + LeftBadgeOffset, CurrentMenu.Y + SettingsButton.Text.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 0, SettingsButton.Text.Scale, 0, 0, 0, 255)
                         else
-                            RenderText(Label, CurrentMenu.X + SettingsButton.Text.X + LeftBadgeOffset, CurrentMenu.Y + SettingsButton.Text.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 0, SettingsButton.Text.Scale, 104, 108, 114, 255)
+                            RenderText(Label, CurrentMenu.X + SettingsButton.Text.X + LeftBadgeOffset, CurrentMenu.Y + SettingsButton.Text.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 0, SettingsButton.Text.Scale, 245, 245, 245, 255)
                         end
                         if type(Style) == 'table' then
                             if Style.LeftBadge ~= nil then
@@ -140,9 +107,9 @@ function RageUI.Checkbox(Label, Description, Checked, Style, Actions)
                         local LeftBadgeOffset = ((LeftBadge == RageUI.BadgeStyle.None or LeftBadge == nil) and 0 or 27)
 
                         if Selected then
-                            RenderText(Label, CurrentMenu.X + SettingsButton.Text.X + LeftBadgeOffset, CurrentMenu.Y + SettingsButton.Text.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 8, SettingsButton.Text.Scale, 0, 0, 0, 255)
+                            RenderText(Label, CurrentMenu.X + SettingsButton.Text.X + LeftBadgeOffset, CurrentMenu.Y + SettingsButton.Text.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 0, SettingsButton.Text.Scale, 0, 0, 0, 255)
                         else
-                            RenderText(Label, CurrentMenu.X + SettingsButton.Text.X + LeftBadgeOffset, CurrentMenu.Y + SettingsButton.Text.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 8, SettingsButton.Text.Scale, 163, 159, 148, 255)
+                            RenderText(Label, CurrentMenu.X + SettingsButton.Text.X + LeftBadgeOffset, CurrentMenu.Y + SettingsButton.Text.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 0, SettingsButton.Text.Scale, 163, 159, 148, 255)
                         end
 
                         if LeftBadge ~= RageUI.BadgeStyle.None and LeftBadge ~= nil then
@@ -180,9 +147,9 @@ function RageUI.Checkbox(Label, Description, Checked, Style, Actions)
                         StyleCheckBox(Selected, Checked, 2, 4, BoxOffset)
                     end
 
-                    if Selected and (CurrentMenu.Controls.Select.Active or (Hovered and CurrentMenu.Controls.Click.Active)) and (Style.Enabled == true or Style.Enabled == nil) and not (isWaitingForServer) then
+                    if Selected and (CurrentMenu.Controls.Select.Active or (Hovered and CurrentMenu.Controls.Click.Active)) and (Style.Enabled == true or Style.Enabled == nil) then
                         local Audio = RageUI.Settings.Audio
-                        TriggerEvent("InteractSound_CL:PlayOnOne", "selected", 0.2)
+                        RageUI.PlaySound(Audio[Audio.Use].Select.audioName, Audio[Audio.Use].Select.audioRef)
                         Checked = not Checked
                         if (Checked) then
                             if (Actions.onChecked ~= nil) then
@@ -212,14 +179,4 @@ function RageUI.Checkbox(Label, Description, Checked, Style, Actions)
     end
 end
 
-function RageUI.ReloadAnimationCheckBox()
-    Citizen.CreateThread(function() 
-        while true do
-            Wait(100)
-            progressValue = 0
-            canInteract = true 
-            alpha = 100
-            break
-        end
-    end)
-end
+

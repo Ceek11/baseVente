@@ -1,5 +1,17 @@
+--- @version
+--- @see RageUI
+
+
+---@class Keys
 Keys = {};
 
+---Register
+---@param Controls string
+---@param ControlName string
+---@param Description string
+---@param Action function
+---@return Keys
+---@public
 function Keys.Register(Controls, ControlName, Description, Action)
     local _Keys = {
         CONTROLS = Controls
@@ -13,6 +25,9 @@ function Keys.Register(Controls, ControlName, Description, Action)
     return setmetatable(_Keys, Keys)
 end
 
+---Exists
+---@param Controls string
+---@return boolean
 function Keys:Exists(Controls)
     return self.CONTROLS == Controls and true or false
 end

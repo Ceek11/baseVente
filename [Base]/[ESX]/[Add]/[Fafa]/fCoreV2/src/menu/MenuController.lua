@@ -27,11 +27,6 @@ local ControlActions = {
 ---@public
 function RageUI.GoUp(Options)
     local CurrentMenu = RageUI.CurrentMenu;
-
-    local canInteract = true
-    local progressValue = 0
-    local alpha = 100
-
     if CurrentMenu ~= nil then
         Options = CurrentMenu.Options
         if CurrentMenu() then
@@ -61,12 +56,7 @@ function RageUI.GoUp(Options)
                 end
 
                 local Audio = RageUI.Settings.Audio
-
-                TriggerEvent("InteractSound_CL:PlayOnOne", "audio", 0.2)
-                RageUI.ReloadAnimation()
-                RageUI.ReloadAnimationCheckBox()
-                RageUI.ReloadAnimationList()
-                
+                RageUI.PlaySound(Audio[Audio.Use].UpDown.audioName, Audio[Audio.Use].UpDown.audioRef)
                 RageUI.LastControl = true
                 if (CurrentMenu.onIndexChange ~= nil) then
                     Citizen.CreateThread(function()
@@ -115,12 +105,7 @@ function RageUI.GoDown(Options)
                     end
                 end
                 local Audio = RageUI.Settings.Audio
-
-                TriggerEvent("InteractSound_CL:PlayOnOne", "audio", 0.2)
-                RageUI.ReloadAnimation()
-                RageUI.ReloadAnimationCheckBox()
-                RageUI.ReloadAnimationList()
-
+                RageUI.PlaySound(Audio[Audio.Use].UpDown.audioName, Audio[Audio.Use].UpDown.audioRef)
                 RageUI.LastControl = false
                 if (CurrentMenu.onIndexChange ~= nil) then
                     Citizen.CreateThread(function()

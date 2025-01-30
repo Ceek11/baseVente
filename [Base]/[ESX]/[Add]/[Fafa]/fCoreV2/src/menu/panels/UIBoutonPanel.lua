@@ -1,5 +1,5 @@
 local TextPanels = {
-    Background = { Dictionary = "commonmenu.ytd", Texture = "gradient_bgd", Y = 4, Width = 431, Height = 42 },
+    Background = { Dictionary = "commonmenu", Texture = "gradient_bgd", Y = 4, Width = 431, Height = 42 },
     Text = {
         Left = { X = 8, Y = 10, Scale = 0.35 },
         Right = { X = 8, Y = 10, Scale = 0.35 },
@@ -20,5 +20,7 @@ function RageUI.BoutonPanel(LeftText, RightText, Index)
             RenderText(RightText or "", CurrentMenu.X + TextPanels.Background.Width + CurrentMenu.WidthOffset - leftTextSize, (RageUI.StatisticPanelCount * 40) + CurrentMenu.Y + TextPanels.Text.Left.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 0, TextPanels.Text.Left.Scale, 245, 245, 245, 255, 2)
             RageUI.StatisticPanelCount = RageUI.StatisticPanelCount + 1
         end
+        
     end
 end
+

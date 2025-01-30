@@ -17,7 +17,6 @@ local SettingsSlider = {
     RightArrow = { Dictionary = "commonmenutu", Texture = "arrowright", X = 400, Y = 11.5, Width = 15, Height = 15 },
 }
 
--- RageUI.Slider("Label", 1, 100, "Coucou", true, {}, true, {})
 function RageUI.Slider(Label, ProgressStart, ProgressMax, Description, Divider, Style, Enabled, Actions)
 
     ---@type table

@@ -1,17 +1,6 @@
 
----
---- @author Dylan MALANDAIN
---- @version 2.0.0
---- @since 2020
----
---- RageUI Is Advanced UI Libs in LUA for make beautiful interface like RockStar GAME.
----
----
---- Commercial Info.
---- Any use for commercial purposes is strictly prohibited and will be punished.
----
+--- @version
 --- @see RageUI
----
 
 function math.round(num, numDecimalPlaces)
     return tonumber(string.format("%." .. (numDecimalPlaces or 0) .. "f", num))
@@ -63,7 +52,7 @@ RageUI.UI = {
 
 ---@class Settings
 RageUI.Settings = {
-    Debug = false,
+    Debug = false,   
     Controls = {
         Up = {
             Enabled = true,
@@ -261,28 +250,28 @@ RageUI.Settings = {
     Items = {
         Title = {
             Background = { Width = 431, Height = 107 },
-            Text = { X = 215, Y = 20, Scale = 1.15 },
+            Text = { X = 215, Y = 20, Scale = 0.35 },
         },
         Subtitle = {
-            Background = { Width = 431, Height = 40 },
-            Text = { X = 14, Y = 8, Scale = 0.27 },
-            PreText = { X = 420, Y = 8, Scale = 0.30 },
+            Background = { Width = 431, Height = 37 },
+            Text = { X = 7, Y = 3, Scale = 0.35 },
+            PreText = { X = 425, Y = 3, Scale = 0.35 },
         },
-        Background = { Dictionary = "commonmenu.ytd", Texture = "gradient_bgd", Y = 0, Width = 431 },
+        Background = { Dictionary = "commonmenu", Texture = "gradient_bgd", Y = 0, Width = 431 },
         Navigation = {
-            Rectangle = { Width = 0, Height = 0 },
+            Rectangle = { Width = 431, Height = 18 },
             Offset = 5,
-            Arrows = { Dictionary = "commonmenu.ytd", Texture = "shop_arrows_upanddown", X = 190, Y = -6, Width = 0, Height = 0 },
+            Arrows = { Dictionary = "commonmenu", Texture = "shop_arrows_upanddown", X = 190, Y = -6, Width = 50, Height = 50 },
         },
         Description = {
-            Bar = { Y = 4, Width = 431, Height = 4 },
-            Background = { Dictionary = "commonmenu.ytd", Texture = "gradient_bgd", Y = 4, Width = 431, Height = 30 },
-            Text = { X = 8, Y = 10, Scale = 0.30 },
+            Bar = { Y = 8, Width = 431, Height = 6 },
+            Background = { Dictionary = "commonmenu", Texture = "gradient_bgd", Y = 15, Width = 431, Height = 36 },
+            Text = { X = 6, Y = 22, Scale = 0.35 },
         },
     },
     Panels = {
         Grid = {
-            Background = { Dictionary = "commonmenu.ytd", Texture = "gradient_bgd", Y = 4, Width = 431, Height = 275 },
+            Background = { Dictionary = "commonmenu", Texture = "gradient_bgd", Y = 4, Width = 431, Height = 275 },
             Grid = { Dictionary = "pause_menu_pages_char_mom_dad", Texture = "nose_grid", X = 115.5, Y = 47.5, Width = 200, Height = 200 },
             Circle = { Dictionary = "mpinventory", Texture = "in_world_circle", X = 115.5, Y = 47.5, Width = 20, Height = 20 },
             Text = {
@@ -293,7 +282,7 @@ RageUI.Settings = {
             },
         },
         Percentage = {
-            Background = { Dictionary = "commonmenu.ytd", Texture = "gradient_bgd", Y = 4, Width = 431, Height = 76 },
+            Background = { Dictionary = "commonmenu", Texture = "gradient_bgd", Y = 4, Width = 431, Height = 76 },
             Bar = { X = 9, Y = 50, Width = 413, Height = 10 },
             Text = {
                 Left = { X = 25, Y = 15, Scale = 0.35 },
@@ -401,8 +390,8 @@ function RageUI.Banner()
             RageUI.ItemsSafeZone(CurrentMenu)
             if CurrentMenu.Sprite ~= nil then
                 if CurrentMenu.Sprite.Dictionary ~= nil then
-                    if CurrentMenu.Sprite.Dictionary == "commonmenu.ytd" then
-                        RenderSprite(CurrentMenu.Sprite.Dictionary, CurrentMenu.Sprite.Texture, CurrentMenu.X, CurrentMenu.Y, RageUI.Settings.Items.Title.Background.Width + CurrentMenu.WidthOffset, RageUI.Settings.Items.Title.Background.Height, CurrentMenu.Sprite.Color.R, CurrentMenu.Sprite.Color.G, CurrentMenu.Sprite.Color.B, CurrentMenu.Sprite.Color.A)
+                    if CurrentMenu.Sprite.Dictionary == "commonmenu" then
+                        RenderSprite(CurrentMenu.Sprite.Dictionary, CurrentMenu.Sprite.Texture, CurrentMenu.X, CurrentMenu.Y, RageUI.Settings.Items.Title.Background.Width + CurrentMenu.WidthOffset, RageUI.Settings.Items.Title.Background.Height, CurrentMenu.Sprite.Color.R,CurrentMenu.Sprite.Color.G,CurrentMenu.Sprite.Color.B,CurrentMenu.Sprite.Color.A)
                     else
                         RenderSprite(CurrentMenu.Sprite.Dictionary, CurrentMenu.Sprite.Texture, CurrentMenu.X, CurrentMenu.Y, RageUI.Settings.Items.Title.Background.Width + CurrentMenu.WidthOffset, RageUI.Settings.Items.Title.Background.Height, nil)
                     end
@@ -439,8 +428,8 @@ function RageUI.Subtitle()
         if CurrentMenu() and (CurrentMenu.Display.Subtitle) then
             RageUI.ItemsSafeZone(CurrentMenu)
             if CurrentMenu.Subtitle ~= "" then
-                RenderRectangle(CurrentMenu.X, CurrentMenu.Y + RageUI.ItemOffset, RageUI.Settings.Items.Subtitle.Background.Width + CurrentMenu.WidthOffset, RageUI.Settings.Items.Subtitle.Background.Height + CurrentMenu.SubtitleHeight, 20, 24, 28, 255)
-                RenderText((CurrentMenu.PageCounterColour .. CurrentMenu.Subtitle), CurrentMenu.X + RageUI.Settings.Items.Subtitle.Text.X, CurrentMenu.Y + RageUI.Settings.Items.Subtitle.Text.Y + RageUI.ItemOffset, 8, RageUI.Settings.Items.Subtitle.Text.Scale, 245, 245, 245, 255, nil, false, false, RageUI.Settings.Items.Subtitle.Background.Width + CurrentMenu.WidthOffset)
+                RenderRectangle(CurrentMenu.X, CurrentMenu.Y + RageUI.ItemOffset, RageUI.Settings.Items.Subtitle.Background.Width + CurrentMenu.WidthOffset, RageUI.Settings.Items.Subtitle.Background.Height + CurrentMenu.SubtitleHeight, 0, 0, 0, 255)
+                RenderText(CurrentMenu.PageCounterColour .. CurrentMenu.Subtitle, CurrentMenu.X + RageUI.Settings.Items.Subtitle.Text.X, CurrentMenu.Y + RageUI.Settings.Items.Subtitle.Text.Y + RageUI.ItemOffset, 0, RageUI.Settings.Items.Subtitle.Text.Scale, 245, 245, 245, 255, nil, false, false, RageUI.Settings.Items.Subtitle.Background.Width + CurrentMenu.WidthOffset)
                 if CurrentMenu.Index > CurrentMenu.Options or CurrentMenu.Index < 0 then
                     CurrentMenu.Index = 1
                 end
@@ -454,12 +443,12 @@ function RageUI.Subtitle()
                         CurrentMenu.Pagination.Maximum = CurrentMenu.Pagination.Total
                     end
                 end
-
+                
                 if CurrentMenu.Display.PageCounter then
                     if CurrentMenu.PageCounter == nil then
-                        RenderText(CurrentMenu.PageCounterColour .. CurrentMenu.Index .. " / " .. CurrentMenu.Options, CurrentMenu.X + RageUI.Settings.Items.Subtitle.PreText.X + CurrentMenu.WidthOffset, CurrentMenu.Y + RageUI.Settings.Items.Subtitle.PreText.Y + RageUI.ItemOffset, 8, RageUI.Settings.Items.Subtitle.PreText.Scale, 245, 245, 245, 255, 2)
+                        RenderText(CurrentMenu.PageCounterColour .. CurrentMenu.Index .. " / " .. CurrentMenu.Options, CurrentMenu.X + RageUI.Settings.Items.Subtitle.PreText.X + CurrentMenu.WidthOffset, CurrentMenu.Y + RageUI.Settings.Items.Subtitle.PreText.Y + RageUI.ItemOffset, 0, RageUI.Settings.Items.Subtitle.PreText.Scale, 245, 245, 245, 255, 2)
                     else
-                        RenderText(CurrentMenu.PageCounter, CurrentMenu.X + RageUI.Settings.Items.Subtitle.PreText.X + CurrentMenu.WidthOffset, CurrentMenu.Y + RageUI.Settings.Items.Subtitle.PreText.Y + RageUI.ItemOffset, 8, RageUI.Settings.Items.Subtitle.PreText.Scale, 245, 245, 245, 255, 2)
+                        RenderText(CurrentMenu.PageCounter, CurrentMenu.X + RageUI.Settings.Items.Subtitle.PreText.X + CurrentMenu.WidthOffset, CurrentMenu.Y + RageUI.Settings.Items.Subtitle.PreText.Y + RageUI.ItemOffset, 0, RageUI.Settings.Items.Subtitle.PreText.Scale, 245, 245, 245, 255, 2)
                     end
                 end
                 RageUI.ItemOffset = RageUI.ItemOffset + RageUI.Settings.Items.Subtitle.Background.Height
@@ -474,10 +463,7 @@ function RageUI.Background()
         if CurrentMenu() and (CurrentMenu.Display.Background) then
             RageUI.ItemsSafeZone(CurrentMenu)
             SetScriptGfxDrawOrder(0)
-            -- RenderSprite(RageUI.Settings.Items.Background.Dictionary, RageUI.Settings.Items.Background.Texture, CurrentMenu.X, CurrentMenu.Y + RageUI.Settings.Items.Background.Y + CurrentMenu.SubtitleHeight, RageUI.Settings.Items.Background.Width + CurrentMenu.WidthOffset, RageUI.ItemOffset, 0, 20, 24, 28, 255)
-
-            RenderRectangle(CurrentMenu.X, CurrentMenu.Y + RageUI.Settings.Items.Background.Y + CurrentMenu.SubtitleHeight, RageUI.Settings.Items.Background.Width + CurrentMenu.WidthOffset, RageUI.ItemOffset + 7, 20, 24, 28, 255)
-
+            RenderSprite(RageUI.Settings.Items.Background.Dictionary, RageUI.Settings.Items.Background.Texture, CurrentMenu.X, CurrentMenu.Y + RageUI.Settings.Items.Background.Y + CurrentMenu.SubtitleHeight, RageUI.Settings.Items.Background.Width + CurrentMenu.WidthOffset, RageUI.ItemOffset, 0, 0, 0, 0, 255)
             SetScriptGfxDrawOrder(1)
         end
     end
@@ -489,9 +475,9 @@ function RageUI.Description()
     if CurrentMenu ~= nil and CurrentMenu.Description ~= nil then
         if CurrentMenu() then
             RageUI.ItemsSafeZone(CurrentMenu)
-            RenderRectangle(CurrentMenu.X, CurrentMenu.Y + Description.Background.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset + 5, Description.Background.Width + CurrentMenu.WidthOffset, CurrentMenu.DescriptionHeight + 5, 20, 24, 28, 255)
-
-            RenderText(CurrentMenu.Description, CurrentMenu.X + Description.Text.X, CurrentMenu.Y + Description.Text.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset + 5, 0, Description.Text.Scale, 255, 255, 255, 255, nil, false, false, Description.Background.Width + CurrentMenu.WidthOffset - 8.0)
+            RenderRectangle(CurrentMenu.X, CurrentMenu.Y + Description.Bar.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, Description.Bar.Width + CurrentMenu.WidthOffset, Description.Bar.Height, 249, 130, 42)
+            RenderSprite(Description.Background.Dictionary, Description.Background.Texture, CurrentMenu.X, CurrentMenu.Y + Description.Background.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, Description.Background.Width + CurrentMenu.WidthOffset, CurrentMenu.DescriptionHeight, 255, 255, 255)
+            RenderText(CurrentMenu.Description, CurrentMenu.X + Description.Text.X, CurrentMenu.Y + Description.Text.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 0, Description.Text.Scale, 255, 255, 255, 255, nil, false, false, Description.Background.Width + CurrentMenu.WidthOffset - 8.0)
             RageUI.ItemOffset = RageUI.ItemOffset + CurrentMenu.DescriptionHeight + Description.Bar.Y
         end
     end
@@ -519,7 +505,7 @@ function RageUI.Render()
             RageUI.StatisticPanelCount = 0
             RageUI.ItemOffset = 0
             if CurrentMenu.Controls.Back.Enabled then
-                if CurrentMenu.Controls.Back.Pressed and CurrentMenu.Closable and (not isWaitingForServer) then
+                if CurrentMenu.Controls.Back.Pressed and CurrentMenu.Closable then
                     CurrentMenu.Controls.Back.Pressed = false
                     local Audio = RageUI.Settings.Audio
                     RageUI.PlaySound(Audio[Audio.Use].Back.audioName, Audio[Audio.Use].Back.audioRef)
@@ -565,7 +551,7 @@ function RageUI.ItemsDescription(CurrentMenu, Description, Selected)
         if Selected and CurrentMenu.Description ~= Description then
             CurrentMenu.Description = Description or nil
             ---@type number
-            local DescriptionLineCount = GetLineCount(CurrentMenu.Description, CurrentMenu.X + SettingsDescription.Text.X, CurrentMenu.Y + SettingsDescription.Text.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 0, SettingsDescription.Text.Scale, 20, 24, 28, 1, nil, false, false, SettingsDescription.Background.Width + (CurrentMenu.WidthOffset - 5.0))
+            local DescriptionLineCount = GetLineCount(CurrentMenu.Description, CurrentMenu.X + SettingsDescription.Text.X, CurrentMenu.Y + SettingsDescription.Text.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 0, SettingsDescription.Text.Scale, 255, 255, 255, 255, nil, false, false, SettingsDescription.Background.Width + (CurrentMenu.WidthOffset - 5.0))
             if DescriptionLineCount > 1 then
                 CurrentMenu.DescriptionHeight = SettingsDescription.Background.Height * DescriptionLineCount
             else

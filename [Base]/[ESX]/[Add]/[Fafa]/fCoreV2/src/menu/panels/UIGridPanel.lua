@@ -25,7 +25,7 @@ local GridSprite = {
 }
 
 local Grid = {
-    Background = { Dictionary = "commonmenu.ytd", Texture = "gradient_bgd", Y = 4, Width = 431, Height = 275 },
+    Background = { Dictionary = "commonmenu", Texture = "gradient_bgd", Y = 4, Width = 431, Height = 275 },
     Grid = { X = 115.5, Y = 47.5, Width = 200, Height = 200 },
     Circle = { Dictionary = "mpinventory", Texture = "in_world_circle", X = 115.5, Y = 47.5, Width = 20, Height = 20 },
     Text = {
@@ -74,8 +74,8 @@ local function UIGridPanel(Type, StartedX, StartedY, TopText, BottomText, LeftTe
             if Hovered then
                 if IsDisabledControlPressed(0, 24) then
                     Selected = true
-                    CircleX = math.round((IsControlEnabled(2, 239) and GetControlNormal(2, 239) or GetDisabledControlNormal(2, 239)) * 1920) - CurrentMenu.SafeZoneSize.X - (Grid.Circle.Width / 2)
-                    CircleY = math.round((IsControlEnabled(2, 240) and GetControlNormal(2, 240) or GetDisabledControlNormal(2, 240)) * 1080) - CurrentMenu.SafeZoneSize.Y - (Grid.Circle.Height / 2)
+                    CircleX = math.round(GetControlNormal(2, 239) * 1920) - CurrentMenu.SafeZoneSize.X - (Grid.Circle.Width / 2)
+                    CircleY = math.round(GetControlNormal(2, 240) * 1080) - CurrentMenu.SafeZoneSize.Y - (Grid.Circle.Height / 2)
                     if CircleX > (CurrentMenu.X + Grid.Grid.X + (CurrentMenu.WidthOffset / 2) + 20 + Grid.Grid.Width - 40) then
                         CircleX = CurrentMenu.X + Grid.Grid.X + (CurrentMenu.WidthOffset / 2) + 20 + Grid.Grid.Width - 40
                     elseif CircleX < (CurrentMenu.X + Grid.Grid.X + 20 - (Grid.Circle.Width / 2)) then

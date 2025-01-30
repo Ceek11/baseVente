@@ -6,7 +6,7 @@ local Colour = {
     Header = { X = 215.5, Y = 15, Scale = 0.35 },
     Box = { X = 15, Y = 55, Width = 44.5, Height = 44.5 },
     SelectedRectangle = { X = 15, Y = 47, Width = 44.5, Height = 8 },
-    Seperator = { Text = "/" }
+    Seperator = { Text = "of" }
 }
 
 ---ColourPanel
@@ -26,7 +26,7 @@ function RageUI.ColourPanel(Title, Colours, MinimumIndex, CurrentIndex, Action, 
         if CurrentMenu() and (CurrentMenu.Index == Index) then
 
             ---@type number
-            local Maximum = (Colours > 9) and 9 or Colours
+            local Maximum = (#Colours > 9) and 9 or #Colours
 
             ---@type boolean
             local Hovered = RageUI.IsMouseInBounds(CurrentMenu.X + Colour.Box.X + CurrentMenu.SafeZoneSize.X + (CurrentMenu.WidthOffset / 2), CurrentMenu.Y + Colour.Box.Y + CurrentMenu.SafeZoneSize.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, (Colour.Box.Width * Maximum), Colour.Box.Height)
@@ -61,7 +61,7 @@ function RageUI.ColourPanel(Title, Colours, MinimumIndex, CurrentIndex, Action, 
                 ColourSeperator = Colour.Seperator
             end
             
-            RenderText("Couleur : "..(Title and Title or "") .. " (" .. CurrentIndex .. " " .. ColourSeperator.Text .. " " .. #Colours .. ")", CurrentMenu.X + RageUI.Settings.Panels.Grid.Text.Top.X + (CurrentMenu.WidthOffset / 2), CurrentMenu.Y + RageUI.Settings.Panels.Grid.Text.Top.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 0, RageUI.Settings.Panels.Grid.Text.Top.Scale, 245, 245, 245, 255, 1)
+            RenderText((Title and Title or "") .. " (" .. CurrentIndex .. " " .. ColourSeperator.Text .. " " .. #Colours .. ")", CurrentMenu.X + RageUI.Settings.Panels.Grid.Text.Top.X + (CurrentMenu.WidthOffset / 2), CurrentMenu.Y + RageUI.Settings.Panels.Grid.Text.Top.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 0, RageUI.Settings.Panels.Grid.Text.Top.Scale, 245, 245, 245, 255, 1)
 
             if Hovered or LeftArrowHovered or RightArrowHovered then
                 if RageUI.Settings.Controls.Click.Active then
