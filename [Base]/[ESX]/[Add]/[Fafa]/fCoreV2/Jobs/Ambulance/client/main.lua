@@ -123,7 +123,7 @@ end)
 
 
 function SendDistressSignal()
-    cNotification(Translation.Ambulance["NotifSendEMS"])
+    cNotification(TranslationJob.Ambulance["NotifSendEMS"])
     TriggerServerEvent("fCore:EMS:DistressSignal", GetEntityCoords(PlayerPedId()), GetPlayerName(PlayerId()))
 end
 

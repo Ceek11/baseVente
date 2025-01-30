@@ -4,11 +4,7 @@ AddEventHandler("fCore:FarmLegal:Recolte", function(item, itemLabel, itemReward,
     local xPlayer = ESX.GetPlayerFromId(_src)
     if not xPlayer then return end 
     checkPos(point, _src)
-    local Getweight = xPlayer.getWeight()
-    if Getweight < xPlayer.maxWeight then 
         xPlayer.addInventoryItem(item, itemReward)
-    else
-        sNotification(_src, "Vous avez plus assez de place sur vous")
     end
 end)
 
@@ -19,8 +15,7 @@ AddEventHandler("fCore:FarmLegal:Traitement", function(itemNeed, itemNeedLabel, 
     if not xPlayer then return end 
     checkPos(point, _src)
     local getItem = xPlayer.getInventoryItem(itemNeed).count
-    local Getweight = xPlayer.getWeight()
-    if Getweight < xPlayer.maxWeight and getItem >= itemMini then 
+    if getItem >= itemMini then 
         xPlayer.removeInventoryItem(itemNeed, itemRemove)
         xPlayer.addInventoryItem(itemNameReward, itemReward)
     else
@@ -35,7 +30,6 @@ AddEventHandler("fCore:FarmLegal:Revente", function(itemNeed, itemNeedLabel, ite
     if not xPlayer then return end
     checkPos(point, _src)
     local getItem = xPlayer.getInventoryItem(itemNeed).count
-    local Getweight = xPlayer.getWeight()
     TriggerEvent('esx_addonaccount:getSharedAccount', society, function(account)
         if getItem >= itemMini then
             account.addMoney(moneyReward/2)

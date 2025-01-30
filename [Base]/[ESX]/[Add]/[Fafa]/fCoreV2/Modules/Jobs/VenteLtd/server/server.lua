@@ -25,9 +25,7 @@ AddEventHandler("fCore:Vente:giveItem", function(targetT, price, name, label, In
     if not xPlayer or not targetPlayer then return end
     local getMoney = targetPlayer.getMoney()
     local getBankMoney = xPlayer.getAccount('bank').money
-    local getWeight = xPlayer.getWeight()
     if getMoney >= price or getBankMoney >= price then
-        if getWeight < Cfg.maxWeight then
             targetPlayer.addInventoryItem(name, Index)
             if getMoney >= price then
                 targetPlayer.removeAccountMoney('money', price)
@@ -46,8 +44,6 @@ AddEventHandler("fCore:Vente:giveItem", function(targetT, price, name, label, In
 
             sNotification(_src, ("Vous venez de donner x%s %s pour le prix de : ~g~%s$~s~ \n\nVous avez reçu ~g~%s$~s~ \nL'entreprise à reçu ~g~%s$~s~\nLe fournisseur à reçu ~g~%s$~s~"):format(Index, label, price, resellerAmount, societyAmount, societyAmount))
             sNotification(targetT, ("Vous venez de recevoir x%s %s pour le prix de : ~g~%s$~s~"):format(Index, label, price))
-        else
-            sNotification(_src, "Vous n'avez pas assez de place sur vous")
         end
     else
         local neededMoney = price - getMoney

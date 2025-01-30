@@ -26,13 +26,9 @@ AddEventHandler("fCore:use_box_ammo", function(_src, boite, munition, nbrMunitio
     local xPlayer = ESX.GetPlayerFromId(_src)
     if not xPlayer then return end
     local getItem = xPlayer.getInventoryItem(boite).count
-    local getWeight = xPlayer.getWeight()
     if getItem > 0 then 
-        if getWeight < Cfg.maxWeight then 
             xPlayer.removeInventoryItem(boite, 1)
             xPlayer.addInventoryItem(munition, nbrMunition)
-        else
-            sNotification(_src, "Vous n'avez pas assez de place sur vous") 
         end
     end
 end)

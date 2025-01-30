@@ -11,7 +11,7 @@ AddEventHandler("Police:put_weapon", function(weaponName, label, job)
     local _src = source
     local xPlayer = ESX.GetPlayerFromId(_src)
     local grade = xPlayer.getJob().grade
-    xPlayer.removeWeapon(name)
+    xPlayer.removeInventoryItem(name, 1)
     MySQL.Async.insert("INSERT INTO weapon_society (job, label, name, grade) VALUES (@job, @label, @name, @grade)", {
         ["@job"] = job,
         ["@label"] = label,
@@ -24,7 +24,8 @@ RegisterNetEvent("Police:TakeWeapon")
 AddEventHandler("Police:TakeWeapon", function(name, label, jobName, id)
     local src = source 
     local xPlayer = ESX.GetPlayerFromId(src)
-    xPlayer.addWeapon(name, ammo)
+
+    xPlayer.addInventoryItem(name, 1)
     MySQL.Async.execute("DELETE FROM weapon_society WHERE id = @id", {["@id"] = id})
     sNotification(src, (TranslationJob.Armurerie["YouJustGun"]):format(label))
 end)

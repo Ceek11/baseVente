@@ -390,9 +390,7 @@ RegisterNetEvent('fCore:Boss:TakeObject')
 AddEventHandler('fCore:Boss:TakeObject', function(Society, QuantityTake, name, label, Webhooks)
     local _src = source
     local xPlayer = ESX.GetPlayerFromId(_src)
-    local getWeight = xPlayer.getWeight()
     if not xPlayer then return end 
-    if getWeight < Cfg.maxWeight then 
         TriggerEvent('esx_addoninventory:getSharedInventory', Society, function(inventory)
             local item = inventory.getItem(name)
             if item.count >= QuantityTake then 
@@ -405,8 +403,6 @@ AddEventHandler('fCore:Boss:TakeObject', function(Society, QuantityTake, name, l
                 sNotification(_src, TranslationJob.AllJob["Snotif_invalid_quantity"])
             end
         end)
-    else 
-        sNotification(_src, "Vous n'avez pas assez de place sur vous")
     end
 end)
 

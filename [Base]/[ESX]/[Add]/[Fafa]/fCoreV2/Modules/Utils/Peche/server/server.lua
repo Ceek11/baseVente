@@ -63,12 +63,8 @@ RegisterNetEvent("fCore:Fishing:GiveFish")
 AddEventHandler("fCore:Fishing:GiveFish", function(nameItem)
     local _src = source 
     local xPlayer = ESX.GetPlayerFromId(_src)
-    local getWeight = xPlayer.getWeight()
-    if getWeight < Cfg.maxWeight then 
         xPlayer.addInventoryItem(nameItem, 1)
-    else
-        sNotification(_src, "Vous n'avez pas assez de place sur vous") 
-    end
+  
 end)
 
 RegisterNetEvent("fCore:Fishing:BreakFishingRod")
