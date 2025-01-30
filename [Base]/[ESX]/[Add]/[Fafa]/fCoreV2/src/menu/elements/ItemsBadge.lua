@@ -6,37 +6,6 @@ RageUI.BadgeStyle = {
             BadgeDictionary = "commonmenu"
         }
     end,
-    BronzeMedal = function()
-        return {
-            BadgeTexture = "mp_medal_bronze",
-        }
-    end,
-    GoldMedal = function()
-        return {
-            BadgeTexture = "mp_medal_gold",
-        }
-    end,
-    SilverMedal = function()
-        return {
-            BadgeTexture = "medal_silver",
-        }
-    end,
-    Alert = function()
-        return {
-            BadgeTexture = "mp_alerttriangle",
-        }
-    end,
-    Crown = function(Selected)
-        return {
-            BadgeTexture = "mp_hostcrown",
-            BadgeColour = Selected and { R = 0, G = 0, B = 0, A = 255 } or { R = 255, G = 255, B = 255, A = 255 }
-        }
-    end,
-    Ammo = function(Selected)
-        return {
-            BadgeTexture = Selected and "shop_ammo_icon_b" or "shop_ammo_icon_a",
-        }
-    end,
     Armour = function(Selected)
         return {
             BadgeTexture = Selected and "shop_armour_icon_b" or "shop_armour_icon_a",
@@ -73,7 +42,6 @@ RageUI.BadgeStyle = {
             BadgeDictionary = "mpinventory"
         }
     end,
-
     Heli = function(Selected)
         return {
             BadgeTexture = Selected and "mp_specitem_heli_black" or "mp_specitem_heli",

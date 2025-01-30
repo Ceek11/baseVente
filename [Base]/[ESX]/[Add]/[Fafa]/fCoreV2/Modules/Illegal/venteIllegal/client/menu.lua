@@ -35,7 +35,6 @@ function openMenuVenteIllegal(valeur)
                         if VenteIllegal.PercentResell < 1.0 then 
                             VenteIllegal.PercentResell = VenteIllegal.PercentResell + VenteIllegal.speedFarm
                         else
-                            print(name)
                             VenteIllegal.PercentResell = 0
                             TriggerServerEvent("fCore:venteIllegal:addItem", name, price, valeur.typeMoney)
                             anim(PlayerPedId(), 'random@domestic', 'pickup_low')

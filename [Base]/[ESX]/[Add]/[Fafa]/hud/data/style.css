@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+#hud-container {
+    position: absolute;
+    bottom: 115px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.speedometer {
+    top: 65px;
+    position: relative;
+    width: 140px;
+    height: 115px;
+}
+
+.speed-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.speed-circle-bg {
+    stroke: #333;
+    stroke-width: 2.5;
+}
+
+.speed-text {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+    font-size: 20px;
+    text-align: center;
+}
+
+#speed-number {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#speed-unit {
+    font-size: 16px;
+}
+
+#fuel-progress-bar {
+    stroke: white;
+    stroke-width: 4.5;
+}
+
+.fuel-indicator {
+    top: 191px;
+    left: 145px;
+    position: relative;
+    width: 40px;
+    height: 39px;
+}
+
+.hunger-indicator, .thirst-indicator {
+    position: relative;
+    width: 55px;
+    height: 55px;
+}
+
+.fuel-svg, .hunger-svg, .thirst-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.fuel-svg {
+    transform: rotate(75deg);
+}
+
+.fuel-circle-bg, .hunger-circle-bg, .thirst-circle-bg {
+    stroke: #333;
+    stroke-width: 6;
+}
+
+.fuel-icon, .hunger-icon, .thirst-icon {
+    position: absolute;
+    top: 58%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    width: 17px;
+    height: 17px;
+    z-index: 1;
+}
+
+.hunger-icon, .thirst-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+}
+
+.hunger-indicator, .thirst-indicator {
+    position: relative;
+    width: 157px;
+    height: 55px;
+}
+
+.hunger-svg, .thirst-svg {
+    width: 55px;
+    height: 55px;
+}
+
+.hunger-circle-bg, .thirst-circle-bg {
+    stroke: #333;
+    stroke-width: 4;
+    fill: #cccccc;
+}
+
+.hunger-bar, .thirst-bar {
+    position: absolute;
+    bottom: 18px;
+    right: 88px;
+    height: 17px;
+    border-radius: 10px;
+    z-index: -2;
+    transition: width 0.3s ease; /* Ajoutez une transition pour des changements fluides */
+}
+
+.hunger-bar {
+    background-color: #00FF00; /* Vert pour la faim */
+    width: 0%; /* Commence à 0% */
+}
+
+.thirst-bar {
+    background-color: #0000FF; /* Bleu pour la soif */
+    width: 0%; /* Commence à 0% */
+}
+
+.hunger-bar-background, .thirst-bar-background {
+    position: absolute;
+    bottom: 18px;
+    right: 88px;
+    width: 155px;    
+    height: 17px;
+    border-radius: 10px;
+    background-color: gray;
+    z-index: -3;
+}
+
+
+.hunger-icon, .thirst-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+}
+
+.hunger-circle-bg {
+    stroke: #00FF00;
+    stroke-width: 4;
+    fill: none;
+}
+
+.thirst-circle-bg {
+    stroke: #0000FF;
+    stroke-width: 4;
+    fill: none;
+}
+
+.hunger-circle-bg,
+.thirst-circle-bg {
+    fill: #cccccc;
+}
+
+.hunger-svg,
+.thirst-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.hud-life {
+    position: relative;
+    top: 70px;
+    left: 1765px;
+}

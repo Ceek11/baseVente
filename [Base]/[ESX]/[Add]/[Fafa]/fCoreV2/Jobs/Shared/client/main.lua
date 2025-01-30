@@ -17,7 +17,7 @@ function MarkerJob()
                     InService = InServiceJob
                 end
                 if job and job.name == v.jobName and job.grade_name == v.gradeBoss then 
-                    for _, Boss in pairs(v.Boss) do 
+                    for _, Boss in pairs(v.Boss) do
                         local dest = Boss.point
                         local dist = #(posPlayer - dest)
                         if dist <= Boss.maxMarker then 

@@ -95,7 +95,6 @@ function MenuF6openPolice(valeur)
                                 onSelected = function()
                                     raison = v.raison
                                     pos = v.pos
-                                    print(pos)
                                     id = k
                                 end
                             }, subMenuGestionAppelCentral)
@@ -112,7 +111,6 @@ function MenuF6openPolice(valeur)
                     RageUI.Line("color", 249, 130,42)
                     RageUI.Button("~g~Accepter", ("Raison : %s"):format(raison), {}, true, {
                         onSelected = function()
-                            print(pos)
                             blipsAppel(pos, "Appel Central")
                         end
                     })
@@ -310,7 +308,7 @@ function MenuF6openPolice(valeur)
                         })
                         RageUI.Button("Demande de renfort", nil, {RightLabel = "→"}, true, {
                             onSelected = function()
-                                TriggerServerEvent('fCore:Police:renfort', GetEntityCoords(PlayerPedId()), "Demande de renfort",valeur)
+                                TriggerServerEvent('fCore:Police:renfort', GetEntityCoords(PlayerPedId()), "Demande de renfort", valeur)
                             end
                         })
                     end

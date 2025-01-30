@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speedometer HUD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="hud-container">
+        <div class="fuel-indicator">
+            <div class="circle">
+                <svg viewBox="0 0 100 50" class="fuel-svg">
+                    <defs>
+                        <linearGradient id="fuel-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop id="fuel-start-color" offset="0%" stop-color="#00FF00" />
+                            <stop id="fuel-end-color" offset="100%" stop-color="#FF0000" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M10,50 A40,40 0 1,1 90,50 A40,40 0 1,1 10,50" stroke="#FFFFFF" stroke-width="4.5" fill="none" class="fuel-circle-bg"></path>
+                    <path id="fuel-progress-bar" stroke="url(#fuel-gradient)" stroke-width="4.5" fill="none"></path>
+                </svg>
+                <img src="icon/fuel.png" class="fuel-icon" alt="Fuel Icon">
+            </div>
+        </div>
+
+        <div class="speedometer">
+            <div class="circle">
+                <svg viewBox="0 0 100 50" class="speed-svg">
+                    <defs>
+                        <linearGradient id="speed-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop id="start-color" offset="0%" stop-color="#00FF00" />
+                            <stop id="end-color" offset="100%" stop-color="#FF0000" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M10,50 A40,40 0 1,1 90,50 A40,40 0 1,1 10,50" stroke="#FFFFFF" stroke-width="2.5" fill="none" class="speed-circle-bg"></path>
+                    <path id="progress-bar" stroke="url(#speed-gradient)" stroke-width="2.5" fill="none"></path>
+                </svg>
+                <div class="speed-text" id="speed-text">
+                    <div id="speed-number">0</div>
+                    <div id="speed-unit">km/h</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hud-life">
+        <div class="hunger-indicator">
+            <svg viewBox="0 0 100 100" class="hunger-svg">
+                <circle cx="50" cy="50" r="30" class="hunger-circle-bg"></circle>
+                <circle cx="50" cy="50" r="30" stroke="#00FF00" stroke-width="4" fill="none" stroke-dasharray="188" stroke-dashoffset="188"></circle>
+            </svg>
+            <div class="hunger-bar-background"></div>
+            <div class="hunger-bar"></div>
+            <img src="icon/hunger.png" class="hunger-icon" alt="Hunger Icon">
+        </div>
+
+        <div class="thirst-indicator">
+            <svg viewBox="0 0 100 100" class="thirst-svg">
+                <circle cx="50" cy="50" r="30" class="thirst-circle-bg"></circle>
+                <circle cx="50" cy="50" r="30" stroke="#0000FF" stroke-width="4" fill="none" stroke-dasharray="188" stroke-dashoffset="188"></circle>
+            </svg>
+            <div class="thirst-bar-background"></div>
+            <div class="thirst-bar"></div>
+            <img src="icon/thirst.png" class="thirst-icon" alt="Thirst Icon">
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -13,7 +13,7 @@ CreateThread(function()
                     interval = 0
                     DrawMarker(27, posExt.x, posExt.y, posExt.z, 0.0, 0.0, 0.0, 0, 0, 0, 0.5, 0.5, 0.5, 249, 130, 42, 55555, false, false, 2, false, false, false, false)
                     if distExt <= 2 then 
-                        ESX.ShowHelpNotification("Appuyer sur ~INPUT_CONTEXT~ pour entrée dans le garage")
+                        ESX.ShowHelpNotification("E", "Pour entrée dans le garage", "Information", {97, 32, 32})
                         if IsControlJustPressed(1, 51) then
                             inGarage = true
                             openMenuGarageImmo("ExtGarage", v)
@@ -27,7 +27,7 @@ CreateThread(function()
                         interval = 0
                         DrawMarker(27, posExt.x, posExt.y, posExt.z, 0.0, 0.0, 0.0, 0, 0, 0, 0.5, 0.5, 0.5, 249, 130, 42, 55555, false, false, 2, false, false, false, false)
                         if distInt <= 2 then 
-                            ESX.ShowHelpNotification("Appuyer sur ~INPUT_CONTEXT~ pour quitter le garage")
+                            ESX.ShowHelpNotification("E", "Pour quitter le garage", "Information", {97, 32, 32})
                             if IsControlJustPressed(1, 51) then 
                                 openMenuGarageImmo("IntGarage", v)
                             end
@@ -44,7 +44,7 @@ CreateThread(function()
                     interval = 0
                     DrawMarker(27, posExt.x, posExt.y, posExt.z, 0.0, 0.0, 0.0, 0, 0, 0, 0.5, 0.5, 0.5, 249, 130, 42, 55555, false, false, 2, false, false, false, false)
                     if distExt <= 2 then 
-                        ESX.ShowHelpNotification("Appuyer sur ~INPUT_CONTEXT~ pour entrée dans la maison")
+                        ESX.ShowHelpNotification("E", "Pour entrée dans la maison", "Information", {97, 32, 32})
                         if IsControlJustPressed(1, 51) then 
                             inHouse = true
                             openMenuHouseImmo("ExtHouse", v)
@@ -58,7 +58,7 @@ CreateThread(function()
                         interval = 0
                         DrawMarker(27, posExt.x, posExt.y, posExt.z, 0.0, 0.0, 0.0, 0, 0, 0, 0.5, 0.5, 0.5, 249, 130, 42, 55555, false, false, 2, false, false, false, false)
                         if distInt <= 2 then 
-                            ESX.ShowHelpNotification("Appuyer sur ~INPUT_CONTEXT~ pour quitter la maison")
+                            ESX.ShowHelpNotification("E", "Pour quitter la maison", "Information", {97, 32, 32})
                             if IsControlJustPressed(1, 51) then 
                                 openMenuHouseImmo("IntHouse", v)
                             end

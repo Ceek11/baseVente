@@ -2,7 +2,7 @@ ESX.RegisterServerCallback("fCore:goFast:getTime", function(source, cb)
     local _src = source 
     local xPlayer = ESX.GetPlayerFromId(_src)
     local time = os.time()
-    MySQL.Async.fetchAll("SELECT * FROM goFast WHERE identifier = @identifier", {
+    MySQL.Async.fetchAll("SELECT * FROM gofast WHERE identifier = @identifier", {
         ["@identifier"] = xPlayer.identifier
     }, function(result)
         if result and #result > 0 then 
@@ -14,12 +14,12 @@ ESX.RegisterServerCallback("fCore:goFast:getTime", function(source, cb)
                     })
                     cb(true, getCops())
                 else
-                    sNotification(_src, ("Vous pouvez refaire un goFast le %s"):format(formatExpiration(data.expiration)))
+                    sNotification(_src, ("Vous pouvez refaire un gofast le %s"):format(formatExpiration(data.expiration)))
                     cb(false, getCops())
                 end
             end
         else
-            MySQL.Async.execute("INSERT INTO goFast (identifier, expiration) VALUES (@identifier, @expiration)", {
+            MySQL.Async.execute("INSERT INTO gofast (identifier, expiration) VALUES (@identifier, @expiration)", {
                 ["@identifier"] = xPlayer.identifier,
                 ["@expiration"] = time + 86400
             })

@@ -84,7 +84,6 @@ function openMenuTraitementLegal(v)
                             Percent = Percent + v.speedFarm
                         else
                             Percent = 100
-                            print(v.itemNeed)
                             TriggerServerEvent("fCore:FarmLegal:Traitement", v.itemNeed, v.itemNeedLabel, v.itemRemove, v.itemNameReward, v.itemRewardLabel, v.itemReward, v.itemMini, v.point)
                             anim(PlayerPedId(), 'random@domestic', 'pickup_low')
                             Percent  = 0

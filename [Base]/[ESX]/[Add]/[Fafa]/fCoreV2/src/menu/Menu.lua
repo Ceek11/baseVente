@@ -1,15 +1,3 @@
-
----@param Title string
----@param Subtitle string
----@param X number
----@param Y number
----@param TextureDictionary string
----@param TextureName string
----@param R number
----@param G number
----@param B number
----@param A number
----@return RageUIMenus
 function RageUI.CreateMenu(Title, Subtitle, X, Y, TextureDictionary, TextureName, R, G, B, A)
 
     ---@type table
@@ -19,7 +7,7 @@ function RageUI.CreateMenu(Title, Subtitle, X, Y, TextureDictionary, TextureName
     Menu.InstructionalButtons = {}
 
     Menu.Display.Header = true;
-    Menu.Display.Glare = true;
+    Menu.Display.Glare = false;
     Menu.Display.Subtitle = true;
     Menu.Display.Background = true;
     Menu.Display.Navigation = true;
@@ -28,7 +16,7 @@ function RageUI.CreateMenu(Title, Subtitle, X, Y, TextureDictionary, TextureName
 
     Menu.Title = Title or ""
     Menu.TitleFont = 6
-    Menu.TitleScale = 1.0
+    Menu.TitleScale = 1.2
     Menu.Subtitle = Subtitle or nil
     Menu.SubtitleHeight = -37
     Menu.Description = nil
@@ -40,7 +28,7 @@ function RageUI.CreateMenu(Title, Subtitle, X, Y, TextureDictionary, TextureName
     Menu.Open = false
     Menu.Controls = RageUI.Settings.Controls
     Menu.Index = 1
-    Menu.Sprite = { Dictionary = TextureDictionary or "commonmenu", Texture = TextureName or "gradient_bgd", Color = { R = R, G = G, B = B, A = A } }
+    Menu.Sprite = { Dictionary = "RageUI", Texture = TextureName or "FafaDev", Color = { R = R, G = G, B = B, A = A } }
     Menu.Rectangle = nil
     Menu.Pagination = { Minimum = 1, Maximum = 10, Total = 10 }
     Menu.Safezone = true
@@ -70,16 +58,6 @@ function RageUI.CreateMenu(Title, Subtitle, X, Y, TextureDictionary, TextureName
     Citizen.CreateThread(function()
         if not HasScaleformMovieLoaded(Menu.InstructionalScaleform) then
             Menu.InstructionalScaleform = RequestScaleformMovie("INSTRUCTIONAL_BUTTONS")
-            while not HasScaleformMovieLoaded(Menu.InstructionalScaleform) do
-                Citizen.Wait(0)
-            end
-        end
-    end)
-    
-    Citizen.CreateThread(function()
-        local ScaleformMovie = RequestScaleformMovie("MP_MENU_GLARE")
-        while not HasScaleformMovieLoaded(ScaleformMovie) do
-            Citizen.Wait(0)
         end
     end)
 
@@ -147,7 +125,7 @@ function RageUI.Menus:DisplayInstructionalButton(boolean)
 end
 
 function RageUI.Menus:DisplayPageCounter(boolean)
-    self.Display.PageCounter= boolean;
+    self.Display.PageCounter = boolean;
     return self.Display.PageCounter;
 end
 
@@ -167,6 +145,10 @@ function RageUI.Menus:SetStyleSize(Value)
         witdh = 100
     end
     self.WidthOffset = witdh
+end
+
+function RageUI.Menus:SetPageCounter(txt)
+    self.PageCounter = txt;
 end
 
 ---GetStyleSize
@@ -213,48 +195,13 @@ function RageUI.Menus:RefreshIndex()
     self.Index = 1
 end
 
----SetSubtitle
----@param Subtitle string
----@return nil
----@public
-function RageUI.Menus:SetSubtitle(Subtitle)
-
-    self.Subtitle = Subtitle or string.upperself.Subtitle
-
-    if string.starts(self.Subtitle, "~") then
-        self.PageCounterColour = string.lower(string.sub(self.Subtitle, 1, 3))
-    else
-        self.PageCounterColour = ""
-    end
-    if self.Subtitle ~= "" then
-        local SubtitleLineCount = GetLineCount(self.Subtitle, self.X + RageUI.Settings.Items.Subtitle.Text.X, self.Y + RageUI.Settings.Items.Subtitle.Text.Y, 0, RageUI.Settings.Items.Subtitle.Text.Scale, 245, 245, 245, 255, nil, false, false, RageUI.Settings.Items.Subtitle.Background.Width + self.WidthOffset)
-
-        if SubtitleLineCount > 1 then
-            self.SubtitleHeight = 18 * SubtitleLineCount
-        else
-            self.SubtitleHeight = 0
-        end
-
-    else
-        self.SubtitleHeight = -37
-    end
-end
-
----PageCounter
----@param Subtitle string
----@return nil
----@public
-function RageUI.Menus:SetPageCounter(Subtitle)
-    self.PageCounter = Subtitle
-end
-
 ---EditSpriteColor
 ---@param Colors table
 ---@return nil
 ---@public
 function RageUI.Menus:EditSpriteColor(R, G, B, A)
     if self.Sprite.Dictionary == "commonmenu" then
-        self.Sprite.Color = { R = tonumber(R) or 255, G = tonumber(G) or 255, B = tonumber(B) or 255, A = tonumber(A) or 500 }
+        self.Sprite.Color = { R = tonumber(R) or 255, G = tonumber(G) or 255, B = tonumber(B) or 255, A = tonumber(A) or 255 }
     end
 end
 ---SetPosition
@@ -283,7 +230,7 @@ end
 ---@return nil
 ---@public
 function RageUI.Menus:SetRectangleBanner(R, G, B, A)
-    self.Rectangle = { R = tonumber(R) or 0, G = tonumber(G) or 0, B = tonumber(B) or 0, A = tonumber(A) or 500 }
+    self.Rectangle = { R = tonumber(R) or 255, G = tonumber(G) or 255, B = tonumber(B) or 255, A = tonumber(A) or 255 }
     self.Sprite = nil
 end
 
@@ -293,7 +240,7 @@ end
 ---@return nil
 ---@public
 function RageUI.Menus:SetSpriteBanner(TextureDictionary, Texture)
-    self.Sprite = { Dictionary = TextureDictionary or "commonmenu", Texture = Texture or "gradient_bgd" }
+    self.Sprite = { Dictionary = TextureDictionary or "commonmenu", Texture = Texture or "interaction_bgd" }
     self.Rectangle = nil
 end
 

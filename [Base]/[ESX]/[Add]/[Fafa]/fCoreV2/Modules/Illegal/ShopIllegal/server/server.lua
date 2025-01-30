@@ -1,15 +1,13 @@
 RegisterNetEvent("fCore:ShopIllegal:BuyWeapon")
 AddEventHandler("fCore:ShopIllegal:BuyWeapon", function(Type, price, name, Index, number, shop, point)
-    print(price)
-    print(name)
-    print(Index)
-    print(number)
+
     local _src = source 
     local xPlayer = ESX.GetPlayerFromId(_src)
     if not xPlayer then return end 
     checkPos(point, _src)
     local getBlackMoney = xPlayer.getAccount('black_money').money 
     local priceTotal = price*Index
+    local getWeight = xPlayer.getWeight()
     if getBlackMoney >= price*Index then
         if Type == "first" then 
             local time = os.time()
@@ -22,8 +20,12 @@ AddEventHandler("fCore:ShopIllegal:BuyWeapon", function(Type, price, name, Index
             local param = {["@shop"] = shop, ["@identifier"] = xPlayer.identifier, ["@number"] = number + Index}
             MySQL.Async.execute(query, param)
         end
-        xPlayer.addInventoryItem(name, Index)
-        xPlayer.removeAccountMoney('black_money', priceTotal)
+        if getWeight < Cfg.maxWeight then 
+            xPlayer.addInventoryItem(name, Index)
+            xPlayer.removeAccountMoney('black_money', priceTotal)
+        else
+            sNotification(_src, TranslationIllegal.ShopIllegal["PasAssezDePlace"]) 
+        end    
     else
         sNotification(_src, TranslationIllegal.ShopIllegal["PasAssezDArgent"])
     end
@@ -71,11 +73,16 @@ AddEventHandler("fCore:ShopIllegal:BuyWeaponIllimited", function(price, name, In
     checkPos(point, _src)
     local getBlackMoney = xPlayer.getAccount('black_money').money 
     local priceTotal = price*Index
+    local getWeight = xPlayer.getWeight()
 
     if getBlackMoney > priceTotal then
+        if getWeight < Cfg.maxWeight then  
             xPlayer.removeAccountMoney('black_money', priceTotal)
             xPlayer.addInventoryItem(name, Index)
             sNotification(_src, (TranslationIllegal.ShopIllegal["AchatEffectue"]):format(Index, label, priceTotal))
+        else
+            sNotification(_src, TranslationIllegal.ShopIllegal["PasAssezDePlace"]) 
+        end
     else
         sNotification(_src, TranslationIllegal.ShopIllegal["PasAssezDArgent"])
     end

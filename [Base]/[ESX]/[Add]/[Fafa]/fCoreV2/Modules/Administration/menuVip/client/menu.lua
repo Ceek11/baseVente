@@ -2,9 +2,6 @@ local OpenVip = false
 menuVip = RageUI.CreateMenu(" ", " ", nil, nil, BannerConfig.TextureDictionary, BannerConfig.TextureName)
 menuBuyVip = RageUI.CreateSubMenu(menuVip, " ", " ", nil, nil, BannerConfig.TextureDictionary, BannerConfig.TextureName)
 menuBuyVehicle = RageUI.CreateSubMenu(menuVip, " ", " ", nil, nil, BannerConfig.TextureDictionary, BannerConfig.TextureName)
-menuCamouflage = RageUI.CreateSubMenu(menuVip, " ", " ", nil, nil, BannerConfig.TextureDictionary, BannerConfig.TextureName)
-menuBuyMysteryBox = RageUI.CreateSubMenu(menuVip, " ", " ", nil, nil, BannerConfig.TextureDictionary, BannerConfig.TextureName)
-
 menuVip.Closed = function()
     OpenVip = false
 end
@@ -36,7 +33,6 @@ function openMenuVIP()
                         end
                     })
                     for k, v in pairs(getNumbercoins) do
-                        -- print(v.coins)
                         local vip = v.vip and "Oui" or "Non"
                         local expiration = v.expiration
                         RageUI.Button(("coins (NOC): ~b~%s NOC"):format(v.coins), nil, {}, true, {})
@@ -48,12 +44,10 @@ function openMenuVIP()
                     end                    
                     RageUI.Line("color", 19, 107, 190)
                     RageUI.Button("Acheter un Vehicule", nil, {}, true, {}, menuBuyVehicle)
-                    RageUI.Button("Acheter une MysteryBox", nil, {}, true, {}, menuBuyMysteryBox)
                 end)
                 RageUI.IsVisible(menuBuyVehicle, function()
                     for k,v in pairs(vehicleVip) do 
-                        print(json.encode(vehicleVip))
-                        RageUI.Button(v.label, nil, {RightLabel = ("~b~ %s NOC"):format(v.Coins)}, AchatEffectuer, {
+                        RageUI.Button(v.label, nil, {RightLabel = ("~b~ %s NOC"):format(v.coins)}, AchatEffectuer, {
                             onActive = function()
                                 RenderSprite("RageUI", v.img, 0, PosXImageVehicleVip, PosYImageVehicleVip, 200, 100)
                             end,
@@ -67,18 +61,6 @@ function openMenuVIP()
                                         cNotification("Vous avez annuler l'achat", "action", "rouge")
                                     end
                                 end
-                            end
-                        })
-                    end
-                end)
-                RageUI.IsVisible(menuBuyMysteryBox, function()
-                    for _,v in pairs(BoxVip) do 
-                        RageUI.Button(v.label, nil, {RightLabel = "~b~"..v.coins.." NOC"}, true, {
-                            onActive = function()
-                                RenderSprite("RageUI", v.img, 0, PosXImageBoxVip, PosYImageBoxVip, 200, 100)
-                            end,
-                            onSelected = function()
-                                TriggerServerEvent("fCore:MenuVip:BuyCaisse", v.coins, v.name)
                             end
                         })
                     end

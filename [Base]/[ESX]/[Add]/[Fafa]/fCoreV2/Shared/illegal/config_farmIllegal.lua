@@ -11,6 +11,7 @@ FarmIllegal = {
             speedFarm = 0.0040,
             Button = "Récolte des branches de weed", description = "Recolter des branches de weed"
         },
+        
         {
             point = vector3(-1625.356, 4573.196, 43.43296),
             item = "feuille_coca", itemLabel = "Feuille de coca", itemReward = 1,

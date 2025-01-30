@@ -23,7 +23,7 @@ function MarkerRobCash(v)
             interval = 0
             DrawMarker(20, dest.x, dest.y, dest.z, 0.0, 0.0, 0.0, 0.0,0.0,0.0, 0.3, 0.3, 0.2, 249,130, 42, 55555, false, true, 2, false, false, false, false)
             if dist <= 1.5 then 
-                ESX.ShowHelpNotification(TranslationIllegal.Fleeca["CollectMoney"])
+                ESX.ShowHelpNotification("E", TranslationIllegal.Fleeca["CollectMoney"], "Information", {97, 32, 32})
                 if IsControlJustPressed(1, 51) then 
                     showPointCash = false
                     StartGrab()
@@ -36,7 +36,7 @@ function MarkerRobCash(v)
             interval = 0
             DrawMarker(20, destTroley2.x, destTroley2.y, destTroley2.z, 0.0, 0.0, 0.0, 0.0,0.0,0.0, 0.3, 0.3, 0.2, 249,130, 42, 55555, false, true, 2, false, false, false, false)
             if dist <= 1.5 then 
-                ESX.ShowHelpNotification(TranslationIllegal.Fleeca["CollectMoney"])
+                ESX.ShowHelpNotification("E", TranslationIllegal.Fleeca["CollectMoney"], "Information", {97, 32, 32})
                 if IsControlJustPressed(1, 51) then 
                     showPointCash2 = false
                     StartGrab()

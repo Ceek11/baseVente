@@ -37,23 +37,7 @@ AddEventHandler("fCore:freezePlayer", function(entity)
     FreezeEntityPosition(entity, statsFreeze)
 end)
 
-RegisterNetEvent("fCore:revive")
-AddEventHandler("fCore:revive", function()
-    local playerPed = PlayerPedId()
-    if DoesEntityExist(playerPed) then
-        isDead = false
-        TriggerServerEvent("fCore:heal", GetPlayerServerId(PlayerId()))
-        TriggerServerEvent("esx:playerIsDead", 0)
-        StopScreenEffect('DeathFailOut')
-        ClearPedTasksImmediately(playerPed)
-        local coords = GetEntityCoords(playerPed)
-        SetEntityCoords(playerPed, coords.x, coords.y, coords.z + 0.5, false, false, false, false)
-        NetworkResurrectLocalPlayer(coords.x, coords.y, coords.z + 0.5, 0, true, false)
-        SetPlayerInvincible(GetPlayerFromServerId(playerPed), false)
-        SetEntityInvincible(playerPed, false)
-        SetEntityVisible(playerPed, true)
-    end
-end)
+
 
 RegisterNetEvent("fCore:Admin:AddToJail")
 AddEventHandler("fCore:Admin:AddToJail", function(raison, newTime)
@@ -73,7 +57,7 @@ AddEventHandler("fCore:Admin:AddToJail", function(raison, newTime)
         
         fastTimer = fastTimer - elapsedTime
         
-        RageUI.Text({message = (TranslationAdministration.MenuAdmin["CText_timeExpirate"]):format(math.floor((fastTimer/60)), raison)})
+        Visual.Text({message = (TranslationAdministration.MenuAdmin["CText_timeExpirate"]):format(math.floor((fastTimer/60)), raison)})
         if dist > 50 then 
             SetEntityCoords(playerPed, dest)
         end
@@ -94,11 +78,6 @@ end)
 RegisterNetEvent("fCore:Admin:unJailPlayer")
 AddEventHandler("fCore:Admin:unJailPlayer", function()
     fastTimer = 0
-end)
-
-CreateThread(function()
-    TriggerServerEvent("fCore:Admin:getPermsAdmin")
-    TriggerServerEvent("fCore:Admin:getGroupAdmin")
 end)
 
 AddEventHandler('esx:playerLoaded', function()

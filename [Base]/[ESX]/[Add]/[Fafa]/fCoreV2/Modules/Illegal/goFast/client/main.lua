@@ -1,19 +1,22 @@
 CreateThread(function()
     while true do 
-         local interval = 1500
-         local posPlayer = GetEntityCoords(PlayerPedId())
-         local dest = goFastTable.Coords
-         local dist = #(dest-posPlayer)
-         if dist <= 3 then 
+        local interval = 1500
+        local posPlayer = GetEntityCoords(PlayerPedId())
+        local dest = goFastTable.Coords
+        local dist = #(dest - posPlayer)
+        if dist <= 3 then 
             interval = 0
-            ESX.ShowHelpNotification("Appuyer sur ~INPUT_CONTEXT~ pour parler à george")
             if IsControlJustPressed(1, 51) then
                 startGofast()
             end
-         end
-         Wait(interval)
+        else
+            exports['HelpNotif']:CloseNotify()
+        end
+        Wait(interval)
     end
 end)
+
+
 
 function startGofast()
     ESX.TriggerServerCallback("fCore:goFast:getTime", function(result, Cops) 
@@ -114,7 +117,6 @@ function DrawBlipGoFast(price)
             local vehicle = GetVehiclePedIsIn(playerPed, false)
             local model = GetEntityModel(vehicle)
             local displayName = GetDisplayNameFromVehicleModel(model)
-            print(displayName)
             TriggerServerEvent("fCore:Gofast:NotifPolice", GetEntityCoords(PlayerPedId()), vehicleType, displayName)
         end)
         SetTimeout(600000,function()
@@ -131,7 +133,7 @@ function DrawBlipGoFast(price)
             local dist = #(dest - posPlayer)
             if dist <= 20 then
                 interval = 0
-                ESX.ShowHelpNotification("Appuyer sur ~INPUT_CONTEXT~ pour livrer le véhicule")
+                ESX.ShowHelpNotification("E", "Pour livrer le véhicule", "Information", {97, 32, 32})
                 if IsControlJustPressed(1, 51) then
                     RemoveBlip(blip)
                     inGofast = false

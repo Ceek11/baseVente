@@ -47,7 +47,7 @@ function CreatePointHouse(coffre, manage, weightChest,weightCoffreVIP, id)
                     interval = 0
                     DrawMarker(27, destCoffre.x, destCoffre.y, destCoffre.z, 0.0, 0.0, 0.0, 0, 0, 0, 0.5, 0.5, 0.5, 249, 130, 42, 55555, false, false, 2, false, false, false, false)
                     if distCoffre <= 2 then 
-                        ESX.ShowHelpNotification("Appuyer sur E pour ouvrir le coffre")
+                        ESX.ShowHelpNotification("E", "Appuyer sur E pour ouvrir le coffre", "Information", {97, 32, 32})
                         if IsControlJustPressed(1, 51) then 
                             openMenuCoffreHouse(weightChest, weightCoffreVIP, id)
                         end
@@ -58,7 +58,7 @@ function CreatePointHouse(coffre, manage, weightChest,weightCoffreVIP, id)
                             interval = 0
                             DrawMarker(27, destCoffre.x, destCoffre.y, destCoffre.z, 0.0, 0.0, 0.0, 0, 0, 0, 0.5, 0.5, 0.5, 249, 130, 42, 55555, false, false, 2, false, false, false, false)
                             if distCoffre <= 2 then 
-                                ESX.ShowHelpNotification("Appuyer sur E pour ouvrir le coffre")
+                                ESX.ShowHelpNotification("E", "Appuyer sur E pour ouvrir le coffre", "Information", {97, 32, 32})
                                 if IsControlJustPressed(1, 51) then 
                                     openMenuCoffreHouse(weightChest, weightCoffreVIP, id)
                                 end
@@ -71,7 +71,7 @@ function CreatePointHouse(coffre, manage, weightChest,weightCoffreVIP, id)
                             interval = 0
                             DrawMarker(27, destCoffre.x, destCoffre.y, destCoffre.z, 0.0, 0.0, 0.0, 0, 0, 0, 0.5, 0.5, 0.5, 249, 130, 42, 55555, false, false, 2, false, false, false, false)
                             if distCoffre <= 2 then 
-                                ESX.ShowHelpNotification("Appuyer sur E pour ouvrir le coffre")
+                                ESX.ShowHelpNotification("E", "Appuyer sur E pour ouvrir le coffre", "Information", {97, 32, 32})
                                 if IsControlJustPressed(1, 51) then 
                                     openMenuCoffreHouse(weightChest, weightCoffreVIP, id)
                                 end
@@ -84,7 +84,7 @@ function CreatePointHouse(coffre, manage, weightChest,weightCoffreVIP, id)
                             interval = 0
                             DrawMarker(27, destCoffre.x, destCoffre.y, destCoffre.z, 0.0, 0.0, 0.0, 0, 0, 0, 0.5, 0.5, 0.5, 249, 130, 42, 55555, false, false, 2, false, false, false, false)
                             if distCoffre <= 2 then 
-                                ESX.ShowHelpNotification("Appuyer sur E pour ouvrir le coffre")
+                                ESX.ShowHelpNotification("E", "Appuyer sur E pour ouvrir le coffre", "Information", {97, 32, 32})
                                 if IsControlJustPressed(1, 51) then 
                                     openMenuCoffreHouse(weightChest, weightCoffreVIP, id)
                                 end
@@ -100,7 +100,7 @@ function CreatePointHouse(coffre, manage, weightChest,weightCoffreVIP, id)
                     interval = 0
                     DrawMarker(27, destManage.x, destManage.y, destManage.z, 0.0, 0.0, 0.0, 0, 0, 0, 0.5, 0.5, 0.5, 249, 130, 42, 55555, false, false, 2, false, false, false, false)
                     if distManage <= 2 then 
-                        ESX.ShowHelpNotification("Appuyer sur E pour ouvrir le Manage")
+                        ESX.ShowHelpNotification("E", "Appuyer sur E pour ouvrir le Manage", "Information", {97, 32, 32})
                         if IsControlJustPressed(1, 51) then 
                             openMenuManageHouse(id)
                         end
@@ -111,7 +111,7 @@ function CreatePointHouse(coffre, manage, weightChest,weightCoffreVIP, id)
                             interval = 0
                             DrawMarker(27, destManage.x, destManage.y, destManage.z, 0.0, 0.0, 0.0, 0, 0, 0, 0.5, 0.5, 0.5, 249, 130, 42, 55555, false, false, 2, false, false, false, false)
                             if distManage <= 2 then 
-                                ESX.ShowHelpNotification("Appuyer sur E pour ouvrir le Manage")
+                                ESX.ShowHelpNotification("E", "Appuyer sur E pour ouvrir le Manage", "Information", {97, 32, 32})
                                 if IsControlJustPressed(1, 51) then 
                                     openMenuManageHouse(id)
                                 end
@@ -124,7 +124,7 @@ function CreatePointHouse(coffre, manage, weightChest,weightCoffreVIP, id)
                             interval = 0
                             DrawMarker(27, destManage.x, destManage.y, destManage.z, 0.0, 0.0, 0.0, 0, 0, 0, 0.5, 0.5, 0.5, 249, 130, 42, 55555, false, false, 2, false, false, false, false)
                             if distManage <= 2 then 
-                                ESX.ShowHelpNotification("Appuyer sur E pour ouvrir le Manage")
+                                ESX.ShowHelpNotification("E", "Appuyer sur E pour ouvrir le Manage", "Information", {97, 32, 32})
                                 if IsControlJustPressed(1, 51) then 
                                     openMenuManageHouse(id)
                                 end
@@ -137,7 +137,7 @@ function CreatePointHouse(coffre, manage, weightChest,weightCoffreVIP, id)
                             interval = 0
                             DrawMarker(27, destManage.x, destManage.y, destManage.z, 0.0, 0.0, 0.0, 0, 0, 0, 0.5, 0.5, 0.5, 249, 130, 42, 55555, false, false, 2, false, false, false, false)
                             if distManage <= 2 then 
-                                ESX.ShowHelpNotification("Appuyer sur E pour ouvrir le Manage")
+                                ESX.ShowHelpNotification("E", "Appuyer sur E pour ouvrir le Manage", "Information", {97, 32, 32})
                                 if IsControlJustPressed(1, 51) then 
                                     openMenuManageHouse(id)
                                 end

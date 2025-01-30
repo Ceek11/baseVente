@@ -250,7 +250,6 @@ end
 
 RegisterNetEvent("fCore:Coiffeur:saveSkin")
 AddEventHandler("fCore:Coiffeur:saveSkin", function()
-    print("cooooooooooo")
     TriggerEvent("skinchanger:getSkin", function(skin) 
         currentSkin = skin  
         TriggerServerEvent('esx_skin:save', skin)

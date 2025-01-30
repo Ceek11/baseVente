@@ -26,7 +26,7 @@ CreateThread(function()
                     PlayAmbientSpeech2(outEntity, "GENERIC_HI", "SPEECH_PARAMS_FORCE")
                     SetPedCanRagdollFromPlayerImpact(outEntity, false)
                     if dst <= 3.0 then
-                        ESX.ShowHelpNotification("Appuyez sur ~INPUT_CONTEXT~ pour récupérer l'animal.")
+                        ESX.ShowHelpNotification("E", "Pour récupérer l'animal.", "Information", {97, 32, 32})
                         if IsControlJustPressed(1, 51) then
                             if GetSelectedPedWeapon(PlayerPedId()) == GetHashKey("weapon_knife") then
                                 TaskStartScenarioInPlace(PlayerPedId(), "CODE_HUMAN_MEDIC_KNEEL", 0, 1)

@@ -133,21 +133,6 @@ tp = {
             sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0,
             rotX = 0.0, rotY = 0.0, rotX = 0.0, 
             r = 249, g = 130, b = 42, a = 55555,
-            Point = vector3(-449.952118, 6010.438476, 32.288666),
-            Text = "Appuyer ~b~[E] ~s~pour ~g~utiliser ~s~1'~b~ascenseur",
-            maxDist = 15,
-            max3D = 1.5,
-            Etage = {
-                {EtageName = "Etage 1 | Bureaux, Armuerie", Point = vector3(-449.202178, 6008.997070, 36.995662), Text = "Appuyer ~b~[E] ~s~pour ~g~utiliser ~s~1'~b~ascenseur"},
-                {EtageName = "Etage  0 | Réception, Garage", Point = vector3(-449.952118, 6010.438476, 32.288666), Text = "Appuyer ~b~[E] ~s~pour ~g~utiliser ~s~1'~b~ascenseur"},
-				{EtageName = "Etage -1 | Cellules, Interrogatoire", Point = vector3(-449.994262, 6010.442382, 27.581496), Text = "Appuyer ~b~[E] ~s~pour ~g~utiliser ~s~1'~b~ascenseur"},
-            }
-        },
-        {
-            markerType = 27,
-            sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0,
-            rotX = 0.0, rotY = 0.0, rotX = 0.0, 
-            r = 249, g = 130, b = 42, a = 55555,
             Point = vector3(330.129090, -601.130494, 43.284050),
             Text = "Appuyer ~b~[E] ~s~pour ~g~utiliser ~s~1'~b~ascenseur",
             maxDist = 15,

@@ -1,7 +1,11 @@
 local fCoreBlips = {   
+{ Label = "Zone chaude", BColor = 0, Id = 429, BSize = 0.7, X = 119.210480, Y = -1953.48, Z = 20.75696182251, Area = false, ASize = 450.0, AColor = 29, Job = "ALL", Job2 = "ALL" },
+
+
+
+{ Label = "Service Pubic | Police Dept.", BColor = 29, Id = 526, BSize = 0.7, X = -1114.2580566406, Y =-832.57781982422, Z = 30.75696182251, Area = false, ASize = 450.0, AColor = 29, Job = "ALL", Job2 = "ALL" },
 { Label = "Public | Vente Pêche", BColor = 12, Id =  751, BSize = 0.7, X = -330.979736, Y = -2778.924804, Z = 6.145104, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
 { Label = "Public | Vente Chasse", BColor = 21, Id =  463, BSize = 0.9, X = -679.177368, Y = 5834.396972, Z = 18.331306, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" }, 
-{ Label = "Service Pubic | Rockford Hills Police Dept.", BColor = 29, Id = 526, BSize = 0.7, X = -368.474548, Y = -354.628754, Z = 31.654760, Area = false, ASize = 450.0, AColor = 29, Job = "ALL", Job2 = "ALL" },
 { Label = "Service Pubic | SAPD Academy (Recrutement)", BColor = 29, Id = 526, BSize = 0.7, X = 829.144654, Y = -1290.120484, Z = 28.255812, Area = false, ASize = 450.0, AColor = 29, Job = "ALL", Job2 = "ALL" },
 { Label = "Cayo Perico | Milice", BColor = 52, Id = 526, BSize = 0.7, X = 4924.744628, Y = -5294.181152, Z = 5.902592, Area = false, ASize = 450.0, AColor = 29, Job = "ALL", Job2 = "ALL" },
 { Label = "Service Pubic | Paleto Bay Sherif Dept.", BColor = 5, Id = 526, BSize = 0.7, X = -438.516816, Y = 6012.816406, Z = 32.288650, Area = false, ASize = 450.0, AColor = 5, Job = "ALL", Job2 = "ALL" },
@@ -64,59 +68,14 @@ local fCoreBlips = {
 { Label = "Cayo Perico | Location Bateau", BColor = 18, Id = 455, BSize = 0.7, X = 4930.665528, Y = -5146.302734, Z = 3.478524, Area = false, ASize = 450.0, AColor = 29, Job = "ALL", Job2 = "ALL" },
 
 
-
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 269.4982, Y = -1261.63, Z = 29.08566, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -70.28708, Y = -1760.562, Z = 29.53702, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 175.8218, Y = -1562.348, Z = 29.26502, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 1208.73, Y = -1402.738, Z = 35.22412, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 1181.082, Y = -329.8296, Z = 69.31656, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 179.6556, Y = 6604.514, Z = 37.75574, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -2097.02, Y = -322.4104, Z = 13.16862, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -723.94, Y = -933.9332, Z = 19.21394, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 620.8256, Y = 268.9422, Z = 83.0894, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -524.903, Y = -1211.922, Z = 18.18486, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -319.469, Y = -1471.494, Z = 30.54854, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 818.3606, Y = -1028.712, Z = 26.40434, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -1437.268, Y = -275.975, Z = 46.2077, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -1800.09, Y = 803.5598, Z = 38.651, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -2554.868, Y = 2334.414, Z = 33.07804, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 49.43562, Y = 2778.854, Z = 58.04394, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 263.9726, Y = 2607.386, Z = 44.98296, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 1039.354, Y = 2671.228, Z = 39.55088, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 1208.096, Y = 2660.312, Z = 37.89978, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 1785.652, Y = 3330.426, Z = 41.38562, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 2004.972, Y = 3774.37, Z = 32.40394, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 1687.088, Y = 4929.708, Z = 42.07816, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 1701.492, Y = 6416.056, Z = 32.76402, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 2581.048, Y = 361.9218, Z = 88.4688, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -66.49998, Y = -2532.646, Z = 6.135808, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 2539.246, Y = 2594.64, Z = 37.94486, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 2680.136, Y = 3263.91, Z = 55.24088, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
--- { Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -94.14078, Y = 6419.888, Z = 31.4895, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-
-
-
-
 { Label = "Entreprise | LTD", BColor = 57, Id =  59, BSize = 0.7, X = -711.8634, Y = -912.0056, Z = 19.2156, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
 { Label = "Entreprise | LTD", BColor = 57, Id =  59, BSize = 0.7, X = -1488.648, Y = -380.6548, Z = 40.16342, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
 { Label = "Entreprise | LTD", BColor = 57, Id =  59, BSize = 0.7, X = 1159.182, Y = -322.3798, Z = 69.2051, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
 { Label = "Entreprise | LTD", BColor = 57, Id =  59, BSize = 0.7, X = -50.24404, Y = -1753.14, Z = 29.42102, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
 { Label = "Entreprise | LTD", BColor = 57, Id =  59, BSize = 0.7, X = 29.53114, Y = -1345.496, Z = 29.49702, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
 { Label = "Cayo Perico | LTD", BColor = 57, Id =  59, BSize = 0.7, X = 5125.251954, Y = -5118.268554, Z = 2.213866, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = -1825.22, Y = 791.1172, Z = 138.2052, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = 2555.384, Y = 385.2806, Z = 108.623, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = -3042.324, Y = 588.6332, Z = 7.908928, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = 1393.066, Y = 3603.152, Z = 34.98092, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = 1133.3, Y = -982.0648, Z = 46.41584, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = 544.254, Y = 2668.718, Z = 42.1565, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = 1963.532, Y = 3744.22, Z = 32.34374, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = 1733.596, Y = 6414.696, Z = 35.03722, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = 377.9218, Y = 327.5668, Z = 103.5664, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = -2965.406, Y = 389.6688, Z = 15.04332, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = 1165.796, Y = 2707.596, Z = 38.1577, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = -3243.694, Y = 1004.872, Z = 12.8307, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = -1223.962, Y = -905.011, Z = 12.32636, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = 2678.646, Y = 3284.694, Z = 55.24112, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+
+
 { Label = "Public | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = 1699.255982, Y = 4928.928710, Z = 42.063686, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
 { Label = "Cayo Perico | Supérette", BColor = 1, Id =  59, BSize = 0.7, X = 4466.455566, Y = -4463.705078, Z = 4.298446, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
 { Label = "Public | Fourrière", BColor = 9, Id =  317, BSize = 0.7, X = 407.2222, Y = -1637.694, Z = 29.29196, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
@@ -147,15 +106,6 @@ local fCoreBlips = {
 { Label = "Public | Parking Bateau", BColor = 15, Id =  356, BSize = 0.7, X = -3424.546, Y = 980.2286, Z = 8.346684, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
 { Label = "Cayo Perico | Parking Bateau", BColor = 15, Id =  356, BSize = 0.7, X = 4929.721680, Y = -5174.240722, Z = 2.461616, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
 { Label = "Cayo Perico | Parking Bateau", BColor = 15, Id =  356, BSize = 0.7, X = 5153.258300, Y = -4656.873536, Z = 1.437808, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Banque Central", BColor = 25, Id =  642, BSize = 0.7, X = 249.421, Y = 219.1244, Z = 107.283, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Banque Central", BColor = 25, Id =  642, BSize = 0.7, X = -106.8818, Y = 6469.286, Z = 31.62672, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Fleeca", BColor = 25, Id =  272, BSize = 0.7, X = 1175.142, Y = 2706.796, Z = 38.09408, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Fleeca", BColor = 25, Id =  272, BSize = 0.7, X = -2962.472, Y = 482.9002, Z = 15.7031, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Fleeca", BColor = 25, Id =  272, BSize = 0.7, X = -1212.852, Y = -330.6984, Z = 37.78702, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Fleeca", BColor = 25, Id =  272, BSize = 0.7, X = -351.1386, Y = -49.93954, Z = 49.04258, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Fleeca", BColor = 25, Id =  272, BSize = 0.7, X = 314.2082, Y = -279.1266, Z = 54.17084, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Public | Fleeca", BColor = 25, Id =  272, BSize = 0.7, X = 149.8778, Y = -1040.722, Z = 29.37408, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
-{ Label = "Cayo Perico | Fleeca", BColor = 25, Id =  272, BSize = 0.7, X = 4477.111816, Y = -4464.144042, Z = 4.242514, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
 { Label = "Public | Magasin de masque", BColor = 2, Id = 362, BSize = 0.7, X = -1119.438720, Y = -1440.620362, Z = 5.228332, Area = false, ASize = 450.0, AColor = 29, Job = "ALL", Job2 = "ALL" },
 { Label = "Cayo Perico | Magasin de masque", BColor = 2, Id = 362, BSize = 0.7, X = 5129.783692, Y = -5098.507324, Z = 2.467702, Area = false, ASize = 450.0, AColor = 29, Job = "ALL", Job2 = "ALL" },
 { Label = "Public | Magasin de vêtement", BColor = 8, Id =  73, BSize = 0.7, X = 75.67168, Y = -1394.068, Z = 29.37616, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
@@ -186,6 +136,38 @@ local fCoreBlips = {
 { Label = "Public | Tatoueur", BColor = 0, Id =  75, BSize = 0.7, X = -293.3714, Y = 6199.332, Z = 31.4879, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
 { Label = "Public | Tatoueur", BColor = 0, Id =  75, BSize = 0.7, X = 321.6876, Y = 180.088, Z = 103.5864, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
 { Label = "Cayo Perico | Tatoueur", BColor = 0, Id =  75, BSize = 0.7, X = 5154.678710, Y = -5124.542968, Z = 2.406762, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+
+
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 269.4982, Y = -1261.63, Z = 29.08566, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -70.28708, Y = -1760.562, Z = 29.53702, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 175.8218, Y = -1562.348, Z = 29.26502, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 1208.73, Y = -1402.738, Z = 35.22412, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 1181.082, Y = -329.8296, Z = 69.31656, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 179.6556, Y = 6604.514, Z = 37.75574, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -2097.02, Y = -322.4104, Z = 13.16862, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -723.94, Y = -933.9332, Z = 19.21394, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 620.8256, Y = 268.9422, Z = 83.0894, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -524.903, Y = -1211.922, Z = 18.18486, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -319.469, Y = -1471.494, Z = 30.54854, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 818.3606, Y = -1028.712, Z = 26.40434, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -1437.268, Y = -275.975, Z = 46.2077, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -1800.09, Y = 803.5598, Z = 38.651, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -2554.868, Y = 2334.414, Z = 33.07804, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 49.43562, Y = 2778.854, Z = 58.04394, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 263.9726, Y = 2607.386, Z = 44.98296, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 1039.354, Y = 2671.228, Z = 39.55088, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 1208.096, Y = 2660.312, Z = 37.89978, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 1785.652, Y = 3330.426, Z = 41.38562, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 2004.972, Y = 3774.37, Z = 32.40394, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 1687.088, Y = 4929.708, Z = 42.07816, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 1701.492, Y = 6416.056, Z = 32.76402, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 2581.048, Y = 361.9218, Z = 88.4688, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -66.49998, Y = -2532.646, Z = 6.135808, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 2539.246, Y = 2594.64, Z = 37.94486, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = 2680.136, Y = 3263.91, Z = 55.24088, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+{ Label = "Station d'essence", BColor = 1, Id =  361, BSize = 0.7, X = -94.14078, Y = 6419.888, Z = 31.4895, Area = false, ASize = 900.0, AColor = 31, Job = "ALL", Job2 = "ALL" },
+
+
 }
 
 
@@ -246,67 +228,4 @@ end
 Citizen.CreateThread(function()
     Citizen.Wait(1000)
     refreshBlips()
-end)
-
-
-
-
-
--- local blipBateau = {
---     vector3(-1625.476, -1164.12, 1.663142)
--- }
-
-
--- local blipSuperette = {
---     vector3(-1625.476, -1164.12, 1.663142)
--- }
-
--- local blipJetSki = {
---     vector3(-1625.476, -1164.12, 1.663142)
--- }
-
-local blipEssence = {
-    vector3(49.4187, 2778.793, 58.043),
-    vector3(263.894, 2606.463, 44.983),
-    vector3(1039.958, 2671.134, 39.550),
-    vector3(1207.260, 2660.175, 37.899),
-    vector3(2539.685, 2594.192, 37.944),
-    vector3(2679.858, 3263.946, 55.240),
-    vector3(2005.055, 3773.887, 32.403),
-    vector3(1687.156, 4929.392, 42.078),
-    vector3(1701.314, 6416.028, 32.763),
-    vector3(179.857, 6602.839, 31.868),
-    vector3(-94.4619, 6419.594, 31.489),
-    vector3(-2554.996, 2334.40, 33.078),
-    vector3(-1800.375, 803.661, 138.651),
-    vector3(-1437.622, -276.747, 46.207),
-    vector3(-2096.243, -320.286, 13.168),
-    vector3(-724.619, -935.1631, 19.213),
-    vector3(-526.019, -1211.003, 18.184),
-    vector3(-70.2148, -1761.792, 29.534),
-    vector3(265.648, -1261.309, 29.292),
-    vector3(819.653, -1028.846, 26.403),
-    vector3(1208.951, -1402.567,35.224),
-    vector3(1181.381, -330.847, 69.316),
-    vector3(620.843, 269.100, 103.089),
-    vector3(2581.321, 362.039, 108.468),
-    vector3(176.631, -1562.025, 29.263),
-    vector3(176.631, -1562.025, 29.263),
-    vector3(-319.292, -1471.715, 30.549),
-    vector3(1784.324, 3330.55, 41.253)
-}
-
-
-Citizen.CreateThread(function()
-    for _, coords in pairs(blipEssence) do
-        local blip = AddBlipForCoord(coords)
-        SetBlipSprite(blip, 361)
-        SetBlipScale(blip, 0.7)
-        SetBlipColour(blip, 1)
-        SetBlipDisplay(blip, 4)
-        SetBlipAsShortRange(blip, true)
-        BeginTextCommandSetBlipName("STRING")
-        AddTextComponentString("Public | Station d'essence")
-        EndTextCommandSetBlipName(blip)
-    end
 end)

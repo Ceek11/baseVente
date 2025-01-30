@@ -1,20 +1,14 @@
-ESX = exports["es_extended"]:getSharedObject()
-
-function sNotification(src, message)
-    TriggerClientEvent("esx:showNotification", src, message)
-end
-
 ESX.RegisterServerCallback("fCore:MenuAdmin:GetItemInBDD", function(source, cb)
     local getItemInBdd = {}
     if weightSysteme then
-        MySQL.Async.fetchAll("SELECT * FROM items", {}, function(result)
+        MySQL.Async.fetchAll("SELECT * FROM items", function(result)
             for k,v in pairs(result) do 
                 table.insert(getItemInBdd, {name = v.name, label = v.label, weight = v.weight})
             end
             cb(getItemInBdd)
         end)
     else
-        MySQL.Async.fetchAll("SELECT * FROM items", {}, function(result)
+        MySQL.Async.fetchAll("SELECT * FROM items", function(result)
             for k,v in pairs(result) do 
                 table.insert(getItemInBdd, {name = v.name, label = v.label, weight = v.limite})
             end
@@ -25,7 +19,7 @@ end)
 
 ESX.RegisterServerCallback("fCore:MenuAdmin:GetJobInBDD", function(source, cb)
     local getJobInBdd = {}
-    MySQL.Async.fetchAll("SELECT job_name, grade, name, label FROM job_grades", {}, function(result)
+    MySQL.Async.fetchAll("SELECT job_name, grade, name, label FROM job_grades", function(result)
         for k,v in pairs(result) do 
             table.insert(getJobInBdd, {jobName = v.job_name, grade = v.grade, label = v.label, name = v.name})
         end
@@ -49,18 +43,25 @@ AddEventHandler("fCore:Admin:nbrAdmin", function(status)
 end)
 
 
+RegisterNetEvent("fCore:MenuAdmin:GiveMoney")
+AddEventHandler("fCore:MenuAdmin:GiveMoney", function(IndexChange, giveMoney)
+    local _src = source 
+    local xPlayer = ESX.GetPlayerFromId(_src)
+    if IndexChange == 1 then 
+        xPlayer.addAccountMoney('money', tonumber(giveMoney))
+    elseif IndexChange == 2 then 
+        xPlayer.addAccountMoney('bank', tonumber(giveMoney))
+    elseif IndexChange == 3 then
+        xPlayer.addAccountMoney('black_money', tonumber(giveMoney))
+    end
+end)
+
 RegisterNetEvent("fCoreV2:MenuAdmin:giveitem")
 AddEventHandler("fCoreV2:MenuAdmin:giveitem", function(name, nbrItemGive)
     local _src = source 
     local xPlayer = ESX.GetPlayerFromId(_src)
     xPlayer.addInventoryItem(name, nbrItemGive)
     sNotification(_src, (TranslationAdministration.MenuAdmin["S_giveitem"]):format(nbrItemGive, name))
-    for k,v in pairs(GetPlayerIdentifiers(source))do
-        if string.sub(v, 1, string.len("discord:")) == "discord:" then 
-            discordPlayer = string.sub(v, string.len("discord:") + 1)
-        end
-    end
-    sendToDiscord(12975872, "Logs Admin", ("Joueur : **%s** | Id: **%s** | Id Unique: **%s** |**Job:** %s\nLicense: **%s**\nDiscord: <@%s>\n\n Viens de se give un item (%s %s)"):format(xPlayer.name, _src, idUnique, xPlayer.getJob().name, xPlayer.identifier, discordPlayer, nbrItemGive, name), "", webhooks.LogsAdmin)
 end)
 
 RegisterNetEvent("fCoreV2:MenuAdmin:giveiteReport")
@@ -68,12 +69,6 @@ AddEventHandler("fCoreV2:MenuAdmin:giveiteReport", function(name, nbrItemGive, i
     local xTarget = ESX.GetPlayerFromId(id)
     xTarget.addInventoryItem(name, nbrItemGive)
     sNotification(_src, (TranslationAdministration.MenuAdmin["S_giveitem"]):format(nbrItemGive, name))
-    for k,v in pairs(GetPlayerIdentifiers(source))do
-        if string.sub(v, 1, string.len("discord:")) == "discord:" then 
-            discordPlayer = string.sub(v, string.len("discord:") + 1)
-        end
-    end
-    sendToDiscord(12975872, "Logs Admin", ("Joueur : **%s** | Id: **%s** | Id Unique: **%s** |**Job:** %s\nLicense: **%s**\nDiscord: <@%s>\n\n Viens de give un item (%s %s) à %s"):format(xPlayer.name, _src, idUnique, xPlayer.getJob().name, xPlayer.identifier, discordPlayer, nbrItemGive, name, xTarget.name), "", webhooks.LogsAdmin)
 end)
 
 
@@ -87,13 +82,6 @@ AddEventHandler("fCore:MenuAdmin:setjob", function(grade, name, setjobAdmin)
     elseif tonumber(setjobAdmin) == 2 then 
         xPlayer.setJob2(name, grade)
     end
-    sNotification(_src, "~g~Vous venez de se setjob")
-    for k,v in pairs(GetPlayerIdentifiers(source))do
-        if string.sub(v, 1, string.len("discord:")) == "discord:" then 
-            discordPlayer = string.sub(v, string.len("discord:") + 1)
-        end
-    end
-    sendToDiscord(12975872, "Logs Admin", ("Joueur : **%s** | Id: **%s** | Id Unique: **%s** |**Job:** %s\nLicense: **%s**\nDiscord: <@%s>\n\n Viens de se mettre une job %s %s"):format(xPlayer.name, _src, idUnique, xPlayer.getJob().name, xPlayer.identifier, discordPlayer, name, grade), "", webhooks.LogsAdmin)
 end)
 
 RegisterNetEvent("fCore:MenuAdmin:setjobReport")
@@ -104,18 +92,11 @@ AddEventHandler("fCore:MenuAdmin:setjobReport", function(grade, name, setjobAdmi
     elseif setjobAdmin == 2 then 
         xTarget.setJob2(name, grade)
     end
-    sNotification(_src, "~g~Vous venez de se setjob")
-    for k,v in pairs(GetPlayerIdentifiers(source))do
-        if string.sub(v, 1, string.len("discord:")) == "discord:" then 
-            discordPlayer = string.sub(v, string.len("discord:") + 1)
-        end
-    end
-    sendToDiscord(12975872, "Logs Admin", ("Joueur : **%s** | Id: **%s** | Id Unique: **%s** |**Job:** %s\nLicense: **%s**\nDiscord: <@%s>\n\n Viens de se mettre une job %s %s à %s"):format(xPlayer.name, _src, idUnique, xPlayer.getJob().name, xPlayer.identifier, discordPlayer, name, grade, xTarget.name), "", webhooks.LogsAdmin)
 end)
 
 RegisterNetEvent("fCore:revive")
-AddEventHandler("fCore:revive", function()
-    TriggerClientEvent('fCore:revive')
+AddEventHandler("fCore:revive", function(id)
+    TriggerClientEvent('fCore:revive', id)
 end)
 
 RegisterCommand("report", function(source, args)
@@ -217,8 +198,6 @@ end)
 
 RegisterNetEvent("fCore:MenuAdmin:GiveMoney")
 AddEventHandler("fCore:MenuAdmin:GiveMoney", function(IndexChange, giveMoney, id)
-    local _src = source 
-    local xPlayer = ESX.GetPlayerFromId(_src)
     local xTarget = ESX.GetPlayerFromId(id)
     if not tonumber(giveMoney) then return end
     if IndexChange == 1 then 
@@ -231,17 +210,12 @@ AddEventHandler("fCore:MenuAdmin:GiveMoney", function(IndexChange, giveMoney, id
         xTarget.addAccountMoney('black_money', tonumber(giveMoney))
         sNotification(id, (TranslationAdministration.MenuAdmin["S_giveBackMoney"]):format(giveMoney, GetPlayerName(id)))
     end
-    for k,v in pairs(GetPlayerIdentifiers(source))do
-        if string.sub(v, 1, string.len("discord:")) == "discord:" then 
-            discordPlayer = string.sub(v, string.len("discord:") + 1)
-        end
-    end
-    sendToDiscord(12975872, "Logs Admin", ("Joueur : **%s** | Id: **%s** | Id Unique: **%s** |**Job:** %s\nLicense: **%s**\nDiscord: <@%s>\n\n Viens de give de l'argent (%s$) à %s"):format(xPlayer.name, _src, idUnique, xPlayer.getJob().name, xPlayer.identifier, discordPlayer, giveMoney, xPlayer.name), "", webhooks.LogsAdmin)
 end)
+
 
 local banListPlayer = {}
 CreateThread(function()
-    MySQL.Async.fetchAll("SELECT * FROM bansql", {}, function(result)
+    MySQL.Async.fetchAll("SELECT * FROM bansql", function(result)
         for k,v in pairs(result) do 
             table.insert(banListPlayer, v)
         end
@@ -300,14 +274,6 @@ AddEventHandler("fCore:Admin:Warn", function(id, message)
         ["@nameadmin"] = xPlayer.getName(),
         ["@reason"] = message,
     })
-    sNotification(_src, "~g~Vous venez de warn le joueur")
-    for k,v in pairs(GetPlayerIdentifiers(source))do
-        if string.sub(v, 1, string.len("discord:")) == "discord:" then 
-            discordPlayer = string.sub(v, string.len("discord:") + 1)
-        end
-    end
-    sendToDiscord(12975872, "Logs Admin", ("Joueur : **%s** | Id: **%s** | Id Unique: **%s** |**Job:** %s\nLicense: **%s**\nDiscord: <@%s>\n\n Viens de warn le joueur"):format(xPlayer.name, _src, idUnique, xPlayer.getJob().name, xPlayer.identifier, discordPlayer, giveMoney, xTarget.name), "", webhooks.LogsAdmin)
-
 end)
 
 
@@ -414,13 +380,6 @@ AddEventHandler("fCore:Admin:BanPlayer", function(id, permanant, message, expira
         })
         table.insert(banListPlayer, {identifier = license, liveid = liveid, xblid = xblid, discord = discord, playerip = playerip, nameplayer = xTarget.getName(), nameadmin = xPlayer.getName(), reason= message, expiration = newTime, permanant= permanant})
     end
-    sNotification(_src, "~g~Vous venez de ban le joueur")
-    for k,v in pairs(GetPlayerIdentifiers(source))do
-        if string.sub(v, 1, string.len("discord:")) == "discord:" then 
-            discordPlayer = string.sub(v, string.len("discord:") + 1)
-        end
-    end
-    sendToDiscord(12975872, "Logs Admin", ("Joueur : **%s** | Id: **%s** | Id Unique: **%s** |**Job:** %s\nLicense: **%s**\nDiscord: <@%s>\n\n Viens de ban le joueur"):format(xPlayer.name, _src, idUnique, xPlayer.getJob().name, xPlayer.identifier, discordPlayer, giveMoney, xTarget.name), "", webhooks.LogsAdmin)
     DropPlayer(id, message)
 end)
 
@@ -477,7 +436,7 @@ end)
 ESX.RegisterServerCallback("fCore:Boss:searchCategoriVehicle", function(source, cb)
     local listCategorieBdd = {}
     local query = "SELECT * FROM vehicle_categories"
-    MySQL.Async.fetchAll(query, {}, function(result)
+    MySQL.Async.fetchAll(query, function(result)
         for k,v in pairs(result) do 
             table.insert(listCategorieBdd, v)
         end
@@ -488,7 +447,7 @@ end)
 ESX.RegisterServerCallback("fCore:Boss:searchVehicle", function(source, cb)
     local listVehicleConcessBdd = {}
     local query = "SELECT * FROM vehicles"
-    MySQL.Async.fetchAll(query, {}, function(result)
+    MySQL.Async.fetchAll(query, function(result)
         for k,v in pairs(result) do 
             table.insert(listVehicleConcessBdd, v)
         end
@@ -530,12 +489,124 @@ AddEventHandler('playerConnecting', function(playerName, setKickReason)
     end
 end)
 
+RegisterNetEvent("fCore:Admin:CreateGradeAdmin")
+AddEventHandler("fCore:Admin:CreateGradeAdmin", function(createGradeAdminTable, TablegestionGrade)
+    MySQL.Async.execute("INSERT INTO gestionadmin (idgrade, namegrade, color, permissions) VALUES (@idgrade, @namegrade, @color, @permissions)", {
+        ["@idgrade"] = createGradeAdminTable.idGarde,
+        ["@namegrade"] = createGradeAdminTable.nameGrade,
+        ["@color"] = createGradeAdminTable.color,
+        ["@permissions"] = json.encode(TablegestionGrade),
+    })
+end)
+
+
+ESX.RegisterServerCallback("fCore:Admin:manageGrade", function(source, cb)
+    local gestionAdmin = {}
+    MySQL.Async.fetchAll("SELECT * FROM gestionadmin", function(result)
+        for k,v in pairs(result) do 
+            table.insert(gestionAdmin, v)
+        end
+        cb(gestionAdmin)
+    end)
+end)
+
+
+RegisterNetEvent("fCore:Admin:deleteGrade")
+AddEventHandler("fCore:Admin:deleteGrade", function(id)
+    MySQL.Async.execute("DELETE FROM gestionadmin WHERE id = @id", {
+        ["@id"] = id
+    })
+end)
+
+RegisterNetEvent("fCore:Admin:UpdatePermission")
+AddEventHandler("fCore:Admin:UpdatePermission", function(TablegestionGrade, IdGrade)
+    MySQL.Async.execute("UPDATE gestionadmin SET permissions = @permissions WHERE id = @id", {
+        ["@id"] = IdGrade,
+        ["@permissions"] = json.encode(TablegestionGrade)
+    })
+end)
+
+RegisterNetEvent("fCore:Admin:UpdateInfoJob")
+AddEventHandler("fCore:Admin:UpdateInfoJob", function(createGradeAdminTable, id)
+    MySQL.Async.execute("UPDATE gestionadmin SET color = @color, namegrade = @namegrade, idgrade = @idgrade WHERE id = @id", {
+        ["@id"] = id,
+        ["@idgrade"] = createGradeAdminTable.idGarde,
+        ["@namegrade"] = createGradeAdminTable.nameGrade,
+        ["@color"] = createGradeAdminTable.color,
+    })
+end)
+
+
+
+
+
+ESX.RegisterServerCallback("fCore:Admin:getPlayerAdmin", function(source, cb)
+    MySQL.Async.fetchAll("SELECT * FROM users", {}, function(usersResult)
+        local isAdmin = {}
+        if usersResult and #usersResult > 0 then
+            MySQL.Async.fetchAll("SELECT idgrade, color FROM gestionadmin", {}, function(adminResult)
+                if adminResult and #adminResult > 0 then
+                    for _,v in pairs(adminResult) do 
+                        for _, user in ipairs(usersResult) do
+                            local userGroup = user.groupA
+                            if userGroup == v.idgrade then
+                                table.insert(isAdmin, {identifier = user.identifier, lastname = user.lastname, firstname = user.firstname, group = user.groupA, color = v.color})
+                            end
+                        end
+                    end
+                    cb(isAdmin)
+                end
+            end)
+        else
+            cb(isAdmin) 
+        end
+    end)
+end)
+
+
+RegisterNetEvent("fCore:Admin:AddAdmin")
+AddEventHandler("fCore:Admin:AddAdmin", function(id, group)
+    local target = ESX.GetPlayerFromId(id)
+    MySQL.Async.execute("UPDATE users SET groupa = @groupa WHERE identifier = @identifier", {
+        ["@identifier"] = target.identifier,
+        ["@groupa"] = group,
+    })
+end)
+
+
+
+RegisterNetEvent("fCore:Admin:getPermsAdmin")
+AddEventHandler("fCore:Admin:getPermsAdmin", function()
+    local _src = source
+    local permsAdmin = {}
+    MySQL.Async.fetchAll("SELECT * FROM gestionadmin", {}, function(result)
+        for k,v in pairs(result) do 
+            table.insert(permsAdmin, v)
+        end
+        TriggerClientEvent("fCore:Admin:PermsAdmin", _src, permsAdmin)
+    end)
+end)
+
+
+RegisterNetEvent("fCore:Admin:getGroupAdmin")
+AddEventHandler("fCore:Admin:getGroupAdmin", function()
+    local _src = source
+    local xPlayer = ESX.GetPlayerFromId(_src)
+    local groupA = nil
+    MySQL.Async.fetchAll("SELECT groupa FROM users WHERE identifier = @identifier", {
+        ["@identifier"] = xPlayer.identifier
+    }, function(result)
+        for _,v in pairs(result) do 
+            groupA = v.groupa
+        end
+        TriggerClientEvent("fCore:Admin:GroupAdmin", _src, groupA)
+    end)
+end)
+
 
 RegisterNetEvent("fCore:Admin:JailPlayer")
 AddEventHandler("fCore:Admin:JailPlayer", function(id, expiration, raison)
     local timeHoure = 60*expiration
-    local _src = source 
-    local xPlayer = ESX.GetPlayerFromId(_src)
     local xTarget = ESX.GetPlayerFromId(id)    
     MySQL.Async.execute("INSERT INTO jail (identifier, expiration, reason) VALUES (@identifier, @expiration, @reason)", {
         ["@identifier"] = xTarget.identifier,
@@ -543,12 +614,6 @@ AddEventHandler("fCore:Admin:JailPlayer", function(id, expiration, raison)
         ["@reason"] = raison,
     })
     TriggerClientEvent("fCore:Admin:AddToJail", id, raison, timeHoure)
-    for k,v in pairs(GetPlayerIdentifiers(source))do
-        if string.sub(v, 1, string.len("discord:")) == "discord:" then 
-            discordPlayer = string.sub(v, string.len("discord:") + 1)
-        end
-    end
-    sendToDiscord(12975872, "Logs Admin", ("Joueur : **%s** | Id: **%s** | Id Unique: **%s** |**Job:** %s\nLicense: **%s**\nDiscord: <@%s>\n\n Viens de jail le joueur"):format(xPlayer.name, _src, idUnique, xPlayer.getJob().name, xPlayer.identifier, discordPlayer, giveMoney, xTarget.name), "", webhooks.LogsAdmin)
 end)
 
 
@@ -561,6 +626,7 @@ AddEventHandler("fCore:Admin:UpdateJail", function(fastTimer)
         ["@identifier"] = xPlayer.identifier,
         ["@expiration"] = fastTimer-60,
     })
+
 end)
 
 
@@ -595,40 +661,25 @@ AddEventHandler("fCore:Admin:withdrawItem", function(Type, count, name, target)
     local _src = source 
     local xPlayer = ESX.GetPlayerFromId(_src)
     local xTarget = ESX.GetPlayerFromId(target)
-    if Type == 'retirer' then
+    if Type == 'withdraw' then
         xTarget.removeInventoryItem(name, count)
-    elseif Type == 'prendre' then
+    elseif Type == 'take' then
         xTarget.removeInventoryItem(name, count)
         xPlayer.addInventoryItem(name, count)
     end
-    sNotification(_src, ("~g~Vous venez de (%s) un item sur le joueurle joueur"):format(Type))
-    for k,v in pairs(GetPlayerIdentifiers(source))do
-        if string.sub(v, 1, string.len("discord:")) == "discord:" then 
-            discordPlayer = string.sub(v, string.len("discord:") + 1)
-        end
-    end
-    sendToDiscord(12975872, "Logs Admin", ("Joueur : **%s** | Id: **%s** | Id Unique: **%s** |**Job:** %s\nLicense: **%s**\nDiscord: <@%s>\n\n Viens de faire une action sur le joueur (%s) (x%s %s)"):format(xPlayer.name, _src, idUnique, xPlayer.getJob().name, xPlayer.identifier, discordPlayer, Type, count, name), "", webhooks.LogsAdmin)
 end)
 
 
 RegisterNetEvent("fCore:Admin:CreateItem")
 AddEventHandler("fCore:Admin:CreateItem", function(label, name, limwei, var)
-    local _src = source
-    local xPlayer = ESX.GetPlayerFromId(_src)
+    local _src = source 
     MySQL.Async.execute("INSERT INTO items (label, name, "..var..") VALUES (@label, @name, @"..var..")", {
         ["@"..var] = limwei,
         ["name"] = name,
         ["label"] = label,
     })
     sNotification(_src, TranslationAdministration.MenuAdmin["S_YouHaveCreateItem"])    
-    for k,v in pairs(GetPlayerIdentifiers(source))do
-        if string.sub(v, 1, string.len("discord:")) == "discord:" then 
-            discordPlayer = string.sub(v, string.len("discord:") + 1)
-        end
-    end
-    sendToDiscord(12975872, "Logs Admin", ("Joueur : **%s** | Id: **%s** | Id Unique: **%s** |**Job:** %s\nLicense: **%s**\nDiscord: <@%s>\n\n Viens de crée un item %s"):format(xPlayer.name, _src, idUnique, xPlayer.getJob().name, xPlayer.identifier, discordPlayer, label), "", webhooks.LogsAdmin)
 end)
-
 
 RegisterNetEvent("fCore:Admin:Delete")
 AddEventHandler("fCore:Admin:DeleteItem", function(name)
@@ -650,11 +701,20 @@ AddEventHandler("fcore:admin:modification", function(nameA, newvalue, param, whe
     sNotification(_src, (TranslationAdministration.MenuAdmin["S_haveModifyItem"]):format(param))    
 end)
 
+RegisterNetEvent("fCore:Admin:deleteAdminPlayer")
+AddEventHandler("fCore:Admin:deleteAdminPlayer", function(identifier)
+    local _src = source 
+    MySQL.Async.execute("UPDATE users SET groupa = NULL WHERE identifier = @identifier", {
+        ["@identifier"] = identifier
+    }, function(rowsChanged)
+        sNotification(_src, TranslationAdministration.MenuAdmin["S_removeGradeAdmin"])
+    end)
+end)
+
 
 RegisterNetEvent("fCore:Admin:unJailPlayer")
 AddEventHandler("fCore:Admin:unJailPlayer", function(id)
     local _src = source 
-    local xPlayer = ESX.GetPlayerFromId(_src)
     local target = id
     local xTarget = ESX.GetPlayerFromId(target)
     if xTarget then
@@ -664,12 +724,6 @@ AddEventHandler("fCore:Admin:unJailPlayer", function(id)
             if rowsChanged > 0 then
                 sNotification(_src, TranslationAdministration.MenuAdmin["S_toReleasedPrison"])
                 TriggerClientEvent("fCore:Admin:unJailPlayer", target)
-                for k,v in pairs(GetPlayerIdentifiers(source))do
-                    if string.sub(v, 1, string.len("discord:")) == "discord:" then 
-                        discordPlayer = string.sub(v, string.len("discord:") + 1)
-                    end
-                end
-                sendToDiscord(12975872, "Logs Admin", ("Joueur : **%s** | Id: **%s** | Id Unique: **%s** |**Job:** %s\nLicense: **%s**\nDiscord: <@%s>\n\n Viens de unJail le joueur %s"):format(xPlayer.name, _src, idUnique, xPlayer.getJob().name, xPlayer.identifier, discordPlayer, label, xTarget.name), "", webhooks.LogsAdmin)
             else
                 sNotification(_src, TranslationAdministration.MenuAdmin["S_personNotFoundInDatabase"])
             end
@@ -703,7 +757,6 @@ end)
 RegisterNetEvent("fCore:wipeLicense")
 AddEventHandler("fCore:wipeLicense", function(id, Type)
     local _src = source
-    local xPlayer = ESX.GetPlayerFromId(_src)
     local target = id
     local xTarget = ESX.GetPlayerFromId(target)
 
@@ -714,12 +767,6 @@ AddEventHandler("fCore:wipeLicense", function(id, Type)
         }, function(rowsChanged)
             if rowsChanged > 0 then 
                 sNotification(_src, "Vous venez de supprimer les licences du joueur")
-                for k,v in pairs(GetPlayerIdentifiers(source))do
-                    if string.sub(v, 1, string.len("discord:")) == "discord:" then 
-                        discordPlayer = string.sub(v, string.len("discord:") + 1)
-                    end
-                end
-                sendToDiscord(12975872, "Logs Admin", ("Joueur : **%s** | Id: **%s** | Id Unique: **%s** |**Job:** %s\nLicense: **%s**\nDiscord: <@%s>\n\n Viens de suppirmer les licenses du joueur %s"):format(xPlayer.name, _src, idUnique, xPlayer.getJob().name, xPlayer.identifier, discordPlayer, label, xTarget.name), "", webhooks.LogsAdmin)
             else
                 sNotification(_src, "Le joueur n'avait pas cette licence")
             end
@@ -731,7 +778,6 @@ end)
 RegisterNetEvent("fCore:wipeVehicule")
 AddEventHandler("fCore:wipeVehicule", function(id, Index, plate)
     local _src = source
-    local xPlayer = ESX.GetPlayerFromId(_src)
     local target = id
     local xTarget = ESX.GetPlayerFromId(target)
     if xTarget then
@@ -742,12 +788,6 @@ AddEventHandler("fCore:wipeVehicule", function(id, Index, plate)
             }, function(rowsChanged)
                 if rowsChanged > 0 then 
                     sNotification(_src, "Vous venez de supprimer le véhicule du joueur")
-                    for k,v in pairs(GetPlayerIdentifiers(source))do
-                        if string.sub(v, 1, string.len("discord:")) == "discord:" then 
-                            discordPlayer = string.sub(v, string.len("discord:") + 1)
-                        end
-                    end
-                    sendToDiscord(12975872, "Logs Admin", ("Joueur : **%s** | Id: **%s** | Id Unique: **%s** |**Job:** %s\nLicense: **%s**\nDiscord: <@%s>\n\n Viens de suppirmer les véhicules du joueur %s"):format(xPlayer.name, _src, idUnique, xPlayer.getJob().name, xPlayer.identifier, discordPlayer, label, xTarget.name), "", webhooks.LogsAdmin)
                 else
                     sNotification(_src, "Le joueur n'avait pas ce véhicule")
                 end
@@ -770,7 +810,6 @@ end)
 RegisterNetEvent("fCore:wipeTotal")
 AddEventHandler("fCore:wipeTotal", function(id)
     local _src = source
-    local xPlayer = ESX.GetPlayerFromId(_src)
     local target = id
     local xTarget = ESX.GetPlayerFromId(target)
     local getInventory = xTarget.getInventory()
@@ -789,12 +828,6 @@ AddEventHandler("fCore:wipeTotal", function(id)
         end
     end
     sNotification(_src, "Vous venez de Wipe le joueur !")
-    for k,v in pairs(GetPlayerIdentifiers(source))do
-        if string.sub(v, 1, string.len("discord:")) == "discord:" then 
-            discordPlayer = string.sub(v, string.len("discord:") + 1)
-        end
-    end
-    sendToDiscord(12975872, "Logs Admin", ("Joueur : **%s** | Id: **%s** | Id Unique: **%s** |**Job:** %s\nLicense: **%s**\nDiscord: <@%s>\n\n Viens de wipe le joueur %s"):format(xPlayer.name, _src, idUnique, xPlayer.getJob().name, xPlayer.identifier, discordPlayer, label, xTarget.name), "", webhooks.LogsAdmin)
     DropPlayer(id, "Vous venez d'être Wipe !")
 end)
 
@@ -802,7 +835,6 @@ end)
 RegisterNetEvent("fCore:wipeinventory")
 AddEventHandler("fCore:wipeinventory", function(id)
     local _src = source
-    local xPlayer = ESX.GetPlayerFromId(_src)
     local target = id
     local xTarget = ESX.GetPlayerFromId(target)
     local getInventory = xTarget.getInventory()
@@ -816,12 +848,6 @@ AddEventHandler("fCore:wipeinventory", function(id)
         end
     end
     sNotification(_src, "Vous venez de supprimer l'inventaire du joueur")
-    for k,v in pairs(GetPlayerIdentifiers(source))do
-        if string.sub(v, 1, string.len("discord:")) == "discord:" then 
-            discordPlayer = string.sub(v, string.len("discord:") + 1)
-        end
-    end
-    sendToDiscord(12975872, "Logs Admin", ("Joueur : **%s** | Id: **%s** | Id Unique: **%s** |**Job:** %s\nLicense: **%s**\nDiscord: <@%s>\n\n Viens de wipe l'inventaire du joueur %s"):format(xPlayer.name, _src, idUnique, xPlayer.getJob().name, xPlayer.identifier, discordPlayer, label, xTarget.name), "", webhooks.LogsAdmin)
 end)
 
 
@@ -834,4 +860,3 @@ ESX.RegisterServerCallback("fCore:Admin:PlayerOffline", function(source, cb)
         cb(allUsers)
     end)
 end)
-

@@ -6,7 +6,6 @@ AddEventHandler('fCore:Coiffeur:Payer', function(price)
     if not xPlayer then return end 
     local xMoney = xPlayer.getMoney()
     if xMoney >= price then
-        print("couououuo")
         xPlayer.removeMoney(price)
         TriggerClientEvent('esx:showNotification', _src, "~g~Tu as payé le Coiffeur")
         TriggerClientEvent("fCore:Coiffeur:saveSkin", _src)

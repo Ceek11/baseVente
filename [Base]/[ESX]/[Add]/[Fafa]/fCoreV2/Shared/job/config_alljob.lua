@@ -10,12 +10,12 @@ Patron = {
         societyName = "society_police",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = false,
                 percentageMoney = 90,        
-                point = vec3(460.559723, -985.478210, 29.728075), 
+                point = vector3(-1114.2580566406,-832.57781982422,30.75696182251), 
                 maxMarker = 15,
                 max3D = 1.5,
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~menu patron",
@@ -79,7 +79,7 @@ Patron = {
             {
                 maxMarker = 15,
                 max3D = 1.5,
-                point =  vec3(472.673920, -997.453003, 25.273281),
+                point =  vector3(-1090.6168212891,-834.98254394531,19.001609802246),
                 markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~coffre",
             },
@@ -92,7 +92,7 @@ Patron = {
                 point = vec3(441.554230, -984.484924, 25.699812),
                 markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
-                spawnpoint = vec4(432.148132, -987.539734, 25.699804, 166.74),
+                spawnpoint = vector4(-1117.0579833984,-836.75512695312,13.33616733551,354.26293945312),
             },
             { ---Heli
                 Type = "Heli",
@@ -109,14 +109,7 @@ Patron = {
             { ---
                 maxMarker = 15,
                 max3D = 1.5,
-                point = vector3(432.148132, -987.539734, 25.699804),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ranger ~s~l'~b~hélicoptère",
-            },
-            { ---
-                maxMarker = 15,
-                max3D = 1.5,
-                point =  vec3(449.182709, -981.423218, 43.691395),
+                point = vector3(-1112.7135009766,-832.31439208984,13.330463409424),
                 markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
                 text = "Appuyer ~b~[E] ~s~pour ~g~ranger ~s~l'~b~hélicoptère",
             },
@@ -125,12 +118,20 @@ Patron = {
             {
                 maxMarker = 15,
                 max3D = 1.5,
-                point = vec3(463.367554, -996.563599, 29.689514),
+                point = vector3(-1096.5401611328,-829.0791015625,26.856449127197),
+                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
+                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
+            },
+            {
+                maxMarker = 15,
+                max3D = 1.5,
+                point = vector3(-1096.7718505859,-834.22253417969,13.962024688721),
                 markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             },
         },
     },
+
     {
         
         EmployeeInService = 0,
@@ -139,7 +140,7 @@ Patron = {
         societyName = "society_lssd",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = false,
@@ -219,24 +220,8 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
                 spawnpoint = vector4(-475.351594, 5988.409668, 31.336498, 317.68951416016),
             },
-            { ---Heli Sandy
-                Type = "Heli",
-                maxMarker = 15,
-                max3D = 2.5,
-                point = vec3(1833.042114, 3675.807862, 38.930596),
-                markerType = 34, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
-                spawnpoint = vector4(1832.832032, 3668.327880, 38.930610, 33.195365905762),
-            },
-            { ---Paleto Vehi
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-459.330384, 6029.642578, 31.489814),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
-                spawnpoint = vector4(-481.224030, 6023.574218, 31.206542, 223.652633667),
-            },
             { ---Sandy Vehi
+                Type = "car",                
                 maxMarker = 15,
                 max3D = 1.5,
                 point = vector3(1856.797486, 3687.908448, 34.327136),
@@ -253,45 +238,137 @@ Patron = {
                 markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
                 text = "Appuyer ~b~[E] ~s~pour ~g~ranger ~s~l'~b~hélicoptère",
             },
-            { ---Heli Sandy
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(1833.705200, 3668.793458, 38.930610),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ranger ~s~l'~b~hélicoptère",
-            },
-            { ---Paleto Vehi
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-481.224030, 6023.574218, 31.206542),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ranger ~s~le ~b~vehicule",
-            },
-            { ---Sandy Vehi
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(1859.055420, 3694.115234, 33.441734),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ranger ~s~le ~b~vehicule",
-            }
         },
         Vestiaire = {
             { ---Paleto
                 maxMarker = 15,
                 max3D = 1.5,
-                point = vector3(-439.177246, 6010.936036, 35.995686),
+                point = vector3(-453.13034057617,6013.912109375,31.716451644897),
                 markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             },
-            { ---Sandy
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(1838.446534, 3678.817138, 37.945),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
-            }
         },
     },
+
+
+    {
+        
+        EmployeeInService = 0,
+        jobName = "lssd",
+        jobLabel = "LSSD",
+        societyName = "society_lssd",
+        maxFakeMoney = 5000,
+        gradeBoss = "boss",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
+        Boss = {
+            {
+                makeFakeMoney = false,
+                percentageMoney = 90,        
+                point = vector3(-433.056092, 6006.037598, 35.995678), 
+                maxMarker = 15,
+                max3D = 1.5,
+                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~menu patron",
+                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
+                Option = {
+                    {armurerie = true, historyBill = true, stockBateau = true, stockVehicle = true, stock = true, stockKitRepa = false, saisie = true}
+                }
+            },
+        },
+        Shop = {
+            {label = "Maverick", name = "lguardmav", price = 10000},
+        },
+        BateauShop = {
+            {label = "Predator", name = "predator", price = 10000},
+        },
+        Vehicule = {
+            {label = "Buffalo STX", name = "polbuffalop", price = 10000},
+            {label = "Alamo 2", name = "polalamop2", price = 10000},
+            {label = "Caracara", name = "polcarap", price = 10000},
+            {label = "Scout 2 Ranger", name = "nscoutnps", price = 10000},
+            {label = "Fugitive", name = "polfugitivep", price = 10000},
+            {label = "Scout 2", name = "nscoutlssd2", price = 10000},
+            {label = "Torence", name = "poltorencep", price = 10000},
+            {label = "Scout", name = "polscoutp", price = 10000},
+            {label = "Buffalo", name = "polbuffalop2", price = 10000},
+            {label = "Moto", name = "polbikeb2", price = 10000},
+            {label = "Stanier", name = "polstanierp", price = 10000},
+            {label = "Speedo", name = "polspeedop", price = 10000},
+            {label = "Scout 2 HP", name = "nscoutsahp", price = 10000},
+            {label = "Scout 2 HP", name = "nscoutsahp2", price = 10000},
+            {label = "Coquette HP", name = "polcoquettep", price = 10000},
+            {label = "Gauntlet HP", name = "polgauntletp", price = 10000},
+            {label = "Banalisé Everon", name = "fateveron", price = 10000},
+            {label = "Banalisé Stalker", name = "fatstalker", price = 10000},
+            {label = "Banalisé Torrence", name = "fattorrence", price = 10000},
+            {label = "Banalisé Buffalo", name = "fatbuffalo", price = 10000},
+            {label = "Banalisé Novak", name = "apoliceu10", price = 10000},
+            {label = "Banalisé Baller", name = "apoliceub", price = 10000},
+            {label = "Banalisé Schafter", name = "apoliceu15", price = 10000},
+            {label = "Banalisé Torence", name = "apoliceu7", price = 10000},
+            {label = "Banalisé Scout", name = "apoliceu6", price = 10000},
+            {label = "Banalisé Buffalo", name = "apoliceu14", price = 10000},
+            {label = "Banalisé Speedo", name = "apoliceu13", price = 10000},
+            {label = "Banalisé Oracle", name = "apoliceu9", price = 10000},
+            {label = "Banalisé Stanier", name = "apoliceu", price = 10000},
+            {label = "Banalisé Stanier Old", name = "apoliceu2", price = 10000},
+            {label = "Stalker RAD", name = "polstalkerp", price = 10000},
+            {label = "Scout DOA/SWAT", name = "umkscout2", price = 10000},
+            {label = "Insurgent", name = "swatinsur", price = 10000},
+            {label = "Stockade", name = "swatstoc", price = 10000},
+            {label = "RCV", name = "riot2", price = 10000},
+            {label = "Rumpo DOA", name = "swatvanr2", price = 10000},
+            {label = "Speepo SWAT", name = "swatvans2", price = 10000},
+            {label = "Hazard", name = "hazard2", price = 10000},
+        },
+        Coffre = {
+            {
+                maxMarker = 15,
+                max3D = 1.5,
+                point =  vector3(-446.864868, 6018.393554, 31.30),
+                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
+                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~coffre",
+            }
+        },
+        Garage = {
+            { ---Heli Paleto
+                Type = "Heli",
+                maxMarker = 15,
+                max3D = 2.5,
+                point = vec3(-477.758666, 6005.299804, 31.311826),
+                markerType = 34, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
+                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
+                spawnpoint = vector4(-475.351594, 5988.409668, 31.336498, 317.68951416016),
+            },
+            { ---Sandy Vehi
+                Type = "car",                
+                maxMarker = 15,
+                max3D = 1.5,
+                point = vector3(1856.797486, 3687.908448, 34.327136),
+                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
+                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
+                spawnpoint = vector4(1859.055420, 3694.115234, 33.441734, 210.98992919922),
+            },
+        },
+        DeleteVehi = {
+            { ---Heli Paleto
+                maxMarker = 15,
+                max3D = 1.5,
+                point = vector3(-475.351594, 5988.409668, 31.336498),
+                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
+                text = "Appuyer ~b~[E] ~s~pour ~g~ranger ~s~l'~b~hélicoptère",
+            },
+        },
+        Vestiaire = {
+            { ---Paleto
+                maxMarker = 15,
+                max3D = 1.5,
+                point = vector3(-453.13034057617,6013.912109375,31.716451644897),
+                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
+                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
+            },
+        },
+    },
+
     {
         
         EmployeeInService = 0,
@@ -300,7 +377,7 @@ Patron = {
         societyName = "society_ems",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = false,
@@ -345,39 +422,15 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
                 spawnpoint = vector4(-75.110870, 6491.229492, 31.490934, 136.57165527344),
             },
-            { ---Heli Ocean
-                Type = "Heli",
+            { ---Heli Paleto
+                Type = "car",
                 maxMarker = 15,
                 max3D = 2.5,
-                point = vec3(-1868.924682, -343.091674, 58.098206),
+                point = vec3(-78.734390, 6502.940918, 31.490942),
                 markerType = 34, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
-                spawnpoint = vector4(-1867.290162, -352.645142, 58.098538, 319.47314453125),
+                spawnpoint = vector4(-75.110870, 6491.229492, 31.490934, 136.57165527344),
             },
-            { ---EMSocean Vehi
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-1846.490112, -367.614654, 40.803524),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
-                spawnpoint = vector4(-1847.790162, -375.606506, 40.176156, 230.8678741455),
-            },
-            { ---EMSsandy Vehi
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(1770.227662, 3664.504394, 34.581006),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
-                spawnpoint = vector4(1765.228272, 3666.811768, 33.732956, 29.717769622802),
-            },
-            { ---EMSpaleto Vehi
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-71.637566, 6506.280274, 31.535814),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
-                spawnpoint = vector4(-64.356370, 6500.850586, 30.884052, 135.03256225586),
-            }
         },
         DeleteVehi = {
             { ---Heli Paleto
@@ -387,34 +440,6 @@ Patron = {
                 markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
                 text = "Appuyer ~b~[E] ~s~pour ~g~ranger ~s~l'~b~hélicoptère",
             },
-            { ---Heli Ocean
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-1867.290162, -352.645142, 58.098538),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ranger ~s~l'~b~hélicoptère",
-            },
-            { ---EMSocean Vehi
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-1847.790162, -375.606506, 40.803524),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ranger ~s~le ~b~vehicule",
-            },
-            { ---EMSsandy Vehi
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(1765.228272, 3666.811768, 33.732956),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ranger ~s~le ~b~vehicule",
-            },
-            { ---EMSpaleto Vehi
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-64.356370, 6500.850586, 30.884052),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ranger ~s~le ~b~vehicule",
-            }
         },
         Vestiaire = {
             { ---EMSpaleto
@@ -424,29 +449,9 @@ Patron = {
                 markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             },
-            { ---EMSsandy
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(1784.256104, 3652.343262, 33.854),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
-            },
-            { ---EMSoceanfemme
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-1815.587524, -359.583710, 48.4645),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
-            },
-            { ---EMSoceanhomme
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-1814.395142, -357.920624, 48.4645),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
-            }
         },
     }, 
+
     {
         
         EmployeeInService = 0,
@@ -455,7 +460,7 @@ Patron = {
         societyName = "society_concess",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -514,9 +519,7 @@ Patron = {
         },
     }, 
 
-
-    
-	{
+    {
         
         EmployeeInService = 0,
         jobName = "bahamas",
@@ -524,7 +527,7 @@ Patron = {
         societyName = "society_bahamas",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -540,7 +543,7 @@ Patron = {
             },
         },
         Vehicule = {
-		    {label = "Van (speed)", name = "burrito2baha", price = 14000},
+            {label = "Van (speed)", name = "burrito2baha", price = 14000},
             {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
             {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
         },
@@ -590,7 +593,7 @@ Patron = {
         societyName = "society_vigneron",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -606,7 +609,7 @@ Patron = {
             },
         },
         Vehicule = {
-		    {label = "Van (speed)", name = "burrito2v", price = 14000},
+            {label = "Van (speed)", name = "burrito2v", price = 14000},
             {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
             {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
         },
@@ -658,7 +661,7 @@ Patron = {
         maxFakeMoney = 5000,
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -674,7 +677,7 @@ Patron = {
             },
         },
         Vehicule = {
-		    {label = "Van (speed)", name = "burrito2red", price = 14000},
+            {label = "Van (speed)", name = "burrito2red", price = 14000},
             {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
             {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
         },
@@ -717,7 +720,7 @@ Patron = {
             }
         },
     },
-	{
+    {
         
         EmployeeInService = 0,
         jobName = "unicorn",
@@ -725,7 +728,7 @@ Patron = {
         societyName = "society_unicorn",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -741,7 +744,7 @@ Patron = {
             },
         },
         Vehicule = {
-		    {label = "Van (speed)", name = "burrito2u", price = 14000},
+            {label = "Van (speed)", name = "burrito2u", price = 14000},
             {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
             {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
         },
@@ -784,7 +787,7 @@ Patron = {
             }
         },
     },
-	{
+    {
         
         EmployeeInService = 0,
         jobName = "yellowjack",
@@ -792,7 +795,7 @@ Patron = {
         societyName = "society_yellowjack",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -851,7 +854,7 @@ Patron = {
             }
         },
     },
-	{
+    {
         
         EmployeeInService = 0,
         jobName = "tequilala",
@@ -859,7 +862,7 @@ Patron = {
         societyName = "society_tequilala",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -875,7 +878,7 @@ Patron = {
             },
         },
         Vehicule = {
-		    {label = "Van (speedo)", name = "burrito2tequi", price = 21500},
+            {label = "Van (speedo)", name = "burrito2tequi", price = 21500},
             {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
             {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
         },
@@ -917,8 +920,8 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
-	{
+    },
+    {
         
         EmployeeInService = 0,
         jobName = "tacos",
@@ -926,7 +929,7 @@ Patron = {
         societyName = "society_tacos",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -942,7 +945,7 @@ Patron = {
             },
         },
         Vehicule = {
-		    {label = "Van (speedo)", name = "burrito2ta", price = 21500},
+            {label = "Van (speedo)", name = "burrito2ta", price = 21500},
             {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
             {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
         },
@@ -984,142 +987,8 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
+    },
     {
-        
-        EmployeeInService = 0,
-        jobName = "koi",
-        jobLabel = "Koï",
-        societyName = "society_koi",
-        maxFakeMoney = 5000,
-        gradeBoss = "boss",
-        Webhooks = "",
-        Boss = {
-            {
-                makeFakeMoney = true,
-                percentageMoney = 90,        
-                point = vector3(-1053.789916, -1441.550416, -2.36), 
-                maxMarker = 15,
-                max3D = 1.5,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~menu patron",
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                Option = {
-                    {armurerie = false, historyBill = true, stockVehicle = true, stockKitRepa = false}
-                } 
-            },
-        },
-        Vehicule = {
-		    {label = "Van (speedo)", name = "burrito2koi", price = 21500},
-            {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-            {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
-        },
-        Coffre = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point =  vector3(-1075.437988, -1440.359498, -2.41),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~coffre",
-            }
-        },
-        Garage = {
-            {   
-                Type = "car",
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-1013.422668, -1472.317138, 4.944722),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
-                spawnpoint = vector4(-1011.408142, -1469.026246, 4.795006, 34.508441925048),
-            }
-        },
-        DeleteVehi = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-1011.408142, -1469.026246, 4.795006),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ranger ~s~le ~b~vehicule",
-            }
-        },
-        Vestiaire = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-1059.931518, -1434.606568, -2.41),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
-            }
-        },
-	},
-	{
-        
-        jobName = "horny",
-        jobLabel = "Horny's",
-        EmployeeInService = 0,
-        societyName = "society_horny",
-        maxFakeMoney = 5000,
-        gradeBoss = "boss",
-        Webhooks = "",
-        Boss = {
-            {
-                makeFakeMoney = true,
-                percentageMoney = 90,        
-                point = vector3(1238.112916, -349.061646, 68.082138), 
-                maxMarker = 15,
-                max3D = 1.5,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~menu patron",
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                Option = {
-                    {armurerie = false, historyBill = true, stockVehicle = true, stockKitRepa = false}
-                } 
-            },
-        },
-        Vehicule = {
-		    {label = "Van (speedo)", name = "burrito2ho", price = 21500},
-            {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-            {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
-        },
-        Coffre = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point =  vector3(1248.695556, -352.736664, 68.082154),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~coffre",
-            }
-        },
-        Garage = {
-            {   
-                Type = "car",
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(1247.033326, -349.888428, 69.0),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
-                spawnpoint = vector4(1246.050538, -334.385254, 68.820808, 172.091506958),
-            }
-        },
-        DeleteVehi = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(1242.081054, -334.429780, 69.082108),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ranger ~s~le ~b~vehicule",
-            }
-        },
-        Vestiaire = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(1245.297730, -354.806824, 68.082154),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
-            }
-        },
-	},
-	{
         
         EmployeeInService = 0,
         jobName = "armurier",
@@ -1127,7 +996,7 @@ Patron = {
         societyName = "society_armurier",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -1184,8 +1053,8 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
-	{
+    },
+    {
         
         EmployeeInService = 0,
         jobName = "ltdls",
@@ -1193,7 +1062,7 @@ Patron = {
         societyName = "society_ltdls",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -1250,8 +1119,8 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
-	{
+    },
+    {
         
         EmployeeInService = 0,
         jobName = "ltddp",
@@ -1259,7 +1128,7 @@ Patron = {
         societyName = "society_ltddp",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -1316,8 +1185,8 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
-	{
+    },
+    {
         
         EmployeeInService = 0,
         jobName = "ltdmp",
@@ -1325,7 +1194,7 @@ Patron = {
         societyName = "society_ltdmp",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -1382,8 +1251,8 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
-	{
+    },
+    {
         
         EmployeeInService = 0,
         jobName = "ltdgs",
@@ -1391,7 +1260,7 @@ Patron = {
         societyName = "society_ltdgs",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -1448,8 +1317,8 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
-	{
+    },
+    {
         
         EmployeeInService = 0,
         jobName = "ltdfd",
@@ -1457,7 +1326,7 @@ Patron = {
         societyName = "society_ltdfd",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -1514,8 +1383,8 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
-	{
+    },
+    {
         
         EmployeeInService = 0,
         jobName = "lscustomsud",
@@ -1523,7 +1392,7 @@ Patron = {
         societyName = "society_lscustomsud",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -1541,8 +1410,8 @@ Patron = {
         Vehicule = {
             {label = "Petite dépaneuse (towtruck)", name = "towtruck", price = 12850},
             {label = "Grande dépaneuse (flatbed)", name = "flatbed", price = 36950},
-			{label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-			{label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
+            {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
+            {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
         },
         Coffre = {
             {
@@ -1582,8 +1451,8 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
-	{
+    },
+    {
         
         EmployeeInService = 0,
         jobName = "benny",
@@ -1591,7 +1460,7 @@ Patron = {
         societyName = "society_benny",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -1607,8 +1476,8 @@ Patron = {
             },
         },
         Vehicule = {
-			{label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-			{label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
+            {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
+            {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
         },
         Coffre = {
             {
@@ -1648,8 +1517,8 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
-	{
+    },
+    {
         
         EmployeeInService = 0,
         jobName = "lscustomnord",
@@ -1657,7 +1526,7 @@ Patron = {
         societyName = "society_lscustomnord",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -1675,8 +1544,8 @@ Patron = {
         Vehicule = {
             {label = "Petite dépaneuse (towtruck)", name = "towtruck", price = 12850},
             {label = "Grande dépaneuse (flatbed)", name = "flatbed", price = 36950},
-			{label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-			{label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
+            {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
+            {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
         },
         Coffre = {
             {
@@ -1716,7 +1585,7 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
+    },
     {
         
         EmployeeInService = 0,
@@ -1725,7 +1594,7 @@ Patron = {
         societyName = "society_garage_cayo",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -1742,8 +1611,8 @@ Patron = {
         },
         Vehicule = {
             {label = "Petite dépaneuse (towtruck)", name = "towtruck", price = 12850},
-			{label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-			{label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
+            {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
+            {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
         },
         Coffre = {
             {
@@ -1783,141 +1652,8 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
-    {
-        
-        EmployeeInService = 0,
-        jobName = "mineur",
-        jobLabel = "Mineur",
-        societyName = "society_mineur",
-        maxFakeMoney = 5000,
-        gradeBoss = "boss",
-        Webhooks = "",
-        Boss = {
-            {
-                makeFakeMoney = true,
-                percentageMoney = 90,        
-                point = vector3(2526.966064, 4119.777344, 37.92), 
-                maxMarker = 15,
-                max3D = 1.5,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~menu patron",
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                Option = {
-                    {armurerie = false, historyBill = true, stockVehicle = true, stockKitRepa = false}
-                } 
-            },
-        },
-        Vehicule = {
-		    {label = "Van (speedo)", name = "burrito2m", price = 21500},
-            {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-            {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200,},
-        },
-        Coffre = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point =  vector3(2521.511962, 4119.542480, 37.92),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~coffre",
-            }
-        },
-        Garage = {
-            {   
-                Type = "car",
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(2525.056640, 4115.971680, 38.630706),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
-                spawnpoint = vector4(2527.859864, 4115.119140, 38.440514, 242.71643066406),
-            }
-        },
-        DeleteVehi = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(2527.825928, 4115.363770, 38.621620),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ranger ~s~le ~b~vehicule",
-            }
-        },
-        Vestiaire = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(2522.599610, 4116.505372, 37.92),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
-            }
-        },
-	},
-	{
-        
-        EmployeeInService = 0,
-        jobName = "nikkibeach",
-        jobLabel = "Nikki Beach",
-        societyName = "society_nikkibeach",
-        maxFakeMoney = 5000,
-        gradeBoss = "boss",
-        Webhooks = "",
-        Boss = {
-            {
-                makeFakeMoney = true,
-                percentageMoney = 90,        
-                point = vector3(-1425.957886, -1262.557984, 2.62), 
-                maxMarker = 15,
-                max3D = 1.5,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~menu patron",
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                Option = {
-                    {armurerie = false, historyBill = true, stockVehicle = true, stockKitRepa = false}
-                } 
-            },
-        },
-        Vehicule = {
-            {label = "Van (speedo)", name = "burrito2n", price = 21500},
-			{label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-			{label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
-        },
-        Coffre = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point =  vector3(-1423.776856, -1265.031982, 3.0),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~coffre",
-            }
-        },
-        Garage = {
-            {   
-                Type = "car",
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-1415.359864, -1262.329102, 4.386728),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
-                spawnpoint = vector4(-1413.459594, -1265.703125, 4.251768, 311.10870361328),
-            }
-        },
-        DeleteVehi = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-1413.495484, -1265.714112, 4.249420),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~r~ranger ~s~le ~b~vehicule",
-            }
-        },
-        Vestiaire = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-1426.868774, -1264.197754, 2.66),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
-            }
-        },
-	},
+    },
+    
     {
         
         EmployeeInService = 0,
@@ -1926,7 +1662,7 @@ Patron = {
         societyName = "society_concess_bateau",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -1942,8 +1678,8 @@ Patron = {
             },
         },
         Vehicule = {
-			{label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-			{label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
+            {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
+            {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
         },
         Coffre = {
             {
@@ -1983,7 +1719,7 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
+    },
     {
         
         EmployeeInService = 0,
@@ -1992,7 +1728,7 @@ Patron = {
         societyName = "society_concess_moto",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -2008,8 +1744,8 @@ Patron = {
             },
         },
         Vehicule = {
-			{label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-			{label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
+            {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
+            {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
         },
         Coffre = {
             {
@@ -2050,74 +1786,8 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
-    {
-        
-        EmployeeInService = 0,
-        jobName = "uwucafe",
-        jobLabel = "UwU Café",
-        societyName = "society_uwucafe",
-        maxFakeMoney = 5000,
-        gradeBoss = "boss",
-        Webhooks = "",
-        Boss = {
-            {
-                makeFakeMoney = true,
-                percentageMoney = 90,        
-                point = vector3(-577.341736, -1067.526612, 25.619), 
-                maxMarker = 15,
-                max3D = 1.5,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~menu patron",
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                Option = {
-                    {armurerie = false, historyBill = true, stockVehicle = true, stockKitRepa = false}
-                } 
-            },
-        },
-        Vehicule = {
-            {label = "Van (speedo)", name = "burrito2uwu", price = 21500},
-			{label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-			{label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},
-        },
-        Coffre = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point =  vector3(-588.549926, -1067.055298, 21.35),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~coffre",
-            }
-        },
-        Garage = {
-            {   
-                Type = "car",
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-597.070252, -1059.219482, 22.35),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
-                spawnpoint = vector4(-605.696350, -1059.353028, 21.582534, 89.922592163086),
-            }
-        },
-        DeleteVehi = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-605.080262, -1059.166626, 21.788318),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~r~ranger ~s~le ~b~vehicule",
-            }
-        },
-        Vestiaire = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-586.850646, -1049.945678, 21.35),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
-            }
-        },
-	},
+    },
+   
     {
         
         EmployeeInService = 0,
@@ -2142,7 +1812,7 @@ Patron = {
             },
         },
         Vehicule = {
-			{label = "Alamo", name = "ussssuv2", price = 39450},
+            {label = "Alamo", name = "ussssuv2", price = 39450},
             {label = "halfack", name = "halfback2", price = 39850},
             {label = "Watchtower", name = "watchtower2", price = 41500},
             {label = "Roadrunner", name = "roadrunner2", price = 43950},
@@ -2186,16 +1856,15 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
+    },
     {
-        
         EmployeeInService = 0,
         jobName = "avocat",
         jobLabel = "Avocat",
         societyName = "society_avocat",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -2211,8 +1880,8 @@ Patron = {
             },
         },
         Vehicule = {
-			{label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-			{label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},    
+            {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
+            {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},    
         },
         Coffre = {
             {
@@ -2252,7 +1921,7 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
+    },
     {
         
         EmployeeInService = 0,
@@ -2261,7 +1930,7 @@ Patron = {
         societyName = "society_agent-immo",
         maxFakeMoney = 5000,
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -2277,8 +1946,8 @@ Patron = {
             },
         },
         Vehicule = {
-			{label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-			{label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},      
+            {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
+            {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},      
         },
         Coffre = {
             {
@@ -2318,140 +1987,7 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
-    {
-        
-        EmployeeInService = 0,
-        jobName = "agent-immo",
-        jobLabel = "Agent Immobilier",
-        societyName = "society_agent-immo",
-        maxFakeMoney = 5000,
-        gradeBoss = "boss",
-        Webhooks = "",
-        Boss = {
-            {
-                makeFakeMoney = true,
-                percentageMoney = 90,
-                point = vector3(-125.864028, -640.986084, 167.820466), 
-                maxMarker = 15,
-                max3D = 1.5,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~menu patron",
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                Option = {
-                    {armurerie = false, historyBill = true, stockVehicle = true, stockKitRepa = false}
-                } 
-            },
-        },
-        Vehicule = {
-			{label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-			{label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},      
-        },
-        Coffre = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point =  vector3(-126.299996, -636.540650, 167.820374),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~coffre",
-            }
-        },
-        Garage = {
-            {   
-                Type = "car",
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-1368.668580, -481.426880, 31.595576),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
-                spawnpoint = vector4(-1371.867432, -480.962830, 31.388056, 7.9145736694336),
-            }
-        },
-        DeleteVehi = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-1371.867432, -480.962830, 31.388056),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~r~ranger ~s~le ~b~vehicule",
-            }
-        },
-        Vestiaire = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-132.619568, -632.891296, 167.820466),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
-            }
-        },
-	},
-    {
-        
-        EmployeeInService = 0,
-        jobName = "henhouse",
-        jobLabel = "Hen House",
-        societyName = "society_henhouse",
-        maxFakeMoney = 5000,
-        gradeBoss = "boss",
-        Webhooks = "",
-        Boss = {
-            {
-                makeFakeMoney = true,
-                percentageMoney = 90,
-                point = vector3(-294.622802, 6266.723144, 33.843), 
-                maxMarker = 15,
-                max3D = 1.5,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~menu patron",
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                Option = {
-                    {armurerie = false, historyBill = true, stockVehicle = true, stockKitRepa = false}
-                } 
-            },
-        },
-        Vehicule = {
-            {label = "Van (speedo)", name = "burrito2h", price = 21500},
-			{label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-			{label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},      
-        },
-        Coffre = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point =  vector3(-294.325104, 6264.588868, 30.485),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~coffre",
-            }
-        },
-        Garage = {
-            {   
-                Type = "car",
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-311.904358, 6270.926758, 31.492426),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
-                spawnpoint = vector4(-314.949494, 6273.321290, 31.006996, 135.36505126954),
-            }
-        },
-        DeleteVehi = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-314.949494, 6273.321290, 31.006996),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~r~ranger ~s~le ~b~vehicule",
-            }
-        },
-        Vestiaire = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(-293.414520, 6266.127930, 30.485),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
-            }
-        },
-	},
+    },
     {
         
         EmployeeInService = 0,
@@ -2461,7 +1997,7 @@ Patron = {
         maxFakeMoney = 4000,
 
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -2478,8 +2014,8 @@ Patron = {
         },
         Vehicule = {
             {label = "Van (speedo)", name = "burrito2t", price = 21500},
-			{label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
-			{label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},      
+            {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
+            {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},      
         },
         Coffre = {
             {
@@ -2519,75 +2055,7 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
-    {
-        
-        EmployeeInService = 0,
-        jobName = "torcedor",
-        jobLabel = "Torcedor",
-        societyName = "society_torcedor",
-        maxFakeMoney = 5000,
-
-        gradeBoss = "boss",
-        Webhooks = "",
-        Boss = {
-            {
-                makeFakeMoney = true,
-                percentageMoney = 90,
-                point = vector3(5064.365234, -4590.288574, 1.86), 
-                maxMarker = 15,
-                max3D = 1.5,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~menu patron",
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                Option = {
-                    {armurerie = false, historyBill = true, stockVehicle = true, stockKitRepa = false}
-                } 
-            },
-        },
-        Vehicule = {
-            {label = "Van (speedo)", name = "burrito2best", price = 21500},
-			{label = "Véhicule employé (winky)", name = "winky", price = 24850},
-			{label = "Véhicule patron (yosemite3)", name = "yosemite3", price = 26850},      
-        },
-        Coffre = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point =  vector3(5058.808594, -4590.573730, 1.92),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~coffre",
-            }
-        },
-        Garage = {
-            {   
-                Type = "car",
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(5073.237304, -4598.653320, 2.850818),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 40, g = 190, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~garage",
-                spawnpoint = vector4(5074.934570, -4602.260742, 2.662938, 162.66903686524),
-            }
-        },
-        DeleteVehi = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(5074.934570, -4602.260742, 2.662938),
-                markerType = 36, sizeX = 0.5, sizeY = 0.5,  sizeZ = 0.5, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 255, g = 0, b = 0, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~r~ranger ~s~le ~b~vehicule",
-            }
-        },
-        Vestiaire = {
-            {
-                maxMarker = 15,
-                max3D = 1.5,
-                point = vector3(5067.306152, -4591.399902, 1.86),
-                markerType = 27, sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0, rotX = 0.0, rotY = 0.0, rotX = 0.0, r = 249, g = 130, b = 42, a = 55555,
-                text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
-            }
-        },
-	},
+    },
     {
         
         EmployeeInService = 0,
@@ -2597,7 +2065,7 @@ Patron = {
         maxFakeMoney = 5000,
 
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = true,
@@ -2613,8 +2081,8 @@ Patron = {
             },
         },
         Vehicule = {
-			{label = "Véhicule employé (winky)", name = "winky", price = 17850},
-			{label = "Véhicule patron (yosemite3)", name = "yosemite3", price = 26850},      
+            {label = "Véhicule employé (winky)", name = "winky", price = 17850},
+            {label = "Véhicule patron (yosemite3)", name = "yosemite3", price = 26850},      
         },
         Coffre = {
             {
@@ -2654,11 +2122,7 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
-
-
-
-    
+    },
     {
         
         EmployeeInService = 0,
@@ -2668,7 +2132,7 @@ Patron = {
         maxFakeMoney = 5000,
 
         gradeBoss = "boss",
-        Webhooks = "",
+        Webhooks = "https://discord.com/api/webhooks/1144746689282969660/uTjo9NMCC4Sb1hPJhZh2t1AHLR7vBX8GlkFEagsIcze_uDFmJIJntG2Xi5MQLjTfHjBN",
         Boss = {
             {
                 makeFakeMoney = false,
@@ -2684,7 +2148,7 @@ Patron = {
             },
         },
         Vehicule = {
-			{label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
+            {label = "Véhicule employé (oracle)", name = "oracle", price = 24850},
             {label = "Véhicule patron (oracle2)", name = "oracle2", price = 29200},    
         },
         Coffre = {
@@ -2725,8 +2189,7 @@ Patron = {
                 text = "Appuyer ~b~[E] ~s~pour ~g~ouvrir ~s~le ~b~vestiaire",
             }
         },
-	},
-    
+    },
 }
 
 

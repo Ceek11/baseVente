@@ -189,7 +189,6 @@ function MenuF6openAmbulance(v)
                             end
                         end
                     })
-                    RageUI.Button("Forcer la synchronisation", nil, {}, true, {})
                 end)
                 RageUI.IsVisible(subMenuRenfort, function()
                     RageUI.List("Secteur : ", secteurs, IndexSecteur, nil, {}, true, {
@@ -207,6 +206,7 @@ function MenuF6openAmbulance(v)
                     if IndexInteraction == 1 then 
                         RageUI.Button("Prise de service", nil, {RightLabel = "→"}, true, {
                             onSelected = function()
+
                             end
                         })
                         RageUI.Button("Pause de service", nil, {RightLabel = "→"}, true, {
@@ -220,6 +220,7 @@ function MenuF6openAmbulance(v)
                     elseif IndexInteraction == 2 then 
                         RageUI.Button("Demande de renforts : Ambulance", nil, {RightLabel = "→"}, true, {
                             onSelected = function()
+                                
                             end
                         })
                         RageUI.Button("Demande de renforts : Hélocoptère", nil, {RightLabel = "→"}, true, {

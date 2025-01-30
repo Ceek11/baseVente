@@ -1,22 +1,23 @@
-local openRecolteIllegal = false 
+local openRecolteIllegal = false
+local PercentIllegalStatsRecolte = false
+local PercentIllegal = 0
+
 menuRecolteIllegal = RageUI.CreateMenu(" ", " ", nil, nil, BannerConfig.TextureDictionary, BannerConfig.TextureName)
 menuRecolteIllegal.Closed = function()
     openRecolteIllegal = false
-    Cfg.PercentStatsRecolte = false
-    Cfg.Percent = 0
+    PercentIllegalStatsRecolte = false
+    PercentIllegal = 0
 end
 
-
-
 function openMenuRecolteIllegal(v)
-    if openRecolteIllegal then 
-        openRecolteIllegal = false 
+    if openRecolteIllegal then
+        openRecolteIllegal = false
         RageUI.Visible(menuRecolteIllegal, false)
     else
-        openRecolteIllegal = true 
+        openRecolteIllegal = true
         RageUI.Visible(menuRecolteIllegal, true)
         CreateThread(function()
-            while openRecolteIllegal do 
+            while openRecolteIllegal do
                 FreezeEntityPosition(PlayerPedId(), true)
                 RageUI.IsVisible(menuRecolteIllegal, function()
                     RageUI.Separator(TranslationIllegal.Farm["HarvestTitle"])
@@ -24,18 +25,21 @@ function openMenuRecolteIllegal(v)
                     RageUI.Line("color", 19, 107, 190)
                     RageUI.Button(v.Button, v.description, {RightLabel = "→"}, true, {
                         onSelected = function()
-                            Cfg.PercentStatsRecolte = true
+                            PercentIllegalStatsRecolte = true
                         end
                     })
-                    if Cfg.PercentStatsRecolte then 
-                        RageUI.PercentagePanel(Cfg.Percent, (TranslationIllegal.Farm["HarvestInProgress"]):format(math.floor(Cfg.Percent*100)), ' ', ' ', {})
-                        if Cfg.Percent < 1.0 then 
-                            Cfg.Percent = Cfg.Percent + v.speedFarm
+                    
+                    if PercentIllegalStatsRecolte then
+                        RageUI.PercentagePanel(PercentIllegal, ("Récolte en cours ~b~%s%%"):format(math.floor(PercentIllegal * 100)), ' ', ' ', {})
+                        
+                        if PercentIllegal < 1.0 then
+                            PercentIllegal = PercentIllegal + v.speedFarm
                         else
-                            Cfg.Percent = 100
+                            PercentIllegal = 1.0 -- Ne pas dépasser 1.0
                             TriggerServerEvent("fCore:FarmIllegal:Recolte", v.item, v.itemLabel, v.itemReward, v.weightMax, v.minimumCops, v.point)
                             anim(PlayerPedId(), 'random@domestic', 'pickup_low')
-                            Cfg.Percent  = 0
+                            PercentIllegal = 0
+                            PercentIllegalStatsRecolte = false -- Réinitialiser après l'action
                         end
                     end
                 end)
@@ -47,12 +51,13 @@ function openMenuRecolteIllegal(v)
 end
 
 
+
 local openTraitementIllegal = false 
 menuTraitementIllegal = RageUI.CreateMenu(" ", " ")
 menuTraitementIllegal.Closed = function()
     openTraitementIllegal = false 
-    Cfg.PercentStatsTraitement = false
-    Cfg.Percent  = 0
+    PercentIllegalStatsTraitement = false
+    PercentIllegal  = 0
 end
 
 function openMenuTraitementIllegal(v)
@@ -71,18 +76,18 @@ function openMenuTraitementIllegal(v)
                     RageUI.Line("color", 19, 107, 190)
                     RageUI.Button(v.Button, v.description, {RightLabel = "→"}, true, {
                         onSelected = function()
-                            Cfg.PercentStatsTraitement = true
+                            PercentIllegalStatsTraitement = true
                         end
                     })
-                    if Cfg.PercentStatsTraitement then 
-                        RageUI.PercentagePanel(Cfg.Percent, (TranslationIllegal.Farm["ProcessInProgress"]):format(math.floor(Cfg.Percent*100)), ' ', ' ', {})
-                        if Cfg.Percent < 1.0 then 
-                            Cfg.Percent = Cfg.Percent + v.speedFarm
+                    if PercentIllegalStatsTraitement then 
+                        RageUI.PercentagePanel(PercentIllegal, (TranslationIllegal.Farm["ProcessInProgress"]):format(math.floor(PercentIllegal*100)), ' ', ' ', {})
+                        if PercentIllegal < 1.0 then 
+                            PercentIllegal = PercentIllegal + v.speedFarm
                         else
-                            Cfg.Percent = 100
+                            PercentIllegal = 100
                             TriggerServerEvent("fCore:FarmIllegal:Traitement", v.itemNeed, v.itemNeedLabel, v.itemRemove, v.itemNameReward, v.itemRewardLabel, v.itemReward, v.minimumCops, v.itemMini, v.deuxItem, v.troisItem, v.item2Need, v.item2NeedLabel, v.item2Remove, v.item2NameReward, v.item2RewardLabel, v.item2Reward, v.item3Need, v.item3NeedLabel, v.item3Remove, v.item3NameReward, v.item3RewardLabel, v.item3Reward, v.item2Mini, v.item3Mini, v.point)
                             anim(PlayerPedId(), 'random@domestic', 'pickup_low')
-                            Cfg.Percent  = 0
+                            PercentIllegal  = 0
                         end
                     end
                 end)

@@ -130,7 +130,7 @@ function openMenuAdmin()
                     end
                     if ServiceAdmin then 
                         RageUI.Separator(TranslationAdministration.MenuAdmin["MenuAdmin"])
-                        RageUI.Line("color", 19, 107, 190)
+                        RageUI.Line("color", 249, 130, 42)
                         RageUI.Separator((TranslationAdministration.MenuAdmin["NbStaffActif"]):format(nbrAdmin))
                         if checkPerms("menureport") then 
                             RageUI.Button(TranslationAdministration.MenuAdmin["ReportDev"], nil, {RightLabel = "→→"}, true, {}, menuReport)
@@ -159,7 +159,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(MenuMeteo, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_weatherMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.Button(TranslationAdministration.MenuAdmin["S_changeTime"], nil, {}, true, {
                         onSelected = function()
                             time = lib.inputDialog(TranslationAdministration.MenuAdmin["S_changeTime"], {
@@ -189,7 +189,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(MenuMeteoCommand, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_weatherMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     for k,v in pairs(Administration.Meteo) do 
                         RageUI.Button((TranslationAdministration.MenuAdmin["S_currentTime"]):format(v.label), nil, {RightLabel = "→"}, true, {
                             onSelected = function()
@@ -201,7 +201,7 @@ function openMenuAdmin()
 
                 RageUI.IsVisible(MenuTemps, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_timeOptions"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     for k,v in pairs(Administration.Temps) do 
                         RageUI.Button((TranslationAdministration.MenuAdmin["S_currentTime"]):format(v.label), nil, {RightLabel = "→"}, true, {
                             onSelected = function()
@@ -213,7 +213,7 @@ function openMenuAdmin()
                 RageUI.IsVisible(menuReport, function()
                     if checkPerms("showreport") then 
                         RageUI.Separator(TranslationAdministration.MenuAdmin["MenuReport"])
-                        RageUI.Line("color", 19, 107, 190)
+                        RageUI.Line("color", 249, 130, 42)
                         if #reportTable > 0 then 
                             for k,v in pairs(reportTable) do
                                 local labelStatsReport = not v.prisEnCharge and TranslationAdministration.MenuAdmin["Attente"] or TranslationAdministration.MenuAdmin["EnCharge"]
@@ -248,9 +248,9 @@ function openMenuAdmin()
                             updateStatusReport()
                         end
                     })
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.Separator((TranslationAdministration.MenuAdmin["InfosReportEnCharge"]): format(name, id, nbr))
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     if checkPerms("tpjoueur") then 
                         RageUI.Button(TranslationAdministration.MenuAdmin["TeleporterVersLui"], reason, {RightLabel = "→→"}, true, {
                             onSelected = function()
@@ -430,7 +430,7 @@ function openMenuAdmin()
                                 end
                             })
                         end
-                        RageUI.Line("color", 19, 107, 190)
+                        RageUI.Line("color", 249, 130, 42)
                         if not Recherche then
                             for _, v in pairs(GetJobMenuAdmin) do 
                                 RageUI.Button(v.jobName.." | "..v.label, nil, {}, true, {
@@ -451,7 +451,7 @@ function openMenuAdmin()
                                     RageUI.Button(v.jobName.." | "..v.label, nil, {}, true, {
                                         onSelected = function()
                                             local input = lib.inputDialog(TranslationAdministration.MenuAdmin["Job12"], {{type = 'number', label = 'Job 1 ou 2', description = 'Le setjob doit est 1 ou 2', icon = 'hashtag'}})
-                                            if tonumber(input) then 
+                                            if input then 
                                                 setjobAdmin = input[1]
                                                 TriggerServerEvent("fCore:MenuAdmin:setjobReport", v.grade, v.jobName, setjobAdmin, id)
                                             end
@@ -464,7 +464,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(menuPersonnel, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_personalMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     if checkPerms("menuoptions") then 
                         RageUI.Button(TranslationAdministration.MenuAdmin["OptionsJoueur"], nil, {RightLabel = "→→"}, true, {}, optionJoueurAdmin)
                     end
@@ -474,7 +474,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(menuPedPersonel, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_pedMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.Button(TranslationAdministration.MenuAdmin["ChangerPed"], nil, {RightLabel = "→→"}, true, {}, menuListPedPersonel)     
                 end)
                 RageUI.IsVisible(menuGiveItemReport, function()
@@ -498,7 +498,7 @@ function openMenuAdmin()
                                 end
                             })
                         end
-                        RageUI.Line("color", 19, 107, 190)
+                        RageUI.Line("color", 249, 130, 42)
                         if not Recherche then
                             for _, v in pairs(GetItemMenuAdmin) do 
                                 RageUI.Button(v.label, nil, {}, true, {
@@ -531,8 +531,8 @@ function openMenuAdmin()
                     end
                 end)
                 RageUI.IsVisible(menuListPedPersonel, function()
-                    RageUI.Separator("↓ ~b~Ped options~s~↓")
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Separator("↓ ~o~Ped options~s~↓")
+                    RageUI.Line("color", 249, 130, 42)
                     if Recherche then
                         RageUI.Button(TranslationAdministration.MenuAdmin["AnnulerRecherche"], nil, {RightLabel = "→"}, true, {
                             onSelected = function()
@@ -709,7 +709,7 @@ function openMenuAdmin()
                                 end
                             })
                         end
-                        RageUI.Line("color", 19, 107, 190)
+                        RageUI.Line("color", 249, 130, 42)
                         if not Recherche then
                             for _, v in pairs(GetJobMenuAdmin) do 
                                 RageUI.Button(v.jobName.." | "..v.label, nil, {}, true, {
@@ -730,7 +730,7 @@ function openMenuAdmin()
                                     RageUI.Button(v.jobName.." | "..v.label, nil, {}, true, {
                                         onSelected = function()
                                             local input = lib.inputDialog(TranslationAdministration.MenuAdmin["Job12"], {TranslationAdministration.MenuAdmin["MettreQuelSetjob"]})
-                                            if tonumber(input) then 
+                                            if input then 
                                                 setjobAdmin = input[1]
                                                 TriggerServerEvent("fCore:MenuAdmin:setjob", v.grade, v.jobName, setjobAdmin)
                                             end
@@ -763,7 +763,7 @@ function openMenuAdmin()
                                 end
                             })
                         end
-                        RageUI.Line("color", 19, 107, 190)
+                        RageUI.Line("color", 249, 130, 42)
                         if not Recherche then
                             for _, v in pairs(GetItemMenuAdmin) do 
                                 RageUI.Button(v.label, nil, {}, true, {
@@ -797,7 +797,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(menuJoueur, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["MenuJoueur"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     if checkPerms("listeplayer") then
                         RageUI.Button(TranslationAdministration.MenuAdmin["ListeDesJoueurs"], nil, {RightLabel = "→→"}, true, {
                             onSelected = function()
@@ -808,8 +808,8 @@ function openMenuAdmin()
                     end
                 end)
                 RageUI.IsVisible(menuListJoueur, function()
-                    RageUI.Separator("↓ ~b~Liste des joueurs~s~ ↓")
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Separator("↓ ~o~Liste des joueurs~s~ ↓")
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.List("Filtrer par", {"En ligne", "Hors ligne", "Tout les joueurs"}, IndexFiltrePlayer, nil, {}, true, {
                         onListChange = function(Index, Items)
                             IndexFiltrePlayer = Index
@@ -845,10 +845,9 @@ function openMenuAdmin()
                         if not playerInZone then 
                             if not Recherche then 
                                 RageUI.Separator(TranslationAdministration.MenuAdmin["JoueursInZone"])
-                                RageUI.Line("color", 19, 107, 190)
+                                RageUI.Line("color", 249, 130, 42)
                                 RageUI.Separator((TranslationAdministration.MenuAdmin["S_onlinePlayer"]):format(#playerInSession))
                                 for k,v in pairs(serversIdSession) do
-                                    -- print(json.encode(v))
                                     if GetPlayerName(GetPlayerFromServerId(v)) == "**Invalid**" then 
                                         table.remove(serversIdSession, k) 
                                     end
@@ -861,7 +860,7 @@ function openMenuAdmin()
                                 end
                             else
                                 RageUI.Separator(TranslationAdministration.MenuAdmin["JoueursInZone"])
-                                RageUI.Line("color", 19, 107, 190)
+                                RageUI.Line("color", 249, 130, 42)
                                 for k,v in pairs(serversIdSession) do
                                     local lowercaseRecherche = string.lower(Recherche)
                                     local lowercaseFullName = string.lower("[ID : "..v.."~s~] - ~r~"..GetPlayerName(GetPlayerFromServerId(v)))
@@ -880,7 +879,7 @@ function openMenuAdmin()
                             end
                         elseif playerInZone then 
                             RageUI.Separator(TranslationAdministration.MenuAdmin["JoueursHorsZone"])
-                            RageUI.Line("color", 19, 107, 190)
+                            RageUI.Line("color", 249, 130, 42)
                             RageUI.Separator((TranslationAdministration.MenuAdmin["S_onlinePlayer"]):format(#playerInSession))
                             if not Recherche then 
                                 for k, v in pairs(playerInSession) do
@@ -913,8 +912,8 @@ function openMenuAdmin()
                             end
                         end
                     elseif IndexFiltrePlayer == 2 then 
-                        RageUI.Separator("↓ ~b~Hors ligne~s~ ↓")
-                        RageUI.Line("color", 19, 107, 190)
+                        RageUI.Separator("↓ ~o~Hors ligne~s~ ↓")
+                        RageUI.Line("color", 249, 130, 42)
                         if allUsersLoad then 
                             RageUI.Separator(("Nombre de joueur hors ligne : ~b~ %s"):format(#allUsers-#playerInSession))
                             if not Recherche then 
@@ -950,8 +949,8 @@ function openMenuAdmin()
                             end
                         end
                     elseif IndexFiltrePlayer == 3 then 
-                        RageUI.Separator("↓ ~b~Tous les joueurs~s~ ↓")
-                        RageUI.Line("color", 19, 107, 190)
+                        RageUI.Separator("↓ ~o~Tous les joueurs~s~ ↓")
+                        RageUI.Line("color", 249, 130, 42)
                         if allUsersLoad then 
                             RageUI.Separator(("Nombre de joueur total :~b~ %s"):format(#allUsers))
                             if not Recherche then 
@@ -985,8 +984,8 @@ function openMenuAdmin()
                     end
                 end)
                 RageUI.IsVisible(subMenuHorsLigne, function()
-                    RageUI.Separator("↓ ~b~Liste des actions ↓~s~")
-                    RageUI.Line("color", 19, 107, 190)  
+                    RageUI.Separator("↓ ~o~Liste des actions ↓~s~")
+                    RageUI.Line("color", 249, 130, 42)  
                     RageUI.Separator("Job : Police | Orga : Ballas")
                     RageUI.Separator((TranslationAdministration.MenuAdmin["ArgentPropre"]):format(moneyPlayer))
                     RageUI.Separator((TranslationAdministration.MenuAdmin["S_dirtyMoney"]):format(blackmoneyPlayer))
@@ -1002,8 +1001,8 @@ function openMenuAdmin()
                     RageUI.Button("Liste des véhicules ~b~[En dev]", nil, {RightLabel = "→→"}, true, {})
                 end)
                 RageUI.IsVisible(menuListPlayer, function()
-                    RageUI.Separator(("↓ ~b~%s~s~ ↓"):format(name))
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Separator(("↓ ~o~%s~s~ ↓"):format(name))
+                    RageUI.Line("color", 249, 130, 42)
                     if checkPerms("infojoueur") then
                         RageUI.Button(TranslationAdministration.MenuAdmin["InfosJoueurDev"], nil, {}, true, {
                             onSelected = function()
@@ -1136,7 +1135,7 @@ function openMenuAdmin()
                             end
                         })
                     end
-                    -- if checkPerms("wipe") then 
+                    if checkPerms("wipe") then 
                         RageUI.Button("Wipe le joueur", nil, {}, true, {
                             onSelected = function()
                                 for _,v in pairs(WipeLicense) do 
@@ -1145,11 +1144,11 @@ function openMenuAdmin()
                                 end
                             end
                         }, menuWipe)
-                    -- end
+                    end
                 end)
                 RageUI.IsVisible(menuWipe, function()
                     RageUI.Separator("↓ Option wipe ↓")
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.Button("Wipe total", nil, {}, true, {
                         onSelected = function()
                             local input = lib.inputDialog(TranslationAdministration.MenuAdmin["S_removeWarnPrompt"], {{type = 'input', label = TranslationAdministration.MenuAdmin["S_confirmPrompt"], description = TranslationAdministration.MenuAdmin["S_yesNoPrompt"], required = true},})
@@ -1227,7 +1226,7 @@ function openMenuAdmin()
                                 end
                             })
                         end
-                        RageUI.Line("color", 19, 107, 190)
+                        RageUI.Line("color", 249, 130, 42)
                         if not Recherche then
                             for _, v in pairs(GetJobMenuAdmin) do 
                                 RageUI.Button(v.jobName.." | "..v.label, nil, {}, true, {
@@ -1248,7 +1247,7 @@ function openMenuAdmin()
                                     RageUI.Button(v.jobName.." | "..v.label, nil, {}, true, {
                                         onSelected = function()
                                             local input = lib.inputDialog(TranslationAdministration.MenuAdmin["Job12"], {{type = 'number', label = 'Job 1 ou 2', description = 'Le setjob doit est 1 ou 2', icon = 'hashtag'}})
-                                            if tonumber(input) then 
+                                            if input then 
                                                 setjobAdmin = input[1]
                                                 TriggerServerEvent("fCore:MenuAdmin:setjobReport", v.grade, v.jobName, setjobAdmin, idJoueur)
                                             end
@@ -1306,8 +1305,8 @@ function openMenuAdmin()
                     })
                 end)
                 RageUI.IsVisible(showSanction, function()
-                    RageUI.Separator("↓ ~b~Liste des actions ↓~s~")
-                    RageUI.Line("color", 19, 107, 190)    
+                    RageUI.Separator("↓ ~o~Liste des actions ↓~s~")
+                    RageUI.Line("color", 249, 130, 42)    
                     RageUI.Button(TranslationAdministration.MenuAdmin["S_viewWarns"], nil, {RightLabel = "→→"}, true, {
                         onSelected = function()
                             getWarn(idPlayer)
@@ -1392,7 +1391,7 @@ function openMenuAdmin()
                         RageUI.Separator((TranslationAdministration.MenuAdmin["S_dirtyMoney"]):format(blackmoneyPlayer))
                         RageUI.Separator((TranslationAdministration.MenuAdmin["ArgentBanque"]):format(bankPlayer))
                         RageUI.Separator(TranslationAdministration.MenuAdmin["MenuInventaire"])
-                        RageUI.Line("color", 19, 107, 190)    
+                        RageUI.Line("color", 249, 130, 42)    
                         for k,v in pairs(infoInventoryPlayer) do 
                             if v.count > 0 then
                                 RageUI.List(("[~b~x%s~s~] - %s"):format(v.count ,v.label), {"Retirer", "Prendre"}, IndexInventory, nil, {}, true, {
@@ -1406,7 +1405,7 @@ function openMenuAdmin()
                                             })
                                             if input then
                                                 if input[1] <= v.count then 
-                                                    TriggerServerEvent("fCore:Admin:withdrawItem", 'retirer', input[1], v.name, idPlayer)
+                                                    TriggerServerEvent("fCore:Admin:withdrawItem", 'withdraw', input[1], v.name, idPlayer)
                                                     SetTimeout(200, function()
                                                         getInventoryPlayer(idPlayer)
                                                     end)
@@ -1420,7 +1419,7 @@ function openMenuAdmin()
                                             })
                                             if input then
                                                 if input[1] <= v.count then 
-                                                    TriggerServerEvent("fCore:Admin:withdrawItem", 'prendre', input[1], v.name, idPlayer)
+                                                    TriggerServerEvent("fCore:Admin:withdrawItem", 'take', input[1], v.name, idPlayer)
                                                     SetTimeout(200, function()
                                                         getInventoryPlayer(idPlayer)
                                                     end)
@@ -1437,7 +1436,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(menuVehicule, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_vehicleMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     if checkPerms("vehicleoption") then
                         RageUI.Button(TranslationAdministration.MenuAdmin["S_vehicleOptions"], nil, {RightLabel = "→→"}, true, {}, VehicleOptionAdmin)
                     end
@@ -1467,7 +1466,7 @@ function openMenuAdmin()
                                 end
                             })
                         end
-                        RageUI.Line("color", 19, 107, 190)
+                        RageUI.Line("color", 249, 130, 42)
                         if not Recherche then
                             for _, v in pairs(GetItemMenuAdmin) do 
                                 RageUI.Button(v.label, nil, {}, true, {
@@ -1501,7 +1500,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(VehicleOptionAdmin, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_vehicleOptionsMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.Button(TranslationAdministration.MenuAdmin["ReparerVehicule"], nil, {}, true, {
                         onSelected = function()
                             reparerVehicle()
@@ -1600,7 +1599,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(spawnVehicleAdmin, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_spawnMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.Button(TranslationAdministration.MenuAdmin["S_spawnByName"], nil, {}, true, {
                         onSelected = function()
                             local input = lib.inputDialog(TranslationAdministration.MenuAdmin["DonnerNomVehicule"], {TranslationAdministration.MenuAdmin["DonnerNomVehicule"]})
@@ -1614,7 +1613,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(listVehicleAdmin, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_categoryList"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     for k,v in pairs(listCategorie) do 
                         RageUI.Button(("Catégorie - %s"):format(v.label), nil, {RightLabel = "→→"}, true, {
                             onSelected = function()
@@ -1626,7 +1625,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(menuListVehicleAdmin, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_vehicleList"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     for k,v in pairs(listVehicleConcess) do 
                         if nameCategory == v.category then 
                             RageUI.Button(v.name, nil, {}, true, {
@@ -1639,7 +1638,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(menuAdministratif, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_adminMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     if checkPerms("mapping") then
                         RageUI.Button(TranslationAdministration.MenuAdmin["MenuMapping"], nil, {RightLabel = "→→"}, true, {}, menuMappingAdmin)
                     end
@@ -1670,7 +1669,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(menuCreateItem, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_createItemMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.Button(TranslationAdministration.MenuAdmin["S_createItem"], nil, {}, true, {
                         onSelected = function()
                             item = lib.inputDialog(TranslationAdministration.MenuAdmin["S_createItem"], {
@@ -1692,7 +1691,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(listeItem, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_itemListMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     if not finishToLoadTable then 
                         RageUI.Separator("")
                         RageUI.Separator(TranslationAdministration.MenuAdmin["AttenteDonnees"])
@@ -1713,7 +1712,7 @@ function openMenuAdmin()
                                 end
                             })
                         end
-                        RageUI.Line("color", 19, 107, 190)
+                        RageUI.Line("color", 249, 130, 42)
                         if not Recherche then
                             for _, v in pairs(GetItemMenuAdmin) do 
                                 RageUI.Button((TranslationAdministration.MenuAdmin["S_itemInfoLabel"]):format(v.label), (TranslationAdministration.MenuAdmin["S_itemInfoName"]):format(v.name, var, v.weight), {}, true, {
@@ -1743,7 +1742,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(modifierItem, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_itemModificationMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.List(TranslationAdministration.MenuAdmin["S_modifyItem"], {"Label", "name", var}, IndexModifItem, nil, {}, true, {
                         onListChange = function(Index, Items)
                             IndexModifItem = Index
@@ -1776,7 +1775,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(menuMappingAdmin, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_mappingMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     for _,v in pairs(Administration.PosMapping) do 
                         RageUI.Button(v.label, nil, {RightLabel = "→→"}, true, {
                             onSelected = function()
@@ -1787,14 +1786,14 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(gestionServeur, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_permissionsMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.Button(TranslationAdministration.MenuAdmin["manage_permission"], nil, {}, true, {}, gestionPermission)
                 end)
                 RageUI.IsVisible(gestionPermission, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_createRankMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.Button(TranslationAdministration.MenuAdmin["S_createRank"], nil, {}, true, {}, createGradeAdmin)
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.Button(TranslationAdministration.MenuAdmin["S_addAdmin"], nil, {}, true, {
                         onSelected = function()
                             Recherche = nil
@@ -1815,8 +1814,8 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(AddAdmin, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_onlinePlayersMenu"])
-                    RageUI.Line("color", 19, 107, 190)
-                    RageUI.Button("~b~Recherche un joueur~s~", nil, {RightLabel = "→→"}, true, {
+                    RageUI.Line("color", 249, 130, 42)
+                    RageUI.Button("~o~Recherche un joueur~s~", nil, {RightLabel = "→→"}, true, {
                         onSelected = function()
                             local input = lib.inputDialog("Recherche un joueur", {"Pour rechercher un joueur"})
                             if input then
@@ -1866,7 +1865,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(AddAdminOption, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_rankListMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     if loadGestionAdmin then 
                         for k,v in pairs(gestionAdmin) do 
                             RageUI.Button((TranslationAdministration.MenuAdmin["S_rankChangeInfo"]):format(v.color,v.namegrade), nil, {}, true, {
@@ -1880,7 +1879,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(addRolePlayer, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_selectRankMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.Button(TranslationAdministration.MenuAdmin["S_addAsAdmin"], nil, {}, true, {
                         onSelected = function()
                             local input = lib.inputDialog("Etes vous sur ?", {"Oui/Non"})
@@ -1895,8 +1894,8 @@ function openMenuAdmin()
                     })
                 end)
                 RageUI.IsVisible(createGradeAdmin, function()
-                    RageUI.Separator("↓ ~b~Création du grade ~s~↓")
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Separator("↓ ~o~Création du grade ~s~↓")
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.Button(TranslationAdministration.MenuAdmin["S_rankInfo"], nil, {}, true, {
                         onSelected = function()
                             local input = lib.inputDialog(TranslationAdministration.MenuAdmin["S_createNewRank"], {
@@ -1918,7 +1917,7 @@ function openMenuAdmin()
                     })
                     RageUI.Button(TranslationAdministration.MenuAdmin["S_setPermissions"], nil, {}, true, {}, GestionGradeadmin)
                     if createGradeAdminTable.idGarde and createGradeAdminTable.nameGrade and createGradeAdminTable.color then 
-                     RageUI.Line("color", 19, 107, 190)
+                     RageUI.Line("color", 249, 130, 42)
                         RageUI.Button(TranslationAdministration.MenuAdmin["S_createRank"], nil, {}, true, {
                             onSelected = function()
                                 TriggerServerEvent("fCore:Admin:CreateGradeAdmin", createGradeAdminTable, Administration.TablegestionGrade)
@@ -1929,7 +1928,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(gestionGererGrade, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_manageRankMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     if loadGestionAdmin then 
                         
                         for k,v in pairs(gestionAdmin) do 
@@ -1944,7 +1943,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(ManageGererGrade, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_manageRankMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.Button(TranslationAdministration.MenuAdmin["S_changeRankInfo"], nil, {}, true, {
                         onSelected = function()
                             local input = lib.inputDialog(TranslationAdministration.MenuAdmin["S_changeRankDetails"], {
@@ -1989,7 +1988,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(ChangePermissionGrade, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_permissionChangeMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     if addPerms then 
                         for k,v in pairs(addPerms) do 
                             RageUI.Checkbox(v.label, nil, v.status, {}, {
@@ -2007,7 +2006,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(GestionGradeadmin, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_manageRankMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.Checkbox("~b~Mettre toute les perms", nil, AllPerms, {}, {
                         onChecked = function()
                             for _,v in pairs(Administration.TablegestionGrade) do 
@@ -2050,7 +2049,7 @@ function openMenuAdmin()
                         })
                     end
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_adminManagementMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     if loadIsAdmin then 
                         if not Recherche then 
                             for _,v in pairs(isAdmin) do 
@@ -2079,7 +2078,7 @@ function openMenuAdmin()
                 end)
                 RageUI.IsVisible(gestionPlayerAdmin, function()
                     RageUI.Separator(TranslationAdministration.MenuAdmin["S_manageRankMenu"])
-                    RageUI.Line("color", 19, 107, 190)
+                    RageUI.Line("color", 249, 130, 42)
                     RageUI.Button(TranslationAdministration.MenuAdmin["S_removeFromStaff"], nil, {}, true, {
                         onSelected = function()
                             local input = lib.inputDialog('Supprimer le grade', {
@@ -2099,6 +2098,10 @@ function openMenuAdmin()
     end
 end
 
+Citizen.CreateThread(function()
+    TriggerServerEvent("fCore:Admin:getPermsAdmin")
+    TriggerServerEvent("fCore:Admin:getGroupAdmin")
+end)
 
 Keys.Register('F9', "menuAdmin", 'Ouvrir le menu Admin', function()
     if openAdmin == false then

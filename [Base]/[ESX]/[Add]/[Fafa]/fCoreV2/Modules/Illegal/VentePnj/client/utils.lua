@@ -89,7 +89,7 @@ CreateThread(function()
 					SetPedCanRagdollFromPlayerImpact(outEntity, false)
                     if dst <= 2.0 then 
                         if sellingIn then
-                            ESX.ShowHelpNotification(TranslationIllegal.VentePnj["AppuyerPourVendre"])
+                            ESX.ShowHelpNotification("E", TranslationIllegal.VentePnj["AppuyerPourVendre"], "Information", {97, 32, 32})
                             if IsControlJustPressed(1, 51) then
                                 ClearPedTasksImmediately(outEntity)
                                 MakeEntityFaceEntity(PlayerPedId(), outEntity)

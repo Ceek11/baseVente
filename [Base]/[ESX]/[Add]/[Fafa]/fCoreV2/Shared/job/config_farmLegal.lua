@@ -11,6 +11,7 @@ FarmLegal = {
             speedFarm = 0.0040,
             Button = "Récupérer des poulets", description = "Récupérer des poulets"
         },
+        
         {
             job = "abatoire",
             point = vector3(-62.40794, 6241.782, 31.09008),

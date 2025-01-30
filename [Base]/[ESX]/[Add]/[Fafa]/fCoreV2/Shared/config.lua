@@ -7,12 +7,11 @@ Cfg.Police = "police"
 Cfg.Sheriff = "sheriff"
 Cfg.PriceFoundEntreprise = 500
 Cfg.maxWeight = 60
-Cfg.Percent = 0
 
 
 BannerConfig = {}
 BannerConfig.TextureDictionary = "RageUI"
-BannerConfig.TextureName = "FafaDev"
+BannerConfig.TextureName = "FaFaDev"
 Cfg.DistMaxAnticheat = 200
 
 

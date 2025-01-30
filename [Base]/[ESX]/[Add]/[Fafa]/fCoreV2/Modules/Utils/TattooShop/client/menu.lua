@@ -51,7 +51,6 @@ function openMenuTattouage()
                             
                             for k,v in pairs(PlayerTattoos) do 
                                 if hashToCheck == v.nameHash then 
-                                    print(json.encode(v))
                                     RageUI.Button(GetLabelText(tattoo.Name), nil, {}, true, {
                                         onSelected = function()
                                             name = v.nameHash

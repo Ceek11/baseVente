@@ -19,6 +19,10 @@ function StringToArray(str)
     return strings
 end
 
+---MeasureStringWidth
+---
+--- Reference : Frazzle <3
+---
 ---@param str string
 ---@param font number
 ---@param scale number
@@ -33,6 +37,10 @@ function MeasureStringWidth(str, font, scale)
 end
 
 
+---AddText
+---
+--- Reference : Frazzle <3
+---
 ---@param str string
 function AddText(str)
     local str = tostring(str)
@@ -50,6 +58,10 @@ function AddText(str)
 end
 
 
+---GetLineCount
+---
+--- Reference : Frazzle <3
+---
 ---@param Text string
 ---@param X number
 ---@param Y number
@@ -157,40 +169,4 @@ function RenderText(Text, X, Y, Font, Scale, R, G, B, A, Alignment, DropShadow, 
     BeginTextCommandDisplayText("CELL_EMAIL_BCON")
     AddText(Text)
     EndTextCommandDisplayText(X, Y)
-end
-
-
-local SettingsButton = {
-    Rectangle = { Y = 0, Width = 420, Height = 38 },
-    Line = { X = 8, Y = 15 },
-    SelectedSprite = { Dictionary = "commonmenu", Texture = "gradient_nav", Y = 0, Width = 431, Height = 38 },
-}
-
-
-function RageUI.Line(Style, r,g,b,a)
-    local CurrentMenu = RageUI.CurrentMenu
-    if CurrentMenu ~= nil then
-        if CurrentMenu() then
-            local Option = RageUI.Options + 1
-            if CurrentMenu.Pagination.Minimum <= Option and CurrentMenu.Pagination.Maximum >= Option then
-                if Style == "color" then 
-                    RenderRectangle(CurrentMenu.X + SettingsButton.Line.X + (CurrentMenu.WidthOffset * 2.5 ~= 0 and CurrentMenu.WidthOffset * 2.5 or 60), CurrentMenu.Y + SettingsButton.Line.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 300, 3, r,g,b,a)
-                else 
-                    RenderRectangle(CurrentMenu.X + SettingsButton.Line.X + (CurrentMenu.WidthOffset * 2.5 ~= 0 and CurrentMenu.WidthOffset * 2.5 or 60), CurrentMenu.Y + SettingsButton.Line.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 300, 3, 255,255,255,170)
-                end
-                RageUI.ItemOffset = RageUI.ItemOffset + SettingsButton.Rectangle.Height
-                if (CurrentMenu.Index == Option) then
-                    if (RageUI.LastControl) then
-                        CurrentMenu.Index = Option - 1
-                        if (CurrentMenu.Index < 1) then
-                            CurrentMenu.Index = RageUI.CurrentMenu.Options
-                        end
-                    else
-                        CurrentMenu.Index = Option + 1
-                    end
-                end
-            end
-            RageUI.Options = RageUI.Options + 1
-        end
-    end
 end

@@ -3,7 +3,7 @@ local Coffre = {}
 local OpenCoffreBoss = false 
 MenuCoffreBoss = RageUI.CreateMenu(" ", " ", nil, nil, BannerConfig.TextureDictionary, BannerConfig.TextureName)
 MenuDeposerCoffreBoss = RageUI.CreateSubMenu(MenuCoffreBoss,  " ", " ", nil, nil, BannerConfig.TextureDictionary, BannerConfig.TextureName)
-MenuRetirerCoffreBoss = RageUI.CreateSubMenu(MenuCoffreBoss, " ", " ", nil, nil, BannerConfig.TextureDictionary, BannerConfig.TextureName)
+MenuRetirerCoffreBoss = RageUI.CreateSubMenu(MenuCoffreBoss, "", " ", nil, nil, BannerConfig.TextureDictionary, BannerConfig.TextureName)
 MenuCoffreBoss.Closed = function()
     OpenCoffreBoss = false
 end

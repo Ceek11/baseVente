@@ -1,6 +1,6 @@
 CoordsTestVehi = vector3(-903.8311, -3194.639, 13.95052)
 HeadingTestVehi = 40
-CoordsSpawnVehi = vector3(-23.65836, -1094.654, 27.30526)
+CoordsSpawnVehi = vec3(-13.205750, -1086.700318, 26.672076)
 HeadingSpawnVehi = 334
 
 CoordsTestBateau = vector3(-4891.264160, -2572.384034, 0.495786)

@@ -76,7 +76,6 @@ end)
 -- MenU f6
 RegisterNetEvent("fCore:Police:AddInFourriere")
 AddEventHandler("fCore:Police:AddInFourriere", function(plate)
-    print(plate)
     MySQL.Async.execute("UPDATE owned_vehicles SET stored = @stored WHERE plate = @plate", {
         ["@plate"] = plate,
         ["@stored"] = 0,

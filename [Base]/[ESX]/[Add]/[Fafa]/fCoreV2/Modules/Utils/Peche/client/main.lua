@@ -13,7 +13,7 @@ function CancelAnim()
     CreateThread(function()
         AnimActif = true
         while AnimActif do 
-            RageUI.Text({message = "Appuyer sur ~r~X~s~ pour arrêter les animations"})   
+            Visual.Text({message = "Appuyer sur ~r~X~s~ pour arrêter les animations"})   
             if IsControlJustPressed(1, 73) then 
                 DeleteAnim()
             end

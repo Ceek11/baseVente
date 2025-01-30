@@ -12,7 +12,6 @@ AddEventHandler("fCore:Bijouterie:giveInformationRob", function(result)
 end)
 
 CreateThread(function()
-
     local hash = GetHashKey(Bijouterie.pedHash)
     while not HasModelLoaded(hash) do
         RequestModel(hash)
@@ -38,7 +37,10 @@ CreateThread(function()
                     if DoesEntityExist(targetPed) and not IsEntityDead(targetPed) then
                         local pedModelHash = GetEntityModel(targetPed)
                         local scared = 0
-                        if pedModelHash == Bijouterie.pedHash then 
+                        print(pedModelHash)
+                        print(Bijouterie.pedHash)
+                        if pedModelHash == GetHashKey(Bijouterie.pedHash) then 
+                            print("ooo")
                             TriggerEvent("ActiveAnum")
                             while scared < 100 and not IsPedDeadOrDying(pedBijouterie) and distance <= 7.5 do 
                                 local sleep = 1200
@@ -55,7 +57,7 @@ CreateThread(function()
                                 while sleep >= GetGameTimer() and not IsPedDeadOrDying(pedBijouterie) do
                                     Wait(0)
                                     DrawRect(0.5, 0.5, 0.2, 0.03, 75, 75, 75, 200)
-                                    local draw = scared/500
+                                    local draw = scared / 500
                                     DrawRect(0.5, 0.5, draw, 0.03, 249, 130, 42, 200)
                                 end
                                 scared = scared + 2
@@ -81,15 +83,15 @@ CreateThread(function()
                 end
             else
                 showMessage = true
-                while showMessage do
-                    Wait(0)
+                -- while showMessage do
+                    -- Wait(0)
                     local distance = #(GetEntityCoords(PlayerPedId()) - Bijouterie.posPed)
                     if distance <= 5 then 
                         DrawText3D(Bijouterie.posPed, TranslationIllegal.Bijouterie["AlreadyRobbed"])
                     else
                         showMessage = false
                     end
-                end
+                -- end
             end
         end        
         Wait(interval)
@@ -121,7 +123,7 @@ function ActiveMarkerBijouterie()
                         interval = 0
                         DrawMarker(20, dest.x, dest.y, dest.z, 0.0, 0.0, 0.0, 0.0,0.0,0.0, 0.3, 0.3, 0.2, 249,130, 42, 55555, false, true, 2, false, false, false, false)
                         if dist <= 1.5 then 
-                            ESX.ShowHelpNotification(TranslationIllegal.Bijouterie["RobPrompt"])
+                            ESX.ShowHelpNotification("E", TranslationIllegal.Bijouterie["RobPrompt"], "Information", {97, 32, 32})
                             if IsControlJustPressed(1, 51) then
                                 ESX.TriggerServerCallback("fCore:Bijouterie:getBreakglass", function(result) 
                                     if result then

@@ -7,7 +7,6 @@ ESX.RegisterServerCallback("fCore:Echap:CheckIdUnique", function(source, cb)
         for k,v in pairs(result) do 
             idUnique = v.id
         end
-        print(idUnique)
         cb(idUnique)
     end)
 end)
@@ -23,7 +22,6 @@ AddEventHandler("fCore:oxTarget:getId", function(id)
     MySQL.Async.fetchAll("SELECT id FROM uniqueid WHERE identifier = @identifier", {["@identifier"] = xTarget.identifier}, function(result)
         for k,v in pairs(result) do 
             idUnique = v.id
-            print(json.encode(idUnique))
         end
         sNotification(_src, ("Id unique : %s<br>Id server %s"):format(idUnique, id), "Action", "vert")
     end)

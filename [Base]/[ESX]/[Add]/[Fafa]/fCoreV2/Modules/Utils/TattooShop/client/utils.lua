@@ -127,7 +127,6 @@ end
 
 function RemoveTattoo(name, label)
 	for k, v in pairs(currentTattoos) do
-        print(v.nameHash)
 		if v.nameHash == name then
 			table.remove(currentTattoos, k)
 		end

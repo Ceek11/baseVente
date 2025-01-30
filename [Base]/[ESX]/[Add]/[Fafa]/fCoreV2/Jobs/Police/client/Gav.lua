@@ -69,7 +69,7 @@ end)
 
 function updateExpirationText()
     while inGav do
-        RageUI.Text({message = (TranslationJob.Police["inJailDuring"]):format(expirationFormat)})
+        Visual.Text({message = (TranslationJob.Police["inJailDuring"]):format(expirationFormat)})
         Wait(0)
     end
 end

@@ -57,7 +57,6 @@ Citizen.CreateThread(function()
                                     if distance >= 10 then 
                                         info.robbed = true
                                         scared = 100
-                                        print("3")
                                         cNotification(TranslationIllegal.Fleeca["TooFar"])
                                     end
                                     local sleep = 1200
@@ -153,7 +152,6 @@ function ActiveMarkerFleeca(Robbery, valeur)
                 local dest = v.posPirate 
                 local dist = #(dest-posPlayer)
                 if dist >= 40 then 
-                    print("2")
                     Robbery = false
                     showPiratagePoint = false
                     DeleteEntity(Trolley1)
@@ -164,7 +162,7 @@ function ActiveMarkerFleeca(Robbery, valeur)
                     interval = 0
                     DrawMarker(20, dest.x, dest.y, dest.z, 0.0, 0.0, 0.0, 0.0,0.0,0.0, 0.3, 0.3, 0.2, 249,130, 42, 55555, false, true, 2, false, false, false, false)
                     if dist <= 1.5 then 
-                        ESX.ShowHelpNotification(TranslationIllegal.Fleeca["HackPrompt"])
+                        ESX.Show(TranslationIllegal.Fleeca["HackPrompt"], "Information", {97, 32, 32}, "E")
                         if IsControlJustPressed(1, 51) then 
                             showPiratagePoint = false
                             ESX.TriggerServerCallback("fCore:Fleeca:GetItemPiratage", function(result) 
@@ -232,7 +230,7 @@ function activePointPerceuse(valeur)
                     interval = 0
                     DrawMarker(20, dest.x, dest.y, dest.z, 0.0, 0.0, 0.0, 0.0,0.0,0.0, 0.3, 0.3, 0.2, 249,130, 42, 55555, false, true, 2, false, false, false, false)
                     if dist <= 1.5 then 
-                        ESX.ShowHelpNotification(TranslationIllegal.Fleeca["DrillPrompt"])
+                        ESX.ShowHelpNotification("E", TranslationIllegal.Fleeca["DrillPrompt"], "Information", {97, 32, 32})
                         if IsControlJustPressed(1, 51) then 
                             ESX.TriggerServerCallback("fCore:Fleeca:GetItemPerceuse", function(result)     
                                 if result then        

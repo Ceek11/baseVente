@@ -4,7 +4,6 @@ function CreateAddonAccount(name, owner, money)
 	self.name  = name
 	self.owner = owner
 	self.money = money
-
 	self.addMoney = function(m)
 		self.money = self.money + m
 		self.save()

@@ -131,7 +131,6 @@ end)
 
 
 ESX.RegisterServerCallback("fCore:vip:GetIfHaveVip", function(source, cb)
-    print("cuoccoucuoouuoouuouo")
     local _src = source 
     local xPlayer = ESX.GetPlayerFromId(_src)
     MySQL.Async.fetchAll("SELECT vip FROM uniqueid WHERE identifier = @identifier", {

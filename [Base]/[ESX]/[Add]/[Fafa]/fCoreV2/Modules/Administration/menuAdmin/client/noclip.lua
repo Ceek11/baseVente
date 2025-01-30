@@ -12,14 +12,18 @@ Citizen.CreateThread(function()
             
             if IsPedInAnyVehicle(PlayerPedId(), false) then
                 noclipEntity = GetVehiclePedIsIn(PlayerPedId(), false)
+                noclipPlayer = PlayerPedId()
             else
                 noclipEntity = PlayerPedId()
             end
             
             if not noclipActive then
                 ResetEntityAlpha(noclipEntity)
+            elseif noclipActive and IsPedInAnyVehicle(PlayerPedId(), false) then 
+                SetEntityAlpha(noclipEntity, math.floor(0), 0)
+                SetEntityAlpha(noclipPlayer, math.floor(0), 0)
             else
-                SetEntityAlpha(noclipEntity, math.floor(255 * 0.2), 0)
+                SetEntityAlpha(noclipEntity, math.floor(0), 0)
             end
             
             SetEntityCollision(noclipEntity, not noclipActive, not noclipActive)

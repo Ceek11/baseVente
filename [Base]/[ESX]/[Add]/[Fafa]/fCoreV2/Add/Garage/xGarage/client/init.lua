@@ -8,7 +8,6 @@ CreateThread(function()
             if dst <= GaragePublic.MarkerDistance then
                 wait = 0
                 if v.Type == "vehicle" then 
-                    -- DrawMarker(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, red, green, blue, alpha, bobUpAndDown, faceCamera, p19, rotate, textureDict, textureName, drawOnEnts)
                     DrawMarker(36, pos, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, 40, 190, 0, 55555, false, true, 2, false, false, false, false)
                 elseif v.Type == "bateau" then 
                     DrawMarker(35, pos, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, 40, 190, 0, 55555, false, true, 2, false, false, false, false)                
@@ -16,7 +15,7 @@ CreateThread(function()
             end
             if dst <= 2.0 then
                 wait = 0
-                ESX.ShowHelpNotification("Appuyez sur ~INPUT_CONTEXT~ pour intéragir.")
+                ESX.ShowHelpNotification("E", "Pour intéragir", "Information", {97, 32, 32})
                 if IsControlJustPressed(1, 51) then
                     FreezeEntityPosition(PlayerPedId(), true)
                     openMenuGaragePublic(v.Type, v.PosSortie)
@@ -37,7 +36,7 @@ CreateThread(function()
             end
             if dst <= 2.0 then
                 wait = 0
-                ESX.ShowHelpNotification(("Appuyez sur ~INPUT_CONTEXT~ pour intéragir. (~g~%s$~s~)"):format(GaragePublic.PriceFourriere))
+                ESX.ShowHelpNotification("E", ("Pour intéragir. (~g~%s$~s~)"):format(GaragePublic.PriceFourriere), "Information", {97, 32, 32})
                 if IsControlJustPressed(1, 51) then
                     FreezeEntityPosition(PlayerPedId(), true)
                     openMenuFourriere(v.Type, v.PosSortie)
@@ -60,7 +59,7 @@ CreateThread(function()
                 end
                 if dst <= 2.0 then
                     wait = 0
-                    ESX.ShowHelpNotification("Appuyez sur ~INPUT_CONTEXT~ pour intéragir.")
+                    ESX.ShowHelpNotification("E", "Pour intéragir.", "Information", {97, 32, 32})
                     if IsControlJustPressed(1, 51) then
                         ESX.TriggerServerCallback("xGarage:stockCar", function(can)
                             if can then

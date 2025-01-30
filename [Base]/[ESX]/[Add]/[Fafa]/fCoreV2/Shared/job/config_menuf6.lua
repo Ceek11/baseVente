@@ -169,7 +169,7 @@ MenuF6 = {
         },
     },
     Mecano = {
-        job = {"benny", "lscustomnord", "lscustomsud"},
+        job = {"benny", "lscustomnord", "lscustomsud", "est_mecan"},
         plateau = {"lscustomnord", "lscustomsud"},
         Position = {
             benny = {

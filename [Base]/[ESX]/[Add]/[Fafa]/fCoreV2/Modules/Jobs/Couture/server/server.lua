@@ -23,7 +23,6 @@ AddEventHandler("fCore:Couture:Caution", function(caution, Type, name, spawn, he
             end
         end
     elseif Type == 2 then  
-        print(test)
         xPlayer.addAccountMoney(test, caution)
         sNotification(_src, (Translation.Couture["depositRefunded"]):format(caution))
     end

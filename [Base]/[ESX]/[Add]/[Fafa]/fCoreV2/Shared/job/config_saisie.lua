@@ -7,4 +7,5 @@ SaisieJob = {
         job = "police",
         societyName = "society_police_saisie",
     },
+    
 }

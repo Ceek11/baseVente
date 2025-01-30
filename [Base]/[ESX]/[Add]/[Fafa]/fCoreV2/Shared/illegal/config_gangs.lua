@@ -89,31 +89,4 @@ InfoGang = {
         posCoffre = vec3(5011.868164, -5745.136718, 19.89),
         society = "society_bandadiaz",
     },
-    {
-        GangName = "DOA",
-        JobName = "doa",
-        GradeBoss = "boss",
-        maxMember = 20,
-        Webhooks = "https://discord.com/api/webhooks/1122324778670370876/oJGxacJmsybCeWD0x9yVENTe_Z8Xnm-K9Y22TFhmlqLpcym9-Sy_PDMUdj5dpQVyKsmI",
-        posCoffre = vec3(0.0,0.0,0.0),
-        society = "society_doa",
-    },
-    {
-        GangName = "SWAT",
-        JobName = "swat",
-        GradeBoss = "boss",
-        maxMember = 20,
-        Webhooks = "https://discord.com/api/webhooks/1122324709174956043/6fAdTiEaplQpPYCJGDKJOV2W_AXhBHziM7JHKtHRu_D4UaBYFtqqrDoQ3FlDQiiefIwW",
-        posCoffre = vec3(0.0,0.0,0.0),
-        society = "society_swat",
-    },
-    {
-        GangName = "SSD",
-        JobName = "ssd",
-        GradeBoss = "boss",
-        maxMember = 20,
-        Webhooks = "https://discord.com/api/webhooks/1122324832713973820/MJZdsw-QLaQSa8Qv_F6v2GdgCoOGnDOj2H9l6z9W_vjPsi51xE_nRHzrh2zEiucHHlEp",
-        posCoffre = vec3(0.0,0.0,0.0),
-        society = "society_ssd",
-    }
 }

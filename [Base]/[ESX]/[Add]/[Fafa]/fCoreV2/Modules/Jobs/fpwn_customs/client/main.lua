@@ -1239,13 +1239,15 @@ Citizen.CreateThread(function()
                         interval = 0
                         DrawMarker(27, dest.x, dest.y, dest.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, 249, 130, 42, 55555, false, false, 2, false, false, false, false)
                         if dist <= 3 then 
-                            ESX.ShowHelpNotification(Config.Zones[1]['Hint'])
+                            ESX.ShowHelpNotification("E", Config.Zones[1]['Hint'], "Information", {97, 32, 32})
                             if IsControlJustReleased(0, 38) then
                                 if ESX.PlayerData.job and ESX.PlayerData.job.name == v.job then
                                     terminatePurchase()
                                     getCarPrice()
                                     vehicleClass = GetVehicleClass(vehPedIsIn)
-                                    if vehicleClass ~= 8 and ESX.PlayerData.job.name == v.job then
+                                    print(vehicleClass)
+                                    if ESX.PlayerData.job.name == v.job then
+
                                         vehModsOld = ESX.Game.GetVehicleProperties(vehPedIsIn)
                                         SetVehicleModKit(vehPedIsIn, 0)
                                         TriggerServerEvent('fpwn_customs:saveVehicle', vehModsOld)

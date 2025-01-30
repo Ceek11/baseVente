@@ -1,6 +1,6 @@
 venteOccasion = {
     PointVente = {
-        {pos = vector3(2759.558106, 3467.597656, 55.708474), texte = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le point de vente"}
+        {pos = vector3(2759.558106, 3467.597656, 55.708474), texte = "Pour ouvrir le point de vente"}
     },
     PointParking = {
         vector4(2754.597412, 3439.777344, 55.884426, 66.0),

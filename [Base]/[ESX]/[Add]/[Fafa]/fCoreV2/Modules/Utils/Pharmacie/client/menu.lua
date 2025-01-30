@@ -5,7 +5,6 @@ menuPharmacie.Closed = function()
 end
 
 function openPharmacieMenu()
-    print("mmmmmm")
     if openPharmacie then 
         openPharmacie = false 
         RageUI.Visible(menuPharmacie, false)

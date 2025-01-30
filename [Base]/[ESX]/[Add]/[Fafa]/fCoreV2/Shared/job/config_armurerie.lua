@@ -21,4 +21,6 @@ Armurerie = {
             {label = "Boite Calibre 12", name = "boite_mun_pompe", price = 500},
         },
     },
+    
+    
 }

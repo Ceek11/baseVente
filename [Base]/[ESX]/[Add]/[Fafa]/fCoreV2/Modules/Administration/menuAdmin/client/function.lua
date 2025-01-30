@@ -1,3 +1,9 @@
+ESX = exports["es_extended"]:getSharedObject()
+
+function cNotification(message)
+    ESX.ShowNotification(message)
+end
+
 function SpawnVehicle(name, pos, heading, TaskWarp)
     RequestModel(name)
     while not HasModelLoaded(name) do
@@ -201,6 +207,25 @@ function ShowGodMod(status)
     end
 end
 
+
+RegisterNetEvent("fCore:revive")
+AddEventHandler("fCore:revive", function(id)
+    local playerPed = GetPlayerPed(GetPlayerFromServerId(id))
+    if DoesEntityExist(playerPed) then
+        isDead = false
+        TriggerServerEvent("fCore:heal", id)
+        TriggerServerEvent("esx:playerIsDead", 0)
+        StopScreenEffect('DeathFailOut')
+        SetEntityHealth(playerPed, 200)
+        ClearPedTasksImmediately(playerPed)
+        local coords = GetEntityCoords(playerPed)
+        SetEntityCoords(playerPed, coords.x, coords.y, coords.z + 0.5, false, false, false, false)
+        NetworkResurrectLocalPlayer(coords.x, coords.y, coords.z + 0.5, 0, true, false)
+        SetPlayerInvincible(GetPlayerFromServerId(id), false)
+        SetEntityInvincible(playerPed, false)
+        SetEntityVisible(playerPed, true)
+    end
+end)
 
 blipsActive = false
 function ShowBlips(status)
@@ -406,8 +431,6 @@ end
 playerInSession = {}
 local isNewPlayer = false 
 AddEventHandler("playerSpawned", function()
-    TriggerServerEvent("fCore:Admin:getPermsAdmin")
-    TriggerServerEvent("fCore:Admin:getGroupAdmin")
     if not isNewPlayer then 
         TriggerServerEvent("fCore:Admin:addNewPlayer")
         isNewPlayer = true
@@ -501,10 +524,11 @@ function showReport(status)
         updateStatusReport()
 
         while reportInProgress do 
-            RageUI.Text({message = (TranslationAdministration.MenuAdmin["InfosReport"]):format(#reportTable, reportEnAttente, reportEnCharge)})   
+            Visual.Text({message = (TranslationAdministration.MenuAdmin["InfosReport"]):format(#reportTable, reportEnAttente, reportEnCharge)})   
             Wait(0)
         end
-    else 
+    else
+        ClearPrints() 
         reportInProgress = false
     end
 end
@@ -579,7 +603,7 @@ Citizen.CreateThread(function()
         if drawInfo then
             interval = 0
             local targetPed = GetPlayerPed(drawTarget)
-            RageUI.Text({ message = TranslationAdministration.MenuAdmin["ArreterSpectateur"]})
+            Visual.Text({ message = TranslationAdministration.MenuAdmin["ArreterSpectateur"]})
             if IsControlJustPressed(0, 51) then
                 NetworkSetInSpectatorMode(false, PlayerPedId())
                 StopDrawPlayerInfo()
@@ -717,7 +741,9 @@ end
 
 function checkPerms(labelPerms)
     for _,v in pairs(getPermsAdmin) do 
+        
         if v.idgrade == getGroupA then
+
             permissions = json.decode(v.permissions)
             for _, perms in pairs(permissions) do 
                 if perms.name == labelPerms then

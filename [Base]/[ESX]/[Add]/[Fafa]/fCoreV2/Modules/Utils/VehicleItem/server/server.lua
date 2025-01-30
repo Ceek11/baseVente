@@ -19,15 +19,19 @@ AddEventHandler("fCore:RemoveVehicleFromServer", function(vehicleNetId)
     local _src = source 
     local vehicle = NetworkGetEntityFromNetworkId(vehicleNetId)
     local xPlayer = ESX.GetPlayerFromId(_src)
+    local getWeight = xPlayer.getWeight()
     if not xPlayer then return end
     if DoesEntityExist(vehicle) then
         checkPos(GetEntityCoords(vehicle), _src)
         local seat = GetPedInVehicleSeat(vehicle, -1)
         if seat == 0 then
+            if getWeight < Cfg.maxWeight then 
                 DeleteEntity(vehicle)
                 xPlayer.addInventoryItem("bmx", 1)
                 sNotification(_src, Translation.VehicleItem["sNotif_collect_vehicle"], "Action", "vert")
-
+            else
+                sNotification(_src, "Vous n'avez pas assez de place sur vous") 
+            end
         else
             sNotification(_src, Translation.VehicleItem["sNotif_vehicle_occupied"])
         end

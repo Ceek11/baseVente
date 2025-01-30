@@ -63,7 +63,7 @@ function cancelAnim()
     local inAnim = true
     CreateThread(function()
         while inAnim do 
-            ESX.ShowHelpNotification("Appuyer sur ~INPUT_CONTEXT~ pour arrêter l'animation")
+			ESX.ShowHelpNotification("E", "Pour arrêter l'animation.", "Information", {97, 32, 32})
             if IsControlJustPressed(1, 51) then 
                 ClearPedTasks(PlayerPedId())
                 inAnim = false
@@ -78,7 +78,7 @@ function cancelAnim()
     local inAnim = true
     CreateThread(function()
         while inAnim do 
-            ESX.ShowHelpNotification("Appuyer sur ~INPUT_CONTEXT~ pour arrêter l'animation")
+			ESX.ShowHelpNotification("E", "Pour arrêter l'animation.", "Information", {97, 32, 32})
             if IsControlJustPressed(1, 51) then 
 				carry.InProgress = false
 				ClearPedSecondaryTask(PlayerPedId())

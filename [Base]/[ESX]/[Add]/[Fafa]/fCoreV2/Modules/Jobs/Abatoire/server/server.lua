@@ -23,7 +23,6 @@ AddEventHandler("fCore:Abatoire:Caution", function(caution, Type, name, spawn, h
             end
         end
     elseif Type == 2 then  
-        print(test)
         xPlayer.addAccountMoney(test, caution)
         sNotification(_src, (Translation.Abatoire["depositRefunded"]):format(caution))
     end

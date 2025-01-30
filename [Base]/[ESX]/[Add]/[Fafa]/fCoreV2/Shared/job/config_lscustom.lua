@@ -1,8 +1,7 @@
 Config                   = {}
 Config.Locale            = 'fr'
 
-
-
+print(Config.Locale['fr'])
 Config.Zones = {
 	{
         job = "benny",
