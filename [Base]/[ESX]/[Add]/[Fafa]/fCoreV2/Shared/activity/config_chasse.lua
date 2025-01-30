@@ -1,0 +1,2 @@
+Chasse = {}
+Chasse.WhiteList = {viande_biche = "a_c_deer", viande_lapin = "a_c_rabbit_01", viande_sanglier = "a_c_boar", viande_oie = "a_c_seagull", peau_puma = "a_c_mtlion", peau_coyotte = "a_c_coyote"}

@@ -1,0 +1,73 @@
+Dj = {}
+
+Dj.Debug = true 
+Dj.DefaultVolume = 0.1 
+Dj.Distance = 5.0 
+
+Dj.Pos = {
+    {
+        jobName = "bahamas",
+        name = 'Bahamas',
+        radius = 30, 
+        distance = 2.5,
+        isPlaying = false,
+        coords = vec3(-1391.092042, -605.201354, 30.518406),
+        maxDistMarker = 10, distMax3D = 1.5, 
+        markerType = 27, text = "Appuyer ~b~[E]~s~ pour ~g~ouvrir~s~ le ~b~menu DJ~s~",
+        sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0,
+        rotX = 0.0, rotY = 0.0, rotZ = 0.0, 
+        r = 249, g = 130, b = 42, a = 55555,
+    },
+    {
+        jobName = "unicorn",
+        name = 'Unicorn',
+        radius = 30, 
+        distance = 2.5,
+        isPlaying = false,
+        coords = vec3(120.664024, -1281.275756, 29.480466),
+        maxDistMarker = 10, distMax3D = 1.5, 
+        markerType = 27, text = "Appuyer ~b~[E]~s~ pour ~g~ouvrir~s~ le ~b~menu DJ~s~",
+        sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0,
+        rotX = 0.0, rotY = 0.0, rotZ = 0.0, 
+        r = 249, g = 130, b = 42, a = 55555,
+    },
+    {
+        jobName = "tequilala",
+        name = 'Tequilala',
+        radius = 30, 
+        distance = 2.5,
+        isPlaying = false,
+        coords = vec3(-550.749634, 282.721466, 82.976670),
+        maxDistMarker = 10, distMax3D = 1.5, 
+        markerType = 27, text = "Appuyer ~b~[E]~s~ pour ~g~ouvrir~s~ le ~b~menu DJ~s~",
+        sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0,
+        rotX = 0.0, rotY = 0.0, rotZ = 0.0, 
+        r = 249, g = 130, b = 42, a = 55555,
+    },
+    {
+        jobName = "nikkibeach",
+        name = 'Nikki Beach',
+        radius = 30, 
+        distance = 2.5,
+        isPlaying = false,
+        coords = vec3(-1476.111206, -1249.966796, 2.902104),
+        maxDistMarker = 10, distMax3D = 1.5, 
+        markerType = 27, text = "Appuyer ~b~[E]~s~ pour ~g~ouvrir~s~ le ~b~menu DJ~s~",
+        sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0,
+        rotX = 0.0, rotY = 0.0, rotZ = 0.0, 
+        r = 249, g = 130, b = 42, a = 55555,
+    },
+    {
+        jobName = "henhouse",
+        name = 'Hen House',
+        radius = 30, 
+        distance = 2.5,
+        isPlaying = false,
+        coords = vec3(-311.953370, 6265.135254, 32.061576),
+        maxDistMarker = 10, distMax3D = 1.5, 
+        markerType = 27, text = "Appuyer ~b~[E]~s~ pour ~g~ouvrir~s~ le ~b~menu DJ~s~",
+        sizeX = 0.5, sizeY = 0.5,  sizeZ = 1.0,
+        rotX = 0.0, rotY = 0.0, rotZ = 0.0, 
+        r = 249, g = 130, b = 42, a = 55555,
+    },
+}

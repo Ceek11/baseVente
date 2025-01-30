@@ -1,0 +1,56 @@
+
+Vente = {
+    Object = {
+       -- { -----Vente Pêche Légal
+       --     text = "Appuyer ~b~[E]~s~ pour ~g~parler ~s~au ~b~poissonner",
+       --     point = vec3(-330.979736, -2778.924804, 6.145104),
+       --     typeMoney = "money", 
+       --     Produit = {
+       --         {label = "Anchois", name = "anchois", price = 5, MaxList = 50, Index = 1},
+       --         {label = "Morue", name = "morue", price = 15, MaxList = 50, Index = 1},
+       --         {label = "Raie", name = "raie", price = 25, MaxList = 50, Index = 1},
+       --         {label = "Saumon", name = "saumon", price = 30, MaxList = 50, Index = 1},
+       --         {label = "Thon", name = "thon", price = 40, MaxList = 50, Index = 1},
+       --     }
+      --  },
+     --   { -----Vente Chasse Légal
+     --       text = "Appuyer ~b~[E]~s~ pour ~g~parler ~s~au ~b~boucher",
+     --       point = vec3(-679.177368, 5834.396972, 18.331306),
+     --       typeMoney = "money", 
+     --       Produit = {
+     --           {label = "Viande de canard", name = "viande_canard", price = 35, MaxList = 50, Index = 1},
+     --           {label = "Viande de lapin", name = "viande_lapin", price = 45, MaxList = 50, Index = 1},
+     --           {label = "Viande de biche", name = "viande_biche", price = 65, MaxList = 50, Index = 1},
+     --           {label = "Viande de sanglier", name = "viande_sanglier", price = 80, MaxList = 50, Index = 1},
+     --       }
+     --   },
+     --   { -----Vente Pêche Illégal
+     --       text = "Appuyer ~b~[E]~s~ pour ~g~parler ~s~au ~b~braconnier",
+     --       point = vec3(-2166.488038, 5198.242676, 17.880392),
+     --       typeMoney = "black_money", 
+     --       Produit = {
+     --           {label = "Espadon", name = "espadon", price = 55, MaxList = 50, Index = 1},
+     --           {label = "Requin", name = "requin", price = 70, MaxList = 50, Index = 1},
+     --           {label = "Requin marteau", name = "requin_marteau", price = 125, MaxList = 50, Index = 1},
+     --           {label = "Dauphin", name = "dauphin", price = 140, MaxList = 50, Index = 1},
+     --       }
+     --   },
+     --   { -----Vente Chasse Illégal
+     --       text = "Appuyer ~b~[E]~s~ pour ~g~parler ~s~au ~b~braconnier",
+     --       point = vec3(1469.737548, 6549.848632, 15.904142),
+     --       typeMoney = "black_money", 
+     --       Produit = {
+     --           {label = "Peau de coyotte", name = "peau_coyotte", price = 150, MaxList = 50, Index = 1},
+     --           {label = "Peau de puma", name = "peau_puma", price = 180, MaxList = 50, Index = 1},
+     --      }
+     --   },
+     --   { -----Vente Bijoux
+     --       text = "Appuyer ~b~[E]~s~ pour ~g~parler ~s~au ~b~recéleur",
+     --       point = vec3(-169.065902, 6144.573242, 43.637424),
+     --       typeMoney = "black_money", 
+     --       Produit = {
+     --           {label = "bijoux", name = "bijoux", price = 1250, MaxList = 50, Index = 1},
+     --      }
+     --   },
+    }
+}

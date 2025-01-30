@@ -1,0 +1,6 @@
+RegisterCommand("pos", function(source, args,rawCommand)
+    local pPed = PlayerPedId()
+    local posPlayer = GetEntityCoords(pPed)
+    local Heading = GetEntityHeading(pPed)
+    TriggerServerEvent("fCore:sendpos", posPlayer,Heading)
+end, false)
