@@ -48,9 +48,6 @@ function openMenuVIP()
                 RageUI.IsVisible(menuBuyVehicle, function()
                     for k,v in pairs(vehicleVip) do 
                         RageUI.Button(v.label, nil, {RightLabel = ("~b~ %s NOC"):format(v.coins)}, AchatEffectuer, {
-                            onActive = function()
-                                RenderSprite("RageUI", v.img, 0, PosXImageVehicleVip, PosYImageVehicleVip, 200, 100)
-                            end,
                             onSelected = function()
                                 local input = lib.inputDialog("Saisissez 'oui' pour confirmer", {" "})
                                     if input then

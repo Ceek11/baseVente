@@ -81,7 +81,7 @@ client_scripts {
     "Modules/Utils/Peche/client/*lua",
 	"Modules/Utils/VenteObject/client/*.lua",
     "Modules/Utils/Chasse/client/*.lua",
-    -- "Modules/Utils/VenteOccasion/client/*.lua",
+    "Modules/Utils/VenteOccasion/client/*.lua",
 	"Modules/Utils/Utils/client/*.lua",
 -- Illegal
 	"Modules/Illegal/gang/client/*.lua",
@@ -157,7 +157,7 @@ server_scripts {
     "Modules/Utils/ClothesShop/server/*.lua",
 	"Modules/Utils/VenteObject/server/*.lua",
 	"Add/Binoculars/server/*.lua",
-    -- "Modules/Utils/VenteOccasion/server/*.lua",
+    "Modules/Utils/VenteOccasion/server/*.lua",
 -- Illegal 
     "Modules/Illegal/gang/server/*.lua",
     "Modules/Illegal/Bijouterie/server/*.lua",

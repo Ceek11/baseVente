@@ -23,9 +23,6 @@ function openMenuRental(Type)
                     for k,v in pairs(Location.Vehicle) do 
                         if Type == v.Type then 
                             RageUI.Button(v.label, v.description, {RightLabel = "~g~"..v.price.."$~s~ →→"}, true, {
-                                onActive = function()
-                                    RenderSprite("RageUI", v.img, 0, PosXImageRental, PosYImageRental, 200, 100)
-                                end,
                                 onSelected = function()
                                     TriggerServerEvent("fCore:Location:BuyRental", v.price, v.label, v.spawn, v.name, v.caution, v.heading)
                                 end

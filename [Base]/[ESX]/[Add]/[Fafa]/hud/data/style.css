@@ -14,7 +14,11 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
+    display: none; /* Assurez-vous que l'HUD est initialement caché */
 }
+
+/* Reste du CSS pour les éléments de l'HUD */
+
 
 .speedometer {
     top: 65px;

@@ -33,6 +33,7 @@ function RageUI.StatisticPanel(Percent, Text, Index)
     end
 end
 
+-- RageUI.StatisticPanelAdvanced("Coucou", 0.5, { 255, 255, 255, 255 }, 0.5, { 255, 0, 0, 255 }, { 255, 255, 255, 255 }, 1)
 function RageUI.StatisticPanelAdvanced(Text, Percent, RGBA1, Percent2, RGBA2, RGBA3, Index)
     local CurrentMenu = RageUI.CurrentMenu
     if CurrentMenu ~= nil then

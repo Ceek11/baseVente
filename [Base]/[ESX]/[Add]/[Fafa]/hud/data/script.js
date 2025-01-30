@@ -65,7 +65,7 @@ window.addEventListener('message', (event) => {
             thirstBar.style.width = `${data.thirstLevel}%`; // Utilisez un pourcentage pour remplir la barre
         }
 
-    } else if (data.action === 'hideHud') {
+    } else if (data.action === 'hideHud') {        
         const container = document.querySelector("#hud-container");
         if (container) {
             container.style.display = "none";

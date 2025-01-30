@@ -6,9 +6,8 @@ SubChangeInfoVehiculeBoss = RageUI.CreateSubMenu(ChangeInfoVehiculeBoss, " ", " 
 GarageMainBoss.Closed = function()
     OpenGarageBoss = false
 end
-
-
 local Recherche
+
 function _BossMainOpenGarage(valeur, garage)
     _JobBuilder:GetInfoVehicule()
     if OpenGarageBoss then
